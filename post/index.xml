@@ -17,12 +17,12 @@
     </item>
     
     <item>
-      <title>Clean White Theme for Hugo</title>
-      <link>https://kcfuler.github.io/post/readme/</link>
-      <pubDate>Wed, 09 Jan 2019 00:00:00 +0000</pubDate>
+      <title>基础算法模板</title>
+      <link>https://kcfuler.github.io/2023/02/01/basic-algorithm/</link>
+      <pubDate>Wed, 01 Feb 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://kcfuler.github.io/post/readme/</guid>
-      <description>Clean White Theme for Hugo CleanWhite is a clean, elegant, but fully functional blog theme for Hugo. Here is a live demo site using this theme. It is based on huxblog Jekyll Theme and Clean Blog Jekyll Theme. These two upstream projects have done awesome jobs to create a blog theme, what I&amp;rsquo;m doing here is porting it to Hugo, of which I like the simplicity and the much faster</description>
+      <guid>https://kcfuler.github.io/2023/02/01/basic-algorithm/</guid>
+      <description>基础算法 排序 快排 #include &amp;lt;iostream&amp;gt; using namespace std; const int N = 1e6 + 10; int a[N]; void quick_sort(int a[] , int l , int r){ if( l &amp;gt;= r) return ; int x = a[(r+l)/2] , i = l - 1 , j = r + 1; while( i &amp;lt; j ){ do i ++ ; while( x &amp;gt; a[i]); do j -- ;</description>
     </item>
     
   </channel>

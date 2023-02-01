@@ -1,0 +1,4567 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="Kcfuler Blog">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="https://dogefs.s3.ladydaily.com/~/source/unsplash/photo-1651429753289-e5cb65123a32?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1348&amp;q=80">
+    <meta property="twitter:image" content="https://dogefs.s3.ladydaily.com/~/source/unsplash/photo-1651429753289-e5cb65123a32?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1348&amp;q=80" />
+    
+
+    
+    <meta name="title" content="基础算法模板" />
+    <meta property="og:title" content="基础算法模板" />
+    <meta property="twitter:title" content="基础算法模板" />
+    
+
+    
+    <meta name="description" content="学习自acwing基础课">
+    <meta property="og:description" content="学习自acwing基础课" />
+    <meta property="twitter:description" content="学习自acwing基础课" />
+    
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="柯昌鹏, KeChangePeng, keChangePeng, , 柯昌鹏的网络日志, 柯昌鹏的博客, KeChangePeng Blog, 博客, 个人网站, 互联网, Web">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>基础算法模板 | 柯昌鹏的博客 | Zhaohuabing Blog</title>
+
+    <link rel="canonical" href="/2023/02/01/basic-algorithm/">
+
+    
+    
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hugo-theme-cleanwhite.min.css">
+
+    
+    <link rel="stylesheet" href="/css/zanshang.css">
+
+    
+    <link href="https://cdn.jsdelivr.net/gh/FortAwesome/Font-Awesome@5.15.1/css/all.css" rel="stylesheet" type="text/css">
+
+    
+    
+
+    
+    <script src="/js/jquery.min.js"></script>
+
+    
+    <script src="/js/bootstrap.min.js"></script>
+
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    <script src="/js/lazysizes.min.js"></script>
+
+    
+    
+
+</head>
+
+
+
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Kcfuler Blog</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">All Posts</a>
+                    </li>
+                    
+                        
+                        <li>
+                            <a href="/categories/life">life</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/notes">notes</a>
+                        </li>
+                        
+                    
+                    
+		    
+                        <li><a href="/archive/">ARCHIVE</a></li>
+                    
+                        <li><a href="/notes/">NOTES</a></li>
+                    
+                        <li><a href="/about/">ABOUT</a></li>
+                    
+		            <li>
+                        <a href="/search"><i class="fa fa-search"></i></a>
+		           </li>
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('https://dogefs.s3.ladydaily.com/~/source/unsplash/photo-1651429753289-e5cb65123a32?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1348&q=80')
+    }
+</style>
+
+<header class="intro-header" >
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/cs" title="cs">
+                            cs
+                        </a>
+                        
+                    </div>
+                    <h1>基础算法模板</h1>
+                    <h2 class="subheading">记录算法学习</h2>
+                    <span class="meta">
+                        
+                            Posted by 
+                            
+                                kcfuler
+                             
+                            on 
+                            Wednesday, February 1, 2023
+                            
+                            
+                            
+                            
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                
+                <h2 id="基础算法">基础算法</h2>
+<h3 id="排序">排序</h3>
+<h4 id="快排">快排</h4>
+<pre tabindex="0"><code class="language-none" data-lang="none">#include &lt;iostream&gt;
+using namespace std;
+
+const int N = 1e6 + 10;
+
+int a[N];
+
+void quick_sort(int a[] , int l , int r){
+
+if( l &gt;= r) return ;
+
+int x = a[(r+l)/2] , i = l - 1 ,  j = r + 1;
+
+while( i &lt; j ){
+    do i ++ ; while( x &gt; a[i]);
+    do j -- ; while( x &lt; a[j]);
+    if( i &lt; j ) swap( a[i] , a[j]);
+}
+
+quick_sort(a, l , j);
+quick_sort(a, j+1 , r);
+}
+
+int main (){
+int n;
+scanf(“%d” , &amp;n);
+
+for( int i = 0 ; i &lt; n ; i++) scanf(&#34;%d&#34; , &amp;a[i]);
+
+quick_sort(a , 0 , n-1);
+
+for( int i = 0 ; i &lt; n ; i++) printf(&#34;%d &#34; , a[i]);
+
+return 0;
+}
+</code></pre><h5 id="快速选择算法">快速选择算法</h5>
+<pre tabindex="0"><code class="language-none" data-lang="none">#include &lt;iostream&gt;
+using namespace std;
+
+const int N = 1e6 + 10;
+int q[N];
+
+int quick_sort(int l , int r , int k){
+if( l == r ) return q[l];
+
+int x = q[(l + r) / 2] , i = l - 1 , j = r + 1;
+
+while( i &lt; j ){
+    do i ++ ; while( x &gt; q[i]);
+    do j -- ; while( x &lt; q[j]);
+    if( i &lt; j ) swap( q[i] , q[j]);
+}
+
+int sl = j - l + 1; // 用来确定k在数组中的相对位置
+
+if( k &gt; sl ) return quick_sort( j + 1 , r , k - sl);
+return quick_sort( l , j , k );
+}
+
+int main (){
+
+int n , k;
+
+cin&gt;&gt;n&gt;&gt;k;
+
+for(int i = 0 ; i &lt; n ; i++) cin&gt;&gt;q[i];
+
+cout&lt;&lt; quick_sort(0, n - 1 , k)&lt;&lt;endl;
+
+return 0;
+}
+</code></pre><h4 id="归并排序">归并排序</h4>
+<h5 id="基础模板">基础模板</h5>
+<pre tabindex="0"><code class="language-none" data-lang="none">#include &lt;iostream&gt;
+using namespace std;
+
+const int N = 1e6+10;
+int a[N] , tmp[N];// 归并需要额外空间
+
+void merge_sort(int a[] , int l , int r){
+    if( l &gt;= r) return ;
+
+    int mid = (l + r) &gt;&gt; 1;
+
+    merge_sort(a, l , mid ) , merge_sort( a, mid + 1, r);
+
+    int k = 0  , i = l , j = mid + 1;
+    //将数据 按顺序 转移到临时数组中
+    while( i &lt;= mid &amp;&amp; j &lt;= r){
+        if( a[i] &gt;= a[j] ) tmp[k++] = a[j++];
+        else tmp[k++] = a[i++];
+    }
+    while( i &lt;= mid ) tmp[k++] = a[i++];
+    while( j &lt;= r) tmp[k++] = a[j++];
+
+    for( i = l , j = 0 ; i &lt;= r ; i ++ , j ++) a[i] = tmp[j]; // 排序好之后转移回去
+}
+
+int main (){
+    int n;
+    scanf(“%d”, &amp;n);
+
+    for(int i = 0; i &lt; n ;i ++) scanf(&#34;%d&#34; , &amp;a[i]);
+
+    merge_sort(a, 0 , n - 1);
+
+    for(int i = 0 ;i &lt; n ;i++) printf(&#34;%d &#34; , a[i]);
+
+    return 0;
+}
+</code></pre><h5 id="逆序对">逆序对</h5>
+<pre tabindex="0"><code class="language-none" data-lang="none">#include &lt;iostream&gt;
+using namespace std;
+
+typedef long long LL;
+
+const int N = 1e5 + 10;
+int a[N] , tmp[N];
+
+LL res = 0;
+
+LL merge_sort(int l , int r){
+    if(l &gt;= r) return 0;
+
+    int mid = l + r &gt;&gt; 1;
+
+    res = merge_sort( l , mid ) + merge_sort( mid + 1, r);
+
+    int k = 0 , i = l , j = mid + 1 ;
+
+    while( i &lt;= mid &amp;&amp; j &lt;= r){
+        if( a[i] &lt;= a[j]) tmp[k ++] = a[i ++];
+        else{
+            tmp[k ++] = a[j ++];
+            res += mid - i + 1;//逆序对在两个有序数组中，通过相对位置得到的性质
+        }
+    }
+
+    while( i &lt;= mid ) tmp[k ++] = a[i ++];
+    while( j &lt;= r) tmp[k ++] = a[j ++];
+
+    for(int i = l , j = 0 ; i &lt;= r  ;i ++ ,j ++) a[i] = tmp[j];
+
+    return res;
+}
+
+int main (){
+    int n ;
+
+    cin&gt;&gt;n;
+
+    for( int i = 0 ; i &lt; n ; i ++ ) cin&gt;&gt;a[i];
+
+    cout&lt;&lt; merge_sort(0 , n - 1 );
+
+    return 0;
+}
+</code></pre><h4 id="二分">二分</h4>
+<h5 id="模板">模板</h5>
+<pre tabindex="0"><code class="language-none" data-lang="none">#include &lt;iostream&gt;
+using namespace std;
+
+const int N = 1e5 + 10;
+int a[N];
+
+int main (){
+    int n , m ;
+    cin&gt;&gt;n&gt;&gt;m;
+
+    for(int i = 0 ;i &lt; n ;i++) cin&gt;&gt;a[i];
+
+    while( m --){
+        int k ;
+        cin&gt;&gt;k;
+
+        int l = 0 , r = n - 1 ;
+
+        while ( l &lt; r){
+            int mid = ( l + r ) &gt;&gt; 1; // 下界
+
+            if( a[mid] &gt;= k) r = mid;
+            else l = mid + 1;
+        }
+
+        if( a[l] != k) cout&lt;&lt;&#34;-1 -1&#34;&lt;&lt;endl;
+        else {
+
+            cout&lt;&lt;l&lt;&lt;&#34; &#34;;
+
+            int l = 0 , r = n - 1;
+            while( l &lt; r ){
+                int mid = ( l + r + 1 ) &gt;&gt; 1;//上界
+
+                if( a[mid] &lt;= k) l = mid;
+                else r = mid - 1;
+            } 
+            cout&lt;&lt;r&lt;&lt;endl;
+        }
+    } 
+
+    return 0;
+}
+#include &lt;iostream&gt;
+using namespace std;
+
+int main (){
+    double k ;
+    cin&gt;&gt;k;
+    
+    double l = -10000, r = 10000;
+    
+    while( r - l &gt; 1e-8){ // 注意是要越来越接近
+        
+        double mid = ( l + r ) / 2 ;
+        
+        if( mid * mid * mid &gt;= k) r = mid;
+        else l = mid;
+    }
+    
+    printf(&#34;%.6lf\n&#34;,l);//控制小数数位的输出很好用
+    
+    return 0;
+}
+</code></pre><h3 id="前缀和与差分">前缀和与差分</h3>
+<h4 id="前缀和">前缀和</h4>
+<pre tabindex="0"><code class="language-none" data-lang="none">#include &lt;iostream&gt;
+using namespace std;
+
+const int N = 1e5 + 10;
+int a[N] , pre[N];
+
+int main (){
+    int n , m;
+    scanf(&#34;%d%d&#34; ,&amp;n ,&amp; m);
+
+    for(int i = 1 ; i &lt;= n ;i++) scanf(&#34;%d&#34; , &amp;a[i]);
+
+    for(int i = 1 ; i &lt;= n ;i++) pre[i] = pre[i - 1] + a[i];
+
+    while( m --){
+        int s  , e ;
+        scanf(&#34;%d%d&#34; , &amp;s,&amp;e);
+        printf(&#34;%d\n&#34;, pre[e] - pre[ s - 1 ]);
+    }
+
+    return 0;
+}
+#include &lt;iostream&gt;
+using namespace std;
+
+const int N = 1e3 + 10;
+int a[N][N] , s[N][N];
+
+int m , n , q;
+
+int main (){
+
+    cin&gt;&gt;n&gt;&gt;m&gt;&gt;q;//注意矩阵的读入
+
+    for(int i = 1 ; i &lt;= n ;i ++)
+        for( int j = 1 ; j &lt;= m ; j++)
+            cin&gt;&gt;a[i][j];
+
+    for(int i = 1; i &lt;= n ;i ++)
+        for(int j = 1 ; j &lt;= m ; j++)
+            s[i][j] = s[i-1][j] + s[i][j-1] - s[i-1][j-1] + a[i][j];
+
+    while( q --){
+        int x1, y1, x2,y2;
+        cin&gt;&gt;x1&gt;&gt;y1&gt;&gt;x2&gt;&gt;y2;
+
+        int res = s[x2][y2] - s[x1-1][y2] - s[x2][y1 - 1] + s[x1 - 1][y1 - 1];
+
+        cout&lt;&lt;res&lt;&lt;endl;
+    }
+
+    return 0;
+}
+</code></pre><h4 id="差分">差分</h4>
+<pre tabindex="0"><code class="language-none" data-lang="none">#include &lt;iostream&gt;
+using namespace std;
+
+const int N = 1e5 + 10;
+int a[N] , s[N];
+
+void insert(int l , int r , int v){
+    s[l] += v;
+    s[r+1] -= v;
+}
+
+int main(){
+    int n , m ;
+    cin&gt;&gt;n&gt;&gt;m;
+    
+    for(int i = 1 ;i &lt;= n ;i++) cin&gt;&gt;a[i]; // 读入初始数组
+    
+    for(int i = 1 ;i &lt;= n ;i++) insert(i , i ,a[i]); // 初始化差分数组（等价为在每一个位置添加对应的a[i]）
+    
+    while( m --){
+        int l , r , c;
+        cin&gt;&gt;l&gt;&gt;r&gt;&gt;c;
+        insert(l,r,c);//进行区间的操作
+    }
+    
+    for(int i = 1 ;i &lt;= n ;i++) s[i] = s[i] + s[i - 1]; // 还原，前缀和 
+    
+    for(int i = 1 ;i &lt;= n ;i++) cout&lt;&lt;s[i]&lt;&lt;&#34; &#34;; 
+    
+    return 0;
+}
+#include &lt;iostream&gt;
+using namespace std;
+
+const int N = 1e3 + 10;
+int a[N][N],s[N][N];
+
+//二维差分，想象矩阵的面积变化
+void insert(int x1 , int y1, int x2 , int y2, int c){
+    s[x1][y1] += c;
+    s[x2 + 1][y1] -= c;
+    s[x1][y2 + 1] -= c;
+    s[x2 + 1][y2 + 1] += c;
+}
+
+int main (){
+    int n , m, q;
+    cin&gt;&gt;n&gt;&gt;m&gt;&gt;q;
+
+    for(int i = 1 ; i &lt;= n ;i++)
+        for(int j = 1 ;j &lt;= m ;j++)
+            cin&gt;&gt;a[i][j];
+
+    for(int i = 1 ; i &lt;= n ;i++)
+        for(int j = 1; j &lt;= m;j++)
+            insert(i , j , i , j , a[i][j]);// 边界，构造差分数组
+
+    while( q--){
+        int x1,y1,x2,y2,c;
+
+        cin&gt;&gt;x1&gt;&gt;y1&gt;&gt;x2&gt;&gt;y2&gt;&gt;c;
+
+        insert(x1,y1,x2,y2,c);
+    }
+
+    for(int i = 1; i &lt;= n;i ++)
+        for(int j = 1 ; j &lt;= m ;j ++)
+            s[i][j] = s[i][j] + s[i - 1][j] + s[i][j - 1] - s[i - 1][j - 1]; // 前缀和，还原为操作后的数组
+
+    for(int i = 1; i &lt;= n;i ++)
+    {
+        for(int j = 1 ; j &lt;= m ;j++) cout&lt;&lt;s[i][j]&lt;&lt;&#34; &#34;;
+        cout&lt;&lt;endl;
+    }
+
+    return 0;
+}
+</code></pre><h3 id="双指针">双指针</h3>
+<pre tabindex="0"><code class="language-none" data-lang="none">#include &lt;iostream&gt;
+using namespace std;
+
+const int N = 1e5 + 10;
+int a[N] , c[N];
+
+int main (){
+    int n;
+    cin&gt;&gt;n;
+
+    for(int i = 0 ; i &lt; n ; i ++) cin&gt;&gt;a[i];
+
+    int res = 0 , j = 0;
+
+    for(int i = 0 ; i &lt; n ; i ++){
+        c[a[i]]++;
+
+        while( c[a[i]] &gt; 1){
+
+            c[a[j]]--; // 清除对前面的数的计数
+            j++;
+        }
+
+        res = max( res , i - j + 1);
+    }
+
+    cout&lt;&lt;res&lt;&lt;endl;
+
+    return 0;
+}
+#include &lt;iostream&gt;
+using namespace std;
+
+const int N = 1e5 + 10;
+int a[N] , b[N];
+
+int main (){
+    int n , m , x;
+    cin&gt;&gt;n&gt;&gt;m&gt;&gt;x;
+    
+    for(int i = 0; i &lt; n ;i++) cin&gt;&gt;a[i];
+    
+    for(int i = 0; i &lt; m ;i++) cin&gt;&gt;b[i];
+
+    for(int i = 0 , j = m - 1; i &lt; n , j &gt;= 0 ;i++)
+    {
+        while(a[i] + b[j] &gt; x) j--;
+        if(a[i] + b[j] == x) 
+        {
+            cout&lt;&lt;i&lt;&lt;&#34; &#34;&lt;&lt;j&lt;&lt;endl;
+            break;
+        }
+    }
+    
+    return 0;
+}
+#include &lt;iostream&gt;
+using namespace std;
+
+const int N = 1e5 + 10;
+int a[N], b[N];
+
+int main ()
+{
+    int n , m ;
+    cin&gt;&gt;n&gt;&gt;m;
+
+    for(int i = 0 ; i &lt; n ; i++) cin&gt;&gt;a[i];
+    for(int j = 0 ; j &lt; m ; j++) cin&gt;&gt;b[j];
+
+    int i = 0 , j = 0;
+    while( i &lt; n &amp;&amp; j &lt; m){
+        if( a[i] == b[j]) i++;
+        j++;
+    }
+
+    if( i == n) puts(&#34;Yes&#34;);
+    else puts(&#34;No&#34;);
+
+    return 0;
+}
+</code></pre><ul>
+<li></li>
+</ul>
+<p>先想清楚 i 和 j 要如何变化，重要的是思想。</p>
+<h3 id="位运算">位运算</h3>
+<p>这里只涉及到两种常用的位运算</p>
+<ol>
+<li>n的二进制中第k位是几</li>
+</ol>
+<pre tabindex="0"><code>n &gt;&gt; k &amp; 1
+</code></pre><ol>
+<li>lowbit &ndash; 获得最后一个1</li>
+</ol>
+<pre tabindex="0"><code class="language-none" data-lang="none">#include &lt;iostream&gt;
+using namespace std;
+
+int lowbit(int x){//取到最后一个1
+    return x &amp; -x;
+}
+
+int main (){
+    int n ; 
+    cin&gt;&gt;n;
+    
+    while( n --){
+        int x ;
+        cin&gt;&gt;x;
+        
+        int res = 0;
+        
+        while(x) x-=lowbit(x), res+=1; // 减为0的时候就得到了1的个数
+        
+        cout&lt;&lt;res&lt;&lt;&#34; &#34;;
+    }
+    
+    return 0;
+}
+</code></pre><h3 id="离散化">离散化</h3>
+<p>这里指的是有序的离散化</p>
+<h4 id="个人一些理解有误望指正">个人一些理解（有误望指正）</h4>
+<ol>
+<li>离散化的几个必须步骤</li>
+<li>使用一个数组存储<strong>源数组的下标</strong></li>
+<li>对存储下标的数组进行<strong>排序和去重</strong> ， 主要是为了保证二分的效率 和 节约空间</li>
+<li>使用<strong>二分</strong>实现下标的查找</li>
+<li>数轴是<strong>有序</strong>的，而排序之后的数组也是<strong>有序</strong>的</li>
+</ol>
+<pre tabindex="0"><code class="language-none" data-lang="none">#include &lt;iostream&gt;
+#include &lt;vector&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+
+typedef pair&lt;int ,int &gt; PII;
+
+const int N = 3e5 + 10;
+int n , m;
+int a[N] , s[N];
+
+vector&lt;int&gt; alls;
+vector&lt;PII&gt; add, query;
+
+int find(int x ){
+    int l = 0  , r = alls.size() - 1;
+
+    while( l &lt; r){
+        int mid = ( l + r ) &gt;&gt; 1;
+        if( alls[mid] &gt;= x) r = mid;
+        else l = mid + 1;
+    }
+
+    return r + 1; // 这里的+1是为了配合构造前缀和
+}
+int main (){
+    cin&gt;&gt;n&gt;&gt;m;
+
+    while( n --){
+        int x ,c ;
+        cin&gt;&gt;x&gt;&gt;c;
+
+        add.push_back({x,c});
+
+        alls.push_back(x);
+    }
+
+    while ( m --){
+        int l , r ;
+        cin&gt;&gt;l&gt;&gt;r;
+        query.push_back({l , r });
+
+        alls.push_back(l);
+        alls.push_back(r);
+    }
+
+    //排序+去重 , 这一步不能忘记，不然二分会出问题
+    sort( alls.begin() , alls.end());
+    alls.erase( unique(alls.begin(),alls.end()) , alls.end());
+
+    //离散化
+    for( auto item : add){
+        int x = find( item.first );
+        a[x] += item.second;
+    }
+
+    for( int i = 1 ; i &lt;= (int)alls.size() ; i++) s[i] = s[i - 1] + a[i];//计算前缀和
+
+    for( auto item : query){
+        int l = find(item.first);
+        int r = find(item.second);
+
+        cout&lt;&lt;s[r] - s[l - 1]&lt;&lt;endl;
+    }
+
+    return 0;
+}
+</code></pre><h3 id="区间合并">区间合并</h3>
+<p>核心：</p>
+<ul>
+<li></li>
+</ul>
+<p>排序</p>
+<ul>
+<li></li>
+</ul>
+<p>双指针（？）</p>
+<pre tabindex="0"><code class="language-none" data-lang="none">#include &lt;iostream&gt;
+#include &lt;vector&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+
+typedef pair&lt;int , int&gt; PII;
+
+void merge(vector&lt;PII&gt; &amp;segs){
+    sort(segs.begin() , segs.end());
+    
+    vector&lt;PII&gt; res;
+    
+    int st = -2e9  ,ed = -2e9; // 因为排序之后整个区间是递增的，所以用两个变量可以表示
+    
+    for(auto seg : segs){
+        if( seg.first &gt; ed){
+            if( ed != -2e9) // 规避起始点
+                res.push_back({st , ed});
+	        st = seg.first , ed = seg.second;
+        }
+        else ed = max( ed , seg.second);
+    }
+    
+    if( st != -2e9) res.push_back({st , ed}); // 避免为空的情况
+    
+    segs = res;
+    
+}
+
+int main (){
+    int n ;
+    cin&gt;&gt;n;
+    
+    vector&lt;PII&gt; segs;
+    
+    while( n --){
+        int st , ed ;
+        cin&gt;&gt;st&gt;&gt;ed;
+        
+        segs.push_back({st,ed});
+    }
+    
+    merge(segs);
+    
+    cout&lt;&lt;segs.size()&lt;&lt;endl;
+    
+    return 0;
+}
+</code></pre><h1 id="数据结构">数据结构</h1>
+<h2 id="链表">链表</h2>
+<p>这里的链表都是使用数组模拟的方式进行存储的。</p>
+<h3 id="单链表">单链表</h3>
+<pre tabindex="0"><code class="language-none" data-lang="none">#include &lt;iostream&gt;
+using namespace std;
+
+const int N = 1e5 + 10;
+
+int e[N], ne[N], head, idx;//这里的idx 我觉得可以看做调用栈里面的指针，使用它来新建一个元素
+
+void init(){
+    head = -1;
+    idx = 0;
+}
+
+void insert_to_head( int x)
+{
+    e[idx] = x, ne[idx] = head, head = idx, idx++;
+}
+
+void insert_to_next(int k, int x)
+{
+    e[idx] = x, ne[idx] = ne[k], ne[k] = idx, idx++;  
+}
+
+void remove(int k)
+{
+    ne[k] = ne[ne[k]];
+}
+
+int main ()
+{
+    int m ;
+
+    cin&gt;&gt;m;
+
+    init();
+
+    while( m--)
+    {
+        int k, x;
+        char op;
+
+        cin&gt;&gt;op;
+
+        if(op == &#39;H&#39;)
+        {
+
+            cin&gt;&gt;x;
+            insert_to_head(x);
+        }
+        else if(op == &#39;D&#39;)
+        {
+
+            cin&gt;&gt;k;
+            if(k == 0) head = ne[head];
+            remove(k - 1);
+        }
+        else
+        {
+
+            cin&gt;&gt;k&gt;&gt;x;
+            insert_to_next(k - 1, x);//注意 k 和 head初始值的对应关系
+        }
+    }
+
+    for(int i = head; i != -1; i = ne[i]) cout&lt;&lt;e[i]&lt;&lt;&#34; &#34;;
+    cout&lt;&lt;endl;
+
+    return 0;
+}
+</code></pre><h3 id="双链表">双链表</h3>
+<h4 id="基础模板-1">基础模板</h4>
+<pre tabindex="0"><code class="language-none" data-lang="none">#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+const int N = 1e5 + 10;
+int e[N], l[N], r[N], idx;
+
+void init(){
+    l[1] = 0,r[0] = 1,idx = 2;
+}
+
+void insert(int k, int x)
+{
+    e[idx] = x, r[idx] = r[k], l[idx] = k, l[r[k]] = idx, r[k] = idx, idx++;
+}
+
+void remove(int k)
+{
+    l[r[k]] = l[k]; // 右边的左边等于左边
+    r[l[k]] = r[k]; // 左边的右边等于右边
+}
+
+int main ()
+{
+    int m ;
+    cin&gt;&gt;m;
+
+    init();// 一定一定要初始化，不然会变得不幸
+
+    while(m --)
+    {
+        int k, x;
+        string op;
+
+        cin&gt;&gt;op;
+
+        if( op == &#34;L&#34;)
+        {
+            cin&gt;&gt;x;
+            insert(0, x);
+        }
+        else if( op == &#34;R&#34;)
+        {
+            cin&gt;&gt;x;
+            insert(l[1], x);
+        }
+        else if( op == &#34;D&#34;)
+        {
+            cin&gt;&gt;k;
+            remove(k + 1);
+        }
+        else if( op == &#34;IL&#34;)
+        {
+            cin&gt;&gt;k&gt;&gt;x;
+            insert(l[k + 1], x);
+        }
+        else
+        {
+            cin&gt;&gt;k&gt;&gt;x;
+            insert(k + 1, x);
+        }
+    }
+
+    for(int i = r[0]; i != 1; i = r[i]) cout&lt;&lt;e[i]&lt;&lt;&#34; &#34;;
+    cout&lt;&lt;endl;
+
+    return 0;
+}
+</code></pre><h3 id="栈">栈</h3>
+<h4 id="基础模板-2">基础模板</h4>
+<h5 id="数组模拟栈">数组模拟栈</h5>
+<pre tabindex="0"><code class="language-none" data-lang="none">#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+const int N = 1e5 + 10;
+int stk[N],tt;
+
+void init_stk()
+{
+    tt = -1;
+}
+
+int main()
+{
+    int m ;
+    cin&gt;&gt;m;
+
+    init_stk();
+
+    while( m --)
+    {
+        int x;
+        string op ;
+
+        cin&gt;&gt;op;
+
+        if(op == &#34;push&#34;)
+        {
+            cin&gt;&gt;x;
+            stk[++ tt] = x; 
+        }
+        else if(op == &#34;query&#34;)
+        {
+            cout&lt;&lt;stk[tt]&lt;&lt;endl;
+        }
+        else if(op == &#34;pop&#34;)
+        {
+            tt--;
+        }
+        else if(op == &#34;empty&#34;)
+        {
+            if( tt &gt;= 0 ) cout&lt;&lt;&#34;NO&#34;&lt;&lt;endl;
+            else cout&lt;&lt;&#34;YES&#34;&lt;&lt;endl;
+        }
+    }
+
+
+    return 0;
+}
+</code></pre><h4 id="单调栈">单调栈</h4>
+<p>总体过程：定义一个栈，遍历数组</p>
+<ul>
+<li></li>
+</ul>
+<p>当栈顶元素 &gt;= 当前元素 ， 弹出栈顶元素</p>
+<ul>
+<li></li>
+</ul>
+<p>流程结束之后当前的栈顶元素就是最近的小于等于当前元素的元素。</p>
+<p>原理：*<strong>确保栈内元素递增*</strong>。
+代码模板</p>
+<pre tabindex="0"><code class="language-none" data-lang="none">#include &lt;iostream&gt;
+using namespace std;
+
+const int N = 1e5 + 10;
+int stk[N] , tt;
+
+int main ()
+{
+    cin.tie(NULL);
+    ios_base::sync_with_stdio(false);
+    int n;
+    cin&gt;&gt;n;
+    
+    for(int i = 0 ; i &lt; n ; i++) 
+    {
+        int x ;
+        cin&gt;&gt;x;
+        while( tt &amp;&amp; stk[tt] &gt;= x) tt--;
+        
+        if(stk[tt]) cout&lt;&lt;stk[tt]&lt;&lt;&#39; &#39;;
+        else cout&lt;&lt;&#34;-1 &#34;;
+        
+        stk[++tt] = x; // 记得入栈
+    }
+    
+    return 0;
+}
+</code></pre><h5 id="应用">应用</h5>
+<ol>
+<li>找到一个数的左边离它最近的数 &ndash; yxc ：基本上就这个应用</li>
+</ol>
+<h4 id="单调队列">单调队列</h4>
+<p>代码模板</p>
+<p>这里是求滑动窗口中的<code>最小值 | 最大值</code></p>
+<pre tabindex="0"><code class="language-none" data-lang="none">#include &lt;iostream&gt;
+using namespace std;
+
+const int N = 1e6 + 10;
+int a[N], q[N];//使用数组模拟队列
+
+int main()
+{
+    cin.tie(NULL);
+    ios_base::sync_with_stdio(false);
+    int n , k;
+    cin&gt;&gt;n&gt;&gt;k;
+    
+    for(int i = 0; i &lt; n ;i ++) cin&gt;&gt;a[i];
+    
+    int hh = 0 , tt = -1; // hh 为队头， tt 为队尾
+    
+    for(int i = 0; i &lt; n ;i ++)
+    {
+        // 判断队列有没在滑动窗口之内
+        if( hh &lt;= tt &amp;&amp; i - k + 1 &gt; q[hh] )  hh++;
+        
+        while( hh &lt;= tt &amp;&amp; a[q[tt]] &gt;= a[i]) tt--; // 比它大的都弹出
+        
+        q[ ++tt ] = i; // 队列里面存储的是下标
+        
+        if( i &gt;= k - 1 ) cout&lt;&lt;a[q[hh]]&lt;&lt;&#34; &#34;;
+        
+    }
+    
+    cout&lt;&lt;endl;
+    
+    hh = 0 , tt = -1; // hh 为队头， tt 为队尾
+    
+    for(int i = 0; i &lt; n ;i ++)
+    {
+        // 判断队列有没在滑动窗口之内
+        if( hh &lt;= tt &amp;&amp; i - k + 1 &gt; q[hh] )  hh++;
+        
+        while( hh &lt;= tt &amp;&amp; a[q[tt]] &lt;= a[i]) tt--; // 比它小的都弹出
+        
+        q[ ++tt ] = i; // 队列里面存储的是下标
+        // 初始的时候，要有窗口长度再输出
+        if( i &gt;= k - 1 ) cout&lt;&lt;a[q[hh]]&lt;&lt;&#34; &#34;;
+        
+    }
+    return 0;
+}
+</code></pre><h2 id="kmp">KMP</h2>
+<p>本质上就是充分利用在匹配过程中能够得到的信息，来进行下一次的匹配。</p>
+<ul>
+<li></li>
+</ul>
+<p>这里使用</p>
+<p>ne数组</p>
+<p>来保存在当前长度下，字符串最长相等前后缀的长度。</p>
+<ul>
+<li></li>
+</ul>
+<p>在匹配的过程中，如果模板已经匹配到了 j 的位置， 那么从 j 之前的位置肯定是已经匹配过了。</p>
+<p>如果说 之前有 ne[j] 这个位置的左右对称长度的字符串长度是相等的（也就是前后缀相等</p>
+<p>那么我们可以直接让 j 从 ne[j] 的位置开始匹配，因为 ne[j] 的最长前后缀是相等的，且ne[j] 是在 j 之前， 也就是已经匹配过了， 所以就可以确定</p>
+<pre tabindex="0"><code>ne[ j ]
+</code></pre><p>前面的部分和原字符串是相等的</p>
+<p>经过上面的步骤 ， 也就节省调了 ne[ j ] 代表的那一部分的距离，也就达到了优化字符串匹配的效果，这个就是kmp算法。</p>
+<p>比较简洁的算法模板</p>
+<pre tabindex="0"><code class="language-none" data-lang="none">#include &lt;iostream&gt;
+using namespace std;
+
+const int N = 1e5 + 10;
+const int M = 1e6 + 10;
+
+char p[N] , s[M];
+int n , m;
+int ne[N]; //这里不用next 是因为iterator 中也定义了next()这个方法，防止冲突
+
+int main()
+{
+    // cin.tie(NULL);
+    // ios_base::sync_with_stdio(false);
+
+    cin&gt;&gt; n &gt;&gt; (p+1) &gt;&gt; m &gt;&gt; (s + 1); // 这里在输入数组的时候就已经让下标从1开始了
+
+    //求next数组
+    for( int i = 2 , j = 0 ; i &lt;= n; i++)
+    {
+        while( j &amp;&amp; p[i] != p[j + 1]) j = ne[j];// 如果还能退 | 不相等 =》 退到可以相等的位置
+        if( p[i] == p[j + 1] ) j ++;
+        ne[i] = j;
+    }
+
+    for( int i = 1 ,j = 0 ; i &lt;= m; i++)
+    {
+        while( j &amp;&amp; s[i] != p[j + 1]) j = ne[j];
+        if( s[i] == p[j + 1]) j ++;
+        if( j == n)
+        {
+            cout&lt;&lt; i - n&lt;&lt;&#34; &#34;;
+            j = ne[j];
+        }
+    }
+
+    return 0;
+}
+</code></pre><h2 id="trie-字典树">Trie( 字典树)</h2>
+<p>模板</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#ff79c6">import</span> java.util.* <span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Main</span><span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">private</span> <span style="color:#8be9fd;font-style:italic">static</span> <span style="color:#8be9fd">int</span> N  <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">100010</span><span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">private</span> <span style="color:#8be9fd;font-style:italic">static</span> <span style="color:#8be9fd">int</span><span style="color:#ff79c6">[][]</span> son <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> <span style="color:#8be9fd">int</span><span style="color:#ff79c6">[</span>N<span style="color:#ff79c6">][</span><span style="color:#bd93f9">26</span><span style="color:#ff79c6">];</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">private</span> <span style="color:#8be9fd;font-style:italic">static</span> <span style="color:#8be9fd">int</span><span style="color:#ff79c6">[]</span> cnt <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> <span style="color:#8be9fd">int</span><span style="color:#ff79c6">[</span>N<span style="color:#ff79c6">];</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">private</span> <span style="color:#8be9fd;font-style:italic">static</span> <span style="color:#8be9fd">int</span> idx <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">1</span><span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">private</span> <span style="color:#8be9fd;font-style:italic">static</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">insert</span><span style="color:#ff79c6">(</span> <span style="color:#8be9fd">char</span><span style="color:#ff79c6">[]</span> str <span style="color:#ff79c6">){</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#8be9fd">int</span> p <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span><span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">for</span><span style="color:#ff79c6">(</span> <span style="color:#8be9fd">int</span> i <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span> <span style="color:#ff79c6">;</span> i <span style="color:#ff79c6">&lt;</span> str<span style="color:#ff79c6">.</span><span style="color:#50fa7b">length</span> <span style="color:#ff79c6">;</span> i<span style="color:#ff79c6">++)</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#8be9fd">int</span> u <span style="color:#ff79c6">=</span> str<span style="color:#ff79c6">[</span>i<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">-</span> <span style="color:#f1fa8c">&#39;a&#39;</span><span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">if</span><span style="color:#ff79c6">(</span> son<span style="color:#ff79c6">[</span>p<span style="color:#ff79c6">][</span>u<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">==</span> <span style="color:#bd93f9">0</span> <span style="color:#ff79c6">)</span> son<span style="color:#ff79c6">[</span>p<span style="color:#ff79c6">][</span>u<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">++</span>idx<span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span>            p <span style="color:#ff79c6">=</span> son<span style="color:#ff79c6">[</span>p<span style="color:#ff79c6">][</span>u<span style="color:#ff79c6">];</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">}</span>
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        cnt<span style="color:#ff79c6">[</span>p<span style="color:#ff79c6">]++;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">}</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">private</span> <span style="color:#8be9fd;font-style:italic">static</span> <span style="color:#8be9fd">int</span> <span style="color:#50fa7b">query</span><span style="color:#ff79c6">(</span><span style="color:#8be9fd">char</span><span style="color:#ff79c6">[]</span> str<span style="color:#ff79c6">){</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#8be9fd">int</span> p <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span><span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">for</span><span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> i <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span> <span style="color:#ff79c6">;</span> i <span style="color:#ff79c6">&lt;</span> str<span style="color:#ff79c6">.</span><span style="color:#50fa7b">length</span> <span style="color:#ff79c6">;</span> i<span style="color:#ff79c6">++)</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#8be9fd">int</span> u <span style="color:#ff79c6">=</span> str<span style="color:#ff79c6">[</span>i<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">-</span> <span style="color:#f1fa8c">&#39;a&#39;</span><span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">if</span><span style="color:#ff79c6">(</span> son<span style="color:#ff79c6">[</span>p<span style="color:#ff79c6">][</span>u<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">==</span> <span style="color:#bd93f9">0</span> <span style="color:#ff79c6">)</span> <span style="color:#ff79c6">return</span> <span style="color:#bd93f9">0</span><span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span>            p <span style="color:#ff79c6">=</span> son<span style="color:#ff79c6">[</span>p<span style="color:#ff79c6">][</span>u<span style="color:#ff79c6">];</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">}</span>
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">return</span> cnt<span style="color:#ff79c6">[</span>p<span style="color:#ff79c6">];</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">}</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">static</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">main</span><span style="color:#ff79c6">(</span>String <span style="color:#ff79c6">[]</span> argvs<span style="color:#ff79c6">){</span>
+</span></span><span style="display:flex;"><span>        Scanner sc <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> Scanner<span style="color:#ff79c6">(</span> System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">in</span> <span style="color:#ff79c6">);</span>
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#8be9fd">int</span> n <span style="color:#ff79c6">=</span> sc<span style="color:#ff79c6">.</span><span style="color:#50fa7b">nextInt</span><span style="color:#ff79c6">();</span>
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        String op<span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span>        String str<span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">while</span><span style="color:#ff79c6">(</span> n<span style="color:#ff79c6">--</span> <span style="color:#ff79c6">&gt;</span> <span style="color:#bd93f9">0</span> <span style="color:#ff79c6">)</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span>            op <span style="color:#ff79c6">=</span> sc<span style="color:#ff79c6">.</span><span style="color:#50fa7b">next</span><span style="color:#ff79c6">();</span>
+</span></span><span style="display:flex;"><span>            str <span style="color:#ff79c6">=</span> sc<span style="color:#ff79c6">.</span><span style="color:#50fa7b">next</span><span style="color:#ff79c6">();</span>
+</span></span><span style="display:flex;"><span>            
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">if</span><span style="color:#ff79c6">(</span> <span style="color:#f1fa8c">&#34;I&#34;</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">equals</span><span style="color:#ff79c6">(</span>op<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">)</span> insert<span style="color:#ff79c6">(</span>str<span style="color:#ff79c6">.</span><span style="color:#50fa7b">toCharArray</span><span style="color:#ff79c6">());</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">else</span> System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">println</span><span style="color:#ff79c6">(</span>query<span style="color:#ff79c6">(</span>str<span style="color:#ff79c6">.</span><span style="color:#50fa7b">toCharArray</span><span style="color:#ff79c6">()));</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">}</span>
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">}</span>
+</span></span></code></pre></div><ul>
+<li></li>
+</ul>
+<p>java的输入输出对acm模式还是不太友好，好麻烦。</p>
+<pre tabindex="0"><code class="language-none" data-lang="none">#include &lt;iostream&gt;
+using namespace std;
+
+const int N = 1e5 + 10;
+int son[N][26] , cnt[N], idx;
+char str[N];
+
+void insert( char *str)
+{
+    int p = 0;
+    for( int i = 0; str[i] ; i++){
+        int u  = str[i] - &#39;a&#39;;
+        if( ! son[p][u] ) son[p][u] = ++idx; // 没有的话就创建
+        p = son[p][u];
+    }
+    cnt[p] ++; // 这个单词的数量
+}
+
+int serach(char str[])
+{
+    int p = 0; // 这里的p和idx配合，起到一个唯一标识的作用，标识树中的一个节点。
+    for( int i = 0 ; str[i] ; i++)
+    {
+        int u = str[i] - &#39;a&#39;;
+        if( !son[p][u] ) return 0;
+        p = son[p][u];
+    }
+    return cnt[p];
+}
+
+int main ()
+{
+    int m;
+    cin&gt;&gt;m;
+
+    
+    while( m --)
+    {
+        char op[2];
+        scanf(&#34;%s%s&#34;, op , str);
+        
+        if(*op == &#39;I&#39;) insert(str);
+        else cout&lt;&lt;serach(str)&lt;&lt;endl;
+    }
+    
+    return 0;
+}
+</code></pre><h2 id="并查集">并查集</h2>
+<h3 id="主要操作">主要操作</h3>
+<ol>
+<li>将两个集合合并</li>
+<li>询问两个元素是否在一个集合中</li>
+</ol>
+<p>可以在<strong>近乎</strong> <code>O(1)</code> 的时间复杂度之内完成两个操作</p>
+<h3 id="基本原理">基本原理</h3>
+<p>每一个集合用一棵树来表示。树根的编号就是整个集合的编号。每个节点存储它的父节点，<code>p[x]</code>表示x的父节点</p>
+<ol>
+<li>如何判断树根 ： <code>if (p[x] == x)</code></li>
+<li>如何求x的集合编号： <code>while( p[x] != x) x = p[x]</code></li>
+<li>如何合并两个集合 : px 是 x 的集合编号 ， py 是 y 的集合编号 <code>p[x] = y</code> 。</li>
+</ol>
+<h4 id="优化">优化</h4>
+<p><strong>路径压缩</strong>： 搜索过程中，将中间所有节点都指向根节点。</p>
+<p>java模板（裸板）</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#ff79c6">import</span> java.util.*<span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Main</span><span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">private</span> <span style="color:#8be9fd;font-style:italic">static</span> <span style="color:#8be9fd">int</span> N <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">100010</span><span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">private</span> <span style="color:#8be9fd;font-style:italic">static</span> <span style="color:#8be9fd">int</span> <span style="color:#ff79c6">[]</span> p <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> <span style="color:#8be9fd">int</span><span style="color:#ff79c6">[</span>N<span style="color:#ff79c6">];</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">private</span> <span style="color:#8be9fd;font-style:italic">static</span> <span style="color:#8be9fd">int</span> <span style="color:#50fa7b">find</span><span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> x <span style="color:#ff79c6">){</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">if</span><span style="color:#ff79c6">(</span> p<span style="color:#ff79c6">[</span>x<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">!=</span> x <span style="color:#ff79c6">)</span> <span style="color:#ff79c6">return</span> p<span style="color:#ff79c6">[</span>x<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">=</span> find<span style="color:#ff79c6">(</span>p<span style="color:#ff79c6">[</span>x<span style="color:#ff79c6">]);</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">return</span> p<span style="color:#ff79c6">[</span>x<span style="color:#ff79c6">];</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">}</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">static</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">main</span><span style="color:#ff79c6">(</span>String <span style="color:#ff79c6">[]</span> argvs<span style="color:#ff79c6">){</span>
+</span></span><span style="display:flex;"><span>        Scanner sc <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> Scanner<span style="color:#ff79c6">(</span> System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">in</span> <span style="color:#ff79c6">);</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#8be9fd">int</span> n <span style="color:#ff79c6">=</span> sc<span style="color:#ff79c6">.</span><span style="color:#50fa7b">nextInt</span><span style="color:#ff79c6">(),</span> m <span style="color:#ff79c6">=</span> sc<span style="color:#ff79c6">.</span><span style="color:#50fa7b">nextInt</span><span style="color:#ff79c6">();</span>
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">for</span><span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> i <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span> <span style="color:#ff79c6">;</span> i <span style="color:#ff79c6">&lt;</span> n <span style="color:#ff79c6">;</span>i<span style="color:#ff79c6">++)</span> p<span style="color:#ff79c6">[</span>i<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">=</span> i<span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">while</span><span style="color:#ff79c6">(</span> m <span style="color:#ff79c6">--</span> <span style="color:#ff79c6">&gt;</span> <span style="color:#bd93f9">0</span><span style="color:#ff79c6">)</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span>	        <span style="color:#6272a4">//输入输出确实麻烦
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>            String op <span style="color:#ff79c6">=</span> sc<span style="color:#ff79c6">.</span><span style="color:#50fa7b">next</span><span style="color:#ff79c6">();</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#8be9fd">int</span> a <span style="color:#ff79c6">=</span> sc<span style="color:#ff79c6">.</span><span style="color:#50fa7b">nextInt</span><span style="color:#ff79c6">();</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#8be9fd">int</span> b <span style="color:#ff79c6">=</span> sc<span style="color:#ff79c6">.</span><span style="color:#50fa7b">nextInt</span><span style="color:#ff79c6">();</span>
+</span></span><span style="display:flex;"><span>            
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">if</span><span style="color:#ff79c6">(</span> <span style="color:#f1fa8c">&#34;M&#34;</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">equals</span><span style="color:#ff79c6">(</span>op<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">)</span> p<span style="color:#ff79c6">[</span>find<span style="color:#ff79c6">(</span>a<span style="color:#ff79c6">)]</span> <span style="color:#ff79c6">=</span> find<span style="color:#ff79c6">(</span>b<span style="color:#ff79c6">);</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">else</span> <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">if</span><span style="color:#ff79c6">(</span> find<span style="color:#ff79c6">(</span>a<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">==</span> find<span style="color:#ff79c6">(</span>b<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">)</span> System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">println</span><span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;Yes&#34;</span><span style="color:#ff79c6">);</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">else</span> System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">println</span><span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;No&#34;</span><span style="color:#ff79c6">);</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">}</span> 
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">}</span>
+</span></span></code></pre></div><p>C++模板</p>
+<pre tabindex="0"><code class="language-none" data-lang="none">#include &lt;iostream&gt;
+using namespace std;
+
+const int N = 1e5 + 10;
+
+int p[N];
+
+//核心
+int find( int x ){ 
+    if( p[x] != x)
+    {
+        return p[x] = find(p[x]); // 这里的赋值就是路径压缩
+    }
+    return p[x];
+}
+
+int main (){
+    
+    int n , m;
+    cin&gt;&gt;n&gt;&gt;m;
+    
+    for(int i = 0 ; i &lt;  n; i++) p[i] = i;
+    
+    while( m --)
+    {
+        char op[2];
+        int a, b;
+        cin&gt;&gt;op&gt;&gt;a&gt;&gt;b;
+        
+        if( op[0] == &#39;M&#39; ) p[find(a)] = find(b); 
+        else {
+            if( find(a) == find(b)) puts(&#34;Yes&#34;);
+            else puts(&#34;No&#34;);
+        }
+    }
+    
+    return 0;
+}
+</code></pre><h3 id="拓展">拓展</h3>
+<h4 id="连通块">连通块</h4>
+<p>&ldquo;Pasted image 20221104105152.png&rdquo; 未创建，点击以创建。</p>
+<p>使用一个<code>size[N]</code>来维护连通块中元素的数量，在每次合并的时候就将集合中元素的数量也合并。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#ff79c6">import</span> java.util.*<span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Main</span><span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">private</span> <span style="color:#8be9fd;font-style:italic">static</span> <span style="color:#8be9fd">int</span> N <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">100010</span><span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">private</span> <span style="color:#8be9fd;font-style:italic">static</span> <span style="color:#8be9fd">int</span><span style="color:#ff79c6">[]</span> p <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> <span style="color:#8be9fd">int</span> <span style="color:#ff79c6">[</span>N<span style="color:#ff79c6">];</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">private</span> <span style="color:#8be9fd;font-style:italic">static</span> <span style="color:#8be9fd">int</span><span style="color:#ff79c6">[]</span> size <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> <span style="color:#8be9fd">int</span> <span style="color:#ff79c6">[</span>N<span style="color:#ff79c6">];</span> <span style="color:#6272a4">//维护这个题目需要的连通块中元素的数量
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#6272a4">//并查集的核心
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>    <span style="color:#8be9fd;font-style:italic">private</span> <span style="color:#8be9fd;font-style:italic">static</span> <span style="color:#8be9fd">int</span> <span style="color:#50fa7b">find</span><span style="color:#ff79c6">(</span> <span style="color:#8be9fd">int</span> x <span style="color:#ff79c6">){</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">if</span><span style="color:#ff79c6">(</span> p<span style="color:#ff79c6">[</span>x<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">!=</span> x <span style="color:#ff79c6">)</span> <span style="color:#ff79c6">return</span> p<span style="color:#ff79c6">[</span>x<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">=</span> find<span style="color:#ff79c6">(</span> p<span style="color:#ff79c6">[</span>x<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">);</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">return</span> p<span style="color:#ff79c6">[</span>x<span style="color:#ff79c6">];</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">}</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">static</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">main</span> <span style="color:#ff79c6">(</span>String <span style="color:#ff79c6">[]</span> argvs<span style="color:#ff79c6">){</span>
+</span></span><span style="display:flex;"><span>        Scanner sc <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> Scanner<span style="color:#ff79c6">(</span> System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">in</span> <span style="color:#ff79c6">);</span>
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#8be9fd">int</span> n <span style="color:#ff79c6">=</span> sc<span style="color:#ff79c6">.</span><span style="color:#50fa7b">nextInt</span><span style="color:#ff79c6">()</span> <span style="color:#ff79c6">,</span> m <span style="color:#ff79c6">=</span> sc<span style="color:#ff79c6">.</span><span style="color:#50fa7b">nextInt</span><span style="color:#ff79c6">();</span>
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">for</span><span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> i <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span> <span style="color:#ff79c6">;</span> i <span style="color:#ff79c6">&lt;</span> n <span style="color:#ff79c6">;</span> i <span style="color:#ff79c6">++)</span> 
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span>            p<span style="color:#ff79c6">[</span>i<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">=</span> i<span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span>            size<span style="color:#ff79c6">[</span>i<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">1</span><span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">}</span>
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">while</span><span style="color:#ff79c6">(</span> m <span style="color:#ff79c6">--</span> <span style="color:#ff79c6">&gt;</span> <span style="color:#bd93f9">0</span><span style="color:#ff79c6">)</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span>            String op <span style="color:#ff79c6">=</span> sc<span style="color:#ff79c6">.</span><span style="color:#50fa7b">next</span><span style="color:#ff79c6">();</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">if</span><span style="color:#ff79c6">(</span> <span style="color:#f1fa8c">&#34;C&#34;</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">equals</span><span style="color:#ff79c6">(</span>op<span style="color:#ff79c6">))</span> <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#8be9fd">int</span> a <span style="color:#ff79c6">=</span>  sc<span style="color:#ff79c6">.</span><span style="color:#50fa7b">nextInt</span><span style="color:#ff79c6">()</span> <span style="color:#ff79c6">,</span> b <span style="color:#ff79c6">=</span> sc<span style="color:#ff79c6">.</span><span style="color:#50fa7b">nextInt</span><span style="color:#ff79c6">();</span>
+</span></span><span style="display:flex;"><span>                
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">if</span><span style="color:#ff79c6">(</span> find<span style="color:#ff79c6">(</span>a<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">==</span> find<span style="color:#ff79c6">(</span>b<span style="color:#ff79c6">))</span> <span style="color:#ff79c6">continue</span><span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span>                
+</span></span><span style="display:flex;"><span>                size<span style="color:#ff79c6">[</span>find<span style="color:#ff79c6">(</span>b<span style="color:#ff79c6">)]</span> <span style="color:#ff79c6">+=</span> size<span style="color:#ff79c6">[</span>find<span style="color:#ff79c6">(</span>a<span style="color:#ff79c6">)];</span> <span style="color:#6272a4">// 这里要注意合并之后的状态 , 是a并入b，而不是反过来
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>                p<span style="color:#ff79c6">[</span>find<span style="color:#ff79c6">(</span>a<span style="color:#ff79c6">)]</span> <span style="color:#ff79c6">=</span> find<span style="color:#ff79c6">(</span>b<span style="color:#ff79c6">);</span>
+</span></span><span style="display:flex;"><span>            
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">}</span><span style="color:#ff79c6">else</span> <span style="color:#ff79c6">if</span><span style="color:#ff79c6">(</span> <span style="color:#f1fa8c">&#34;Q1&#34;</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">equals</span><span style="color:#ff79c6">(</span>op<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">){</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#8be9fd">int</span> a <span style="color:#ff79c6">=</span>  sc<span style="color:#ff79c6">.</span><span style="color:#50fa7b">nextInt</span><span style="color:#ff79c6">()</span> <span style="color:#ff79c6">,</span> b <span style="color:#ff79c6">=</span> sc<span style="color:#ff79c6">.</span><span style="color:#50fa7b">nextInt</span><span style="color:#ff79c6">();</span>
+</span></span><span style="display:flex;"><span>                
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">if</span><span style="color:#ff79c6">(</span> find<span style="color:#ff79c6">(</span>a<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">==</span> find<span style="color:#ff79c6">(</span>b<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">)</span> System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">println</span><span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;Yes&#34;</span><span style="color:#ff79c6">);</span>
+</span></span><span style="display:flex;"><span>                
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">else</span> System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">println</span><span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;No&#34;</span><span style="color:#ff79c6">);</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">}</span><span style="color:#ff79c6">else</span><span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#8be9fd">int</span> a <span style="color:#ff79c6">=</span> sc<span style="color:#ff79c6">.</span><span style="color:#50fa7b">nextInt</span><span style="color:#ff79c6">();</span>
+</span></span><span style="display:flex;"><span>                
+</span></span><span style="display:flex;"><span>                System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">println</span><span style="color:#ff79c6">(</span>size<span style="color:#ff79c6">[</span>find<span style="color:#ff79c6">(</span>a<span style="color:#ff79c6">)]);</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">}</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">}</span>
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">}</span>
+</span></span><span style="display:flex;"><span>#include <span style="color:#ff79c6">&lt;</span>iostream<span style="color:#ff79c6">&gt;</span>
+</span></span><span style="display:flex;"><span>using namespace std<span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">const</span> <span style="color:#8be9fd">int</span> N <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">100010</span><span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd">int</span> p<span style="color:#ff79c6">[</span>N<span style="color:#ff79c6">],</span>cnt<span style="color:#ff79c6">[</span>N<span style="color:#ff79c6">];</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd">int</span> <span style="color:#50fa7b">find</span><span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> x<span style="color:#ff79c6">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">if</span><span style="color:#ff79c6">(</span> p<span style="color:#ff79c6">[</span>x<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">==</span> x <span style="color:#ff79c6">)</span> <span style="color:#ff79c6">return</span> p<span style="color:#ff79c6">[</span>x<span style="color:#ff79c6">];</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">else</span> <span style="color:#ff79c6">return</span> p<span style="color:#ff79c6">[</span>x<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">=</span> find<span style="color:#ff79c6">(</span>p<span style="color:#ff79c6">[</span>x<span style="color:#ff79c6">]);</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd">int</span> <span style="color:#50fa7b">main</span><span style="color:#ff79c6">(){</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd">int</span> n <span style="color:#ff79c6">,</span> m<span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span>    cin<span style="color:#ff79c6">&gt;&gt;</span>n<span style="color:#ff79c6">&gt;&gt;</span>m<span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">for</span><span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> i <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">1</span><span style="color:#ff79c6">;</span> i <span style="color:#ff79c6">&lt;=</span> n<span style="color:#ff79c6">;</span> i<span style="color:#ff79c6">++)</span> p<span style="color:#ff79c6">[</span>i<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">=</span> i<span style="color:#ff79c6">,</span> cnt<span style="color:#ff79c6">[</span>i<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">1</span><span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">while</span><span style="color:#ff79c6">(</span> m <span style="color:#ff79c6">--</span> <span style="color:#ff79c6">&gt;</span> <span style="color:#bd93f9">0</span><span style="color:#ff79c6">)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span>        string op<span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#8be9fd">int</span> a<span style="color:#ff79c6">,</span> b<span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        cin<span style="color:#ff79c6">&gt;&gt;</span>op<span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">if</span><span style="color:#ff79c6">(</span> op <span style="color:#ff79c6">==</span> <span style="color:#f1fa8c">&#34;C&#34;</span><span style="color:#ff79c6">)</span> 
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span>            cin<span style="color:#ff79c6">&gt;&gt;</span>a<span style="color:#ff79c6">&gt;&gt;</span>b<span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span>            a <span style="color:#ff79c6">=</span> find<span style="color:#ff79c6">(</span>a<span style="color:#ff79c6">),</span> b <span style="color:#ff79c6">=</span> find<span style="color:#ff79c6">(</span>b<span style="color:#ff79c6">);</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">if</span><span style="color:#ff79c6">(</span>a <span style="color:#ff79c6">!=</span> b<span style="color:#ff79c6">)</span> <span style="color:#6272a4">// 还要考虑是同一个点的情况
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>            <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span>                p<span style="color:#ff79c6">[</span>a<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">=</span> b<span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span>                cnt<span style="color:#ff79c6">[</span>b<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">+=</span> cnt<span style="color:#ff79c6">[</span>a<span style="color:#ff79c6">];</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">}</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">}</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">else</span> <span style="color:#ff79c6">if</span><span style="color:#ff79c6">(</span> op <span style="color:#ff79c6">==</span> <span style="color:#f1fa8c">&#34;Q1&#34;</span><span style="color:#ff79c6">)</span> 
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span>            cin<span style="color:#ff79c6">&gt;&gt;</span>a<span style="color:#ff79c6">&gt;&gt;</span>b<span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">if</span><span style="color:#ff79c6">(</span> find<span style="color:#ff79c6">(</span>a<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">==</span> find<span style="color:#ff79c6">(</span>b<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">)</span> cout<span style="color:#ff79c6">&lt;&lt;</span><span style="color:#f1fa8c">&#34;Yes&#34;</span><span style="color:#ff79c6">&lt;&lt;</span>endl<span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">else</span> cout<span style="color:#ff79c6">&lt;&lt;</span><span style="color:#f1fa8c">&#34;No&#34;</span><span style="color:#ff79c6">&lt;&lt;</span>endl<span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">}</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">else</span> <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span>            cin<span style="color:#ff79c6">&gt;&gt;</span>a<span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span>            cout<span style="color:#ff79c6">&lt;&lt;</span>cnt<span style="color:#ff79c6">[</span>find<span style="color:#ff79c6">(</span>a<span style="color:#ff79c6">)]&lt;&lt;</span>endl<span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">}</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">return</span> <span style="color:#bd93f9">0</span><span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">}</span>
+</span></span></code></pre></div><h2 id="堆">堆</h2>
+<h3 id="如何手写一个堆">如何手写一个堆</h3>
+<p>一个堆需要满足的操作：</p>
+<ol>
+<li>插入一个数</li>
+<li>求集合中的最小值</li>
+<li>删除最小值</li>
+<li>删除任意一个元素</li>
+<li>修改任意一个元素
+&ldquo;Pasted image 20221104113231.png&rdquo; 未创建，点击以创建。
+堆的<strong>性质</strong>：</li>
+</ol>
+<ul>
+<li></li>
+</ul>
+<p>堆是一颗</p>
+<p>完全二叉树</p>
+<p>&ldquo;Pasted image 20221104112016.png&rdquo; 未创建，点击以创建。</p>
+<ul>
+<li></li>
+</ul>
+<p>小根堆的定义：每一个节点都比左右两个子节点更小 =&gt; 根节点最小</p>
+<p>堆的<strong>存储</strong>：</p>
+<ol>
+<li>使用一维数组进行存储
+左儿子：<code>2 * x</code>
+右儿子：<code>2 * x + 1</code></li>
+</ol>
+<p>基础操作：</p>
+<ol>
+<li><code>down(x)</code></li>
+<li><code>up(x)</code>
+所有的其它操作都可以通过这两个操作的组合来完成</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#ff79c6">import</span> java.util.*<span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Main</span><span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">private</span> <span style="color:#8be9fd;font-style:italic">static</span> <span style="color:#8be9fd">int</span> N <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">100010</span><span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">private</span> <span style="color:#8be9fd;font-style:italic">static</span> <span style="color:#8be9fd">int</span> <span style="color:#ff79c6">[]</span> heap <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> <span style="color:#8be9fd">int</span> <span style="color:#ff79c6">[</span>N<span style="color:#ff79c6">];</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">private</span> <span style="color:#8be9fd;font-style:italic">static</span> <span style="color:#8be9fd">int</span> size<span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">private</span> <span style="color:#8be9fd;font-style:italic">static</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">down</span><span style="color:#ff79c6">(</span> <span style="color:#8be9fd">int</span> u <span style="color:#ff79c6">){</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#8be9fd">int</span> t  <span style="color:#ff79c6">=</span> u<span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">if</span><span style="color:#ff79c6">(</span> u <span style="color:#ff79c6">*</span> <span style="color:#bd93f9">2</span> <span style="color:#ff79c6">&lt;=</span> size <span style="color:#ff79c6">&amp;&amp;</span> heap<span style="color:#ff79c6">[</span>u <span style="color:#ff79c6">*</span> <span style="color:#bd93f9">2</span><span style="color:#ff79c6">]</span> <span style="color:#ff79c6">&lt;</span> heap<span style="color:#ff79c6">[</span>t<span style="color:#ff79c6">])</span> t <span style="color:#ff79c6">=</span> u <span style="color:#ff79c6">*</span> <span style="color:#bd93f9">2</span><span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">if</span><span style="color:#ff79c6">(</span> u <span style="color:#ff79c6">*</span> <span style="color:#bd93f9">2</span> <span style="color:#ff79c6">+</span> <span style="color:#bd93f9">1</span> <span style="color:#ff79c6">&lt;=</span> size <span style="color:#ff79c6">&amp;&amp;</span> heap<span style="color:#ff79c6">[</span>u <span style="color:#ff79c6">*</span> <span style="color:#bd93f9">2</span> <span style="color:#ff79c6">+</span> <span style="color:#bd93f9">1</span><span style="color:#ff79c6">]</span> <span style="color:#ff79c6">&lt;</span> heap<span style="color:#ff79c6">[</span>t<span style="color:#ff79c6">])</span> t <span style="color:#ff79c6">=</span> u <span style="color:#ff79c6">*</span> <span style="color:#bd93f9">2</span> <span style="color:#ff79c6">+</span> <span style="color:#bd93f9">1</span><span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">if</span><span style="color:#ff79c6">(</span> u <span style="color:#ff79c6">!=</span> t<span style="color:#ff79c6">)</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#8be9fd">int</span> tmp <span style="color:#ff79c6">=</span> heap<span style="color:#ff79c6">[</span>u<span style="color:#ff79c6">];</span>
+</span></span><span style="display:flex;"><span>            heap<span style="color:#ff79c6">[</span>u<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">=</span> heap<span style="color:#ff79c6">[</span>t<span style="color:#ff79c6">];</span>
+</span></span><span style="display:flex;"><span>            heap<span style="color:#ff79c6">[</span>t<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">=</span> tmp<span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span>            
+</span></span><span style="display:flex;"><span>            down<span style="color:#ff79c6">(</span>t<span style="color:#ff79c6">);</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">}</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">private</span> <span style="color:#8be9fd;font-style:italic">static</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">up</span> <span style="color:#ff79c6">(</span> <span style="color:#8be9fd">int</span> u <span style="color:#ff79c6">){</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">while</span><span style="color:#ff79c6">(</span> heap<span style="color:#ff79c6">[</span>u<span style="color:#ff79c6">/</span><span style="color:#bd93f9">2</span><span style="color:#ff79c6">]</span> <span style="color:#ff79c6">&lt;</span> heap<span style="color:#ff79c6">[</span>u<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">){</span>
+</span></span><span style="display:flex;"><span>            u <span style="color:#ff79c6">=</span> u <span style="color:#ff79c6">/</span> <span style="color:#bd93f9">2</span><span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">}</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">static</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">main</span> <span style="color:#ff79c6">(</span>String <span style="color:#ff79c6">[]</span> argvs<span style="color:#ff79c6">){</span>
+</span></span><span style="display:flex;"><span>        Scanner sc <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> Scanner<span style="color:#ff79c6">(</span> System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">in</span> <span style="color:#ff79c6">);</span>
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#8be9fd">int</span> n <span style="color:#ff79c6">=</span> sc<span style="color:#ff79c6">.</span><span style="color:#50fa7b">nextInt</span><span style="color:#ff79c6">(),</span> m <span style="color:#ff79c6">=</span> sc<span style="color:#ff79c6">.</span><span style="color:#50fa7b">nextInt</span><span style="color:#ff79c6">();</span>
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">for</span><span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> i <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">1</span> <span style="color:#ff79c6">;</span> i <span style="color:#ff79c6">&lt;=</span> n <span style="color:#ff79c6">;</span> i<span style="color:#ff79c6">++)</span> heap<span style="color:#ff79c6">[</span>i<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">=</span> sc<span style="color:#ff79c6">.</span><span style="color:#50fa7b">nextInt</span><span style="color:#ff79c6">();</span>
+</span></span><span style="display:flex;"><span>        size <span style="color:#ff79c6">=</span> n<span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">for</span><span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> i <span style="color:#ff79c6">=</span> n <span style="color:#ff79c6">/</span> <span style="color:#bd93f9">2</span> <span style="color:#ff79c6">;</span> i <span style="color:#ff79c6">&gt;</span> <span style="color:#bd93f9">0</span> <span style="color:#ff79c6">;</span> i <span style="color:#ff79c6">--)</span> down<span style="color:#ff79c6">(</span>i<span style="color:#ff79c6">);</span> <span style="color:#6272a4">// 建堆
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">while</span><span style="color:#ff79c6">(</span> m<span style="color:#ff79c6">--</span> <span style="color:#ff79c6">&gt;</span> <span style="color:#bd93f9">0</span><span style="color:#ff79c6">)</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span>            System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">printf</span><span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;%d &#34;</span><span style="color:#ff79c6">,</span> heap<span style="color:#ff79c6">[</span><span style="color:#bd93f9">1</span><span style="color:#ff79c6">]);</span>
+</span></span><span style="display:flex;"><span>            heap<span style="color:#ff79c6">[</span><span style="color:#bd93f9">1</span><span style="color:#ff79c6">]</span> <span style="color:#ff79c6">=</span> heap<span style="color:#ff79c6">[</span>size <span style="color:#ff79c6">--];</span>
+</span></span><span style="display:flex;"><span>            down<span style="color:#ff79c6">(</span><span style="color:#bd93f9">1</span><span style="color:#ff79c6">);</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">}</span>
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">}</span>
+</span></span><span style="display:flex;"><span>#include <span style="color:#ff79c6">&lt;</span>iostream<span style="color:#ff79c6">&gt;</span>
+</span></span><span style="display:flex;"><span>using namespace std<span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">const</span> <span style="color:#8be9fd">int</span> N <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">1e5</span> <span style="color:#ff79c6">+</span> <span style="color:#bd93f9">10</span><span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd">int</span> heap<span style="color:#ff79c6">[</span>N<span style="color:#ff79c6">],</span> cnt<span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd">void</span> <span style="color:#50fa7b">down</span><span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> u <span style="color:#ff79c6">){</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd">int</span> t <span style="color:#ff79c6">=</span> u<span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">if</span><span style="color:#ff79c6">(</span> u <span style="color:#ff79c6">*</span> <span style="color:#bd93f9">2</span> <span style="color:#ff79c6">&lt;=</span> cnt <span style="color:#ff79c6">&amp;&amp;</span> heap<span style="color:#ff79c6">[</span>u <span style="color:#ff79c6">*</span> <span style="color:#bd93f9">2</span><span style="color:#ff79c6">]</span> <span style="color:#ff79c6">&lt;</span> heap<span style="color:#ff79c6">[</span>t<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">)</span> t <span style="color:#ff79c6">=</span> u <span style="color:#ff79c6">*</span> <span style="color:#bd93f9">2</span><span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">if</span><span style="color:#ff79c6">(</span> u <span style="color:#ff79c6">*</span> <span style="color:#bd93f9">2</span> <span style="color:#ff79c6">+</span> <span style="color:#bd93f9">1</span> <span style="color:#ff79c6">&lt;=</span> cnt <span style="color:#ff79c6">&amp;&amp;</span> heap<span style="color:#ff79c6">[</span>u <span style="color:#ff79c6">*</span> <span style="color:#bd93f9">2</span> <span style="color:#ff79c6">+</span> <span style="color:#bd93f9">1</span><span style="color:#ff79c6">]</span> <span style="color:#ff79c6">&lt;</span> heap<span style="color:#ff79c6">[</span>t<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">)</span> t <span style="color:#ff79c6">=</span> u <span style="color:#ff79c6">*</span> <span style="color:#bd93f9">2</span> <span style="color:#ff79c6">+</span> <span style="color:#bd93f9">1</span><span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">if</span><span style="color:#ff79c6">(</span> u <span style="color:#ff79c6">!=</span> t<span style="color:#ff79c6">)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span>        swap<span style="color:#ff79c6">(</span>heap<span style="color:#ff79c6">[</span>u<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">,</span> heap<span style="color:#ff79c6">[</span>t<span style="color:#ff79c6">]);</span>
+</span></span><span style="display:flex;"><span>        down<span style="color:#ff79c6">(</span>t<span style="color:#ff79c6">);</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd">int</span> <span style="color:#50fa7b">main</span> <span style="color:#ff79c6">()</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd">int</span> n <span style="color:#ff79c6">,</span> m <span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span>    cin<span style="color:#ff79c6">&gt;&gt;</span>n<span style="color:#ff79c6">&gt;&gt;</span>m<span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">for</span><span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> i <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">1</span> <span style="color:#ff79c6">;</span> i <span style="color:#ff79c6">&lt;=</span> n <span style="color:#ff79c6">;</span>i<span style="color:#ff79c6">++)</span> cin<span style="color:#ff79c6">&gt;&gt;</span>heap<span style="color:#ff79c6">[</span>i<span style="color:#ff79c6">];</span>
+</span></span><span style="display:flex;"><span>    cnt <span style="color:#ff79c6">=</span> n<span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">for</span><span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> i <span style="color:#ff79c6">=</span> n<span style="color:#ff79c6">/</span><span style="color:#bd93f9">2</span><span style="color:#ff79c6">;</span> i <span style="color:#ff79c6">;</span> i <span style="color:#ff79c6">--</span> <span style="color:#ff79c6">)</span> down<span style="color:#ff79c6">(</span>i<span style="color:#ff79c6">);</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">while</span> <span style="color:#ff79c6">(</span> m <span style="color:#ff79c6">--){</span>
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        cout<span style="color:#ff79c6">&lt;&lt;</span>heap<span style="color:#ff79c6">[</span><span style="color:#bd93f9">1</span><span style="color:#ff79c6">]&lt;&lt;</span><span style="color:#f1fa8c">&#34; &#34;</span><span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span>        heap<span style="color:#ff79c6">[</span><span style="color:#bd93f9">1</span><span style="color:#ff79c6">]</span> <span style="color:#ff79c6">=</span> heap<span style="color:#ff79c6">[</span>cnt <span style="color:#ff79c6">--];</span>
+</span></span><span style="display:flex;"><span>        down<span style="color:#ff79c6">(</span><span style="color:#bd93f9">1</span><span style="color:#ff79c6">);</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">}</span>    
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">return</span> <span style="color:#bd93f9">0</span><span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">}</span>
+</span></span></code></pre></div><p>完整实现</p>
+<p>核心就是加上了 <code>ph | hp</code>这两个数组，用来映射插入顺序和在堆中的顺序，两个数组是互相映射的关系。</p>
+<pre tabindex="0"><code class="language-none" data-lang="none">#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+#include &lt;string.h&gt;
+
+using namespace std;
+
+const int N = 100010;
+
+int h[N], ph[N], hp[N], cnt;
+
+void heap_swap(int a, int b) // 和java不同点就在这里
+{
+    swap(ph[hp[a]],ph[hp[b]]);
+    swap(hp[a], hp[b]);
+    swap(h[a], h[b]);
+}
+
+void down(int u)
+{
+    int t = u;
+    if (u * 2 &lt;= cnt &amp;&amp; h[u * 2] &lt; h[t]) t = u * 2;
+    if (u * 2 + 1 &lt;= cnt &amp;&amp; h[u * 2 + 1] &lt; h[t]) t = u * 2 + 1;
+    if (u != t)
+    {
+        heap_swap(u, t);
+        down(t);
+    }
+}
+
+void up(int u)
+{
+    while (u / 2 &amp;&amp; h[u] &lt; h[u / 2])
+    {
+        heap_swap(u, u / 2);
+        u &gt;&gt;= 1;
+    }
+}
+
+int main()
+{
+    int n, m = 0;
+    scanf(&#34;%d&#34;, &amp;n);
+    while (n -- )
+    {
+        char op[5];
+        int k, x;
+        scanf(&#34;%s&#34;, op);
+        if (!strcmp(op, &#34;I&#34;))
+        {
+            scanf(&#34;%d&#34;, &amp;x);
+            cnt ++ ;
+            m ++ ;
+            ph[m] = cnt, hp[cnt] = m;
+            h[cnt] = x;
+            up(cnt);
+        }
+        else if (!strcmp(op, &#34;PM&#34;)) printf(&#34;%d\n&#34;, h[1]);
+        else if (!strcmp(op, &#34;DM&#34;))
+        {
+            heap_swap(1, cnt);
+            cnt -- ;
+            down(1);
+        }
+        else if (!strcmp(op, &#34;D&#34;))
+        {
+            scanf(&#34;%d&#34;, &amp;k);
+            k = ph[k];
+            heap_swap(k, cnt);
+            cnt -- ;
+            up(k);
+            down(k);
+        }
+        else
+        {
+            scanf(&#34;%d%d&#34;, &amp;k, &amp;x);
+            k = ph[k];
+            h[k] = x;
+            up(k);
+            down(k);
+        }
+    }
+
+    return 0;
+}
+/*
+I x，插入一个数 x；h[++size] = x;up(size);
+PM，输出当前集合中的最小值； h[1]
+DM，删除当前集合中的最小值（数据保证此时的最小值唯一）； h[1] = h[size--];down(1);
+D k，删除第 k 个插入的数； h[k] = h[size--];down(k),up(k)
+C k x，修改第 k 个插入的数，将其变为 x；h[k] = x,down(k) ,up(k);
+*/
+import java.util.Scanner;
+public class Main{
+    static int N = 100010,size,m;
+    static int[] h = new int[N];
+    static int[] hp = new int[N];//自身被映射数组
+    static int[] ph = new int[N];//映射数组
+    public static void swap(int[] a,int x,int y){
+        int temp = a[x];
+        a[x] = a[y];
+        a[y] = temp;
+    }
+    public static void head_swap(int x,int y){
+        //这里因为映射数组跟被映射数组是互相指向对方,如果有两个数更换位置，映射下标也要进行更换
+        //ph的下标指向是按顺序插入的下标，hp所对应的值是ph的按顺序的下标，用这两个属性进行交换
+        swap(ph,hp[x],hp[y]);
+        //因为按照顺序插入ph到指向交换了，对应指向ph的hp也要进行交换
+        swap(hp,x,y);
+        //最后两个值进行交换
+        swap(h,x,y);
+    }
+    public static void down(int x){
+        int t = x;//x的分身
+        //判断一下左下标是不是存在
+        //判断一下左下标的值是不是比我t的值小 。那么就将左下标的值赋予t；否则不变
+        if(x * 2 &lt;= size &amp;&amp; h[x * 2] &lt; h[t]) t = x * 2;
+        //判断一下右下标的值是不是比我t的值小。那么就将右下标的值赋予t，否则不变
+        if(x *2 + 1 &lt;= size &amp;&amp; h[x * 2 + 1] &lt; h[t]) t = x * 2 + 1;
+        if(t != x){//如果x不等于他的分身
+            head_swap(x,t);//那就进行交换顺序
+            down(t);//然后一直向下进行操作
+        }
+    }
+    public static void up(int x){
+        //向上操作，判断一下根节点还不是存在
+        //看一下根节点是不是比我左分支或者右分支的值大，大的话就进行交换
+        while(x / 2 &gt; 0 &amp;&amp; h[x / 2] &gt; h[x]){
+            head_swap(x,x/2);
+            x = x / 2;//相当于一直up
+        }
+    }
+    public static void main(String[] args){
+        Scanner scan = new Scanner(System.in);
+        int n = scan.nextInt();
+        size = 0;//size是原数组的下标
+        m = 0;//m是映射数组的下标
+        while(n -- &gt; 0){
+            String s = scan.next();
+            if(s.equals(&#34;I&#34;)){//插入操作
+                int x= scan.nextInt();
+                size ++;m ++;//插入一个数两个数组的下标都加上1；
+                ph[m] = size;hp[size] = m;//ph与hp数组是映射关系
+                h[size] = x;//将数插入到堆中最后位置
+                up(size);//然后up，往上面排序一遍
+            }else if(s.equals(&#34;PM&#34;)){ //输出当前集合中的最小值
+                System.out.println(h[1]);
+            }else if(s.equals(&#34;DM&#34;)){//删除当前集合中的最小值
+                //因为需要用到映射数组与被映射数组,因为需要找到k的位置在哪里，需要让映射的顺序，
+                //因为如果用size，size是会随时改变的，不是按顺序的，因为会被up或者down顺序会被修改
+                head_swap(1,size);//将最后一个数替换掉第一个最小值元素，然后数量减1，size--
+                size--;
+                down(1);//插入之后进行向下操作，因为可能不符合小根堆
+            }else if(s.equals(&#34;D&#34;)){//删除当前集合中第k个插入得数
+                int k = scan.nextInt();
+                k = ph[k];//ph[k] 是一步一步插入映射的下标，不会乱序，
+                head_swap(k,size);//然后将k与最后一个元素进行交换，然后长度减1，size--
+                size--;
+                up(k);//进行排序一遍，为了省代码量，up一遍down一遍。因为只会执行其中一个
+                down(k);
+            }else{
+                int k = scan.nextInt();
+                int x = scan.nextInt();
+                k = ph[k];//ph[k] 是一步一步插入映射的下标，顺序是按照插入时候的顺序
+                h[k] = x;//然后将第k为数修改为数x
+                up(k);//up一遍，down一遍
+                down(k);
+
+            }
+        }
+    }
+}
+</code></pre><h2 id="hash-表和-stl简介">HASH 表和 STL简介</h2>
+<h3 id="哈希表">哈希表</h3>
+<blockquote>
+<p>知识点：</p>
+</blockquote>
+<pre tabindex="0"><code>- 存储结构 
+	- 开放寻址法
+	- 拉链法
+- 字符串哈希方式
+</code></pre><h4 id="哈希表的主要作用">哈希表的主要作用</h4>
+<p>把一个比较大的数据范围映射到一个更小的数据范围（广义的离散化）, 同时可以获得更快的查询速度。
+通过一个hash函数将一个大值映射到一个小值。</p>
+<p>一般是通过取模一个<strong>质数</strong>来得到小的数。
+处理冲突的两种方式</p>
+<ol>
+<li>拉链法
+也就是每一个位置都是一个<strong>链表</strong>，当冲突时，就将它添加到链表末尾。</li>
+<li>开放寻址法</li>
+</ol>
+<p>一般是通过打上一个标记的方式来完成删除的功能。</p>
+<ul>
+<li></li>
+</ul>
+<p>拉链法</p>
+<pre tabindex="0"><code class="language-none" data-lang="none">#include &lt;iostream&gt;
+#include &lt;cstring&gt;
+using namespace std;
+
+const int N = 100003;
+int h[N], e[N], ne[N], idx;//这里是用链表辅助来处理冲突
+
+
+void insert( int x ){
+    int k = (x % N + N) % N;//避免负数的情况
+    e[idx] = x;
+    ne[idx] = h[k]; // 插入到链表头部
+    h[k] = idx++;
+}
+
+bool find( int x)
+{
+    int k = (x % N + N) % N;
+    for(int i = h[k]; i != -1; i = ne[i]) // 从尾部往头部找
+    {
+        if( e[i] == x) return true;   
+    }
+    
+    return false;
+}
+
+int main ()
+{
+    int n ;
+    scanf(&#34;%d&#34;, &amp;n);
+    
+    memset(h , -1 , sizeof h);
+    
+    while( n-- &gt; 0)
+    {
+        char op[2];
+        int x ;
+        scanf(&#34;%s%d&#34;, op, &amp;x);
+        
+        if( *op == &#39;I&#39;)
+        {
+            insert(x);
+        }else {
+            if( find(x) ) puts(&#34;Yes&#34;);
+            else puts(&#34;No&#34;);
+        }
+        
+    }
+    
+    
+    return 0;
+}
+import java.io.*;  
+import java.util.*;
+
+public class Main{
+	static int N = 100003;
+	static int [] h = new int[N];
+	static int [] e = new int[N];
+	static int [] ne = new int[N];
+	static int idx = 0;
+
+	static void insert(int x )
+	{
+	    int k = (x % N + N) % N;
+
+	    e[idx] = x;
+	    ne[idx] = h[k];
+	    h[k] = idx++;
+	}
+
+	static boolean find(int x)
+	{
+	    int k = (x % N + N) % N;
+	
+	    for(int i = h[k] ; i != -1 ; i = ne[i])
+	    {
+	        if( e[i] == x ) return true;  
+	    }
+	
+	    return false;
+	}
+
+
+	public static void main(String [] argvs) throws IOException
+	{
+	    BufferedReader reader = new BufferedReader( new InputStreamReader( System.in ));
+	    Arrays.fill(h, -1);
+	
+	    int n = Integer.parseInt(reader.readLine());
+
+	    while( n -- &gt; 0)
+	    {
+	        String[] strs = reader.readLine().split(&#34; &#34;);
+	        String op = strs[0];
+	        int x = Integer.parseInt(strs[1]);
+	
+	        if( op.equals(&#34;I&#34;))
+	        {
+	            insert(x);
+	        }else {
+	            if( find(x) ) System.out.println(&#34;Yes&#34;);
+	            else System.out.println(&#34;No&#34;);
+	        }
+	    }
+	}
+}
+</code></pre><ul>
+<li></li>
+</ul>
+<p>开放寻址法
+只用一个数组来进行存储，形式上会更为简单</p>
+<p>一般情况下数组的长度是数据量的<strong>两到三倍</strong>。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#ff79c6">import</span> java.io.*<span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">import</span> java.util.*<span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Main</span><span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">static</span> <span style="color:#8be9fd">int</span> N <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">200003</span><span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">static</span> <span style="color:#8be9fd">int</span> never <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0x3f3f3f3f</span><span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">static</span> <span style="color:#8be9fd">int</span><span style="color:#ff79c6">[]</span> h <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> <span style="color:#8be9fd">int</span><span style="color:#ff79c6">[</span>N<span style="color:#ff79c6">];</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">static</span> <span style="color:#8be9fd">int</span> <span style="color:#50fa7b">find</span><span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> x<span style="color:#ff79c6">)</span> <span style="color:#6272a4">// 返回在 hash数组中的下标
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>    <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#8be9fd">int</span> k <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">(</span>x <span style="color:#ff79c6">%</span> N <span style="color:#ff79c6">+</span> N<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">%</span> N<span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">while</span><span style="color:#ff79c6">(</span> h<span style="color:#ff79c6">[</span>k<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">!=</span> never <span style="color:#ff79c6">&amp;&amp;</span> h<span style="color:#ff79c6">[</span>k<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">!=</span> x<span style="color:#ff79c6">)</span> <span style="color:#6272a4">// 在数组中轮流查找
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>        <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span>            k<span style="color:#ff79c6">++;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">if</span><span style="color:#ff79c6">(</span> k <span style="color:#ff79c6">==</span> N<span style="color:#ff79c6">)</span> k <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span><span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">}</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">return</span> k<span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">}</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">static</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">main</span><span style="color:#ff79c6">(</span>String <span style="color:#ff79c6">[]</span> argvs<span style="color:#ff79c6">)</span> <span style="color:#8be9fd;font-style:italic">throws</span> IOException
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span>        BufferedReader reader <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> BufferedReader<span style="color:#ff79c6">(</span> <span style="color:#ff79c6">new</span> InputStreamReader<span style="color:#ff79c6">(</span> System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">in</span> <span style="color:#ff79c6">));</span>
+</span></span><span style="display:flex;"><span>        Arrays<span style="color:#ff79c6">.</span><span style="color:#50fa7b">fill</span><span style="color:#ff79c6">(</span>h<span style="color:#ff79c6">,</span> never<span style="color:#ff79c6">);</span>
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#8be9fd">int</span> n <span style="color:#ff79c6">=</span> Integer<span style="color:#ff79c6">.</span><span style="color:#50fa7b">parseInt</span><span style="color:#ff79c6">(</span>reader<span style="color:#ff79c6">.</span><span style="color:#50fa7b">readLine</span><span style="color:#ff79c6">());</span>
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">while</span><span style="color:#ff79c6">(</span> n <span style="color:#ff79c6">--</span> <span style="color:#ff79c6">&gt;</span> <span style="color:#bd93f9">0</span><span style="color:#ff79c6">)</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span>            String<span style="color:#ff79c6">[]</span> strs <span style="color:#ff79c6">=</span> reader<span style="color:#ff79c6">.</span><span style="color:#50fa7b">readLine</span><span style="color:#ff79c6">().</span><span style="color:#50fa7b">split</span><span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34; &#34;</span><span style="color:#ff79c6">);</span>
+</span></span><span style="display:flex;"><span>            String op <span style="color:#ff79c6">=</span> strs<span style="color:#ff79c6">[</span><span style="color:#bd93f9">0</span><span style="color:#ff79c6">];</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#8be9fd">int</span> x <span style="color:#ff79c6">=</span> Integer<span style="color:#ff79c6">.</span><span style="color:#50fa7b">parseInt</span><span style="color:#ff79c6">(</span>strs<span style="color:#ff79c6">[</span><span style="color:#bd93f9">1</span><span style="color:#ff79c6">]);</span>
+</span></span><span style="display:flex;"><span>            
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">if</span><span style="color:#ff79c6">(</span> op<span style="color:#ff79c6">.</span><span style="color:#50fa7b">equals</span><span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;I&#34;</span><span style="color:#ff79c6">))</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span>                h<span style="color:#ff79c6">[</span>find<span style="color:#ff79c6">(</span>x<span style="color:#ff79c6">)]</span> <span style="color:#ff79c6">=</span> x<span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">}</span><span style="color:#ff79c6">else</span> <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">if</span><span style="color:#ff79c6">(</span> h<span style="color:#ff79c6">[</span>find<span style="color:#ff79c6">(</span>x<span style="color:#ff79c6">)]</span> <span style="color:#ff79c6">==</span> x<span style="color:#ff79c6">)</span> System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">println</span><span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;Yes&#34;</span><span style="color:#ff79c6">);</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">else</span> System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">println</span><span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;No&#34;</span><span style="color:#ff79c6">);</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">}</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">}</span>
+</span></span></code></pre></div><h4 id="字符串哈希">字符串哈希</h4>
+<p>将字符串看成是<strong>p进制的数</strong>进行转换，然后对它的十进制数取模
+p的值为 <code>131 或者 1331 </code>， 这个是经验值。
+我们在进行转换的时候，<strong>排除0</strong>这个值，默认不会冲突。</p>
+<p>作用：</p>
+<ul>
+<li></li>
+</ul>
+<p>快速判断两个字符串段是否相同，时间复杂度</p>
+<pre tabindex="0"><code>O(1)
+</code></pre><p>， 在大多数字符串场景要比KMP优秀</p>
+<pre tabindex="0"><code class="language-none" data-lang="none">#include &lt;iostream&gt;
+using namespace std;
+
+typedef unsigned long long ULL; // 用unsigned 类型的数据， 在溢出的时候会自动取模
+
+const int N  = 100010;
+ULL h[N];//代表字符串的前缀和
+ULL p[N];//代表p进制
+const int P = 131; // 也可以是 13331，这两个数不容易冲突
+
+ULL query(int l , int r)
+{
+    return h[r] - h[l-1] * p[r - l + 1];
+}
+
+int main()
+{
+    int n , m;
+    char str[N];
+    scanf(&#34;%d%d%s&#34;, &amp;n ,&amp; m, str + 1);
+    
+    p[0] = 1; // 避免冲突
+    for(int i = 1 ; i &lt;= n;i++)
+    {
+        h[i] = h[i-1] * P + str[i];
+        p[i] = p[i - 1] * P;
+    }
+    
+    while ( m --)
+    {
+        int l1,r1,l2,r2;
+        scanf(&#34;%d%d%d%d&#34;, &amp;l1,&amp;r1,&amp;l2,&amp;r2);
+        
+        if( query(l1, r1) == query(l2, r2)) puts(&#34;Yes&#34;);
+        else puts(&#34;No&#34;);
+    }
+    
+    return 0;
+}
+</code></pre><h3 id="stl介绍">STL介绍</h3>
+<pre tabindex="0"><code class="language-none" data-lang="none">vector ，变长数组，倍增的思想 , 支持迭代器
+	size()
+	empty()
+	clear()
+	front()/ back()
+	push_back()/ pop_back()
+	begin() / end()
+	支持比较运算，比较基准是字典序
+pair&lt;type, type&gt; 存储一个二元组
+	p.first | p.second 
+	支持比较运算， 以 first 为第一关键字 ， 以 second 为第二关键字
+	make_pair()
+	{first, second}
+string ， 字符串, substr(), c_str()
+	size()
+	empty()
+	clear()
+	支持 + 运算
+	substr(start , size); 当size &gt; string.size() , 截取到末尾 
+queue    队列 push() front() pop()
+	size()  
+	push()  // 向队尾插入一个元素
+	front() // 返回队头元素 
+	back() // 返回队尾元素
+	pop() // 弹出队头元素
+priority_queue 优先队列  , 实现原理是堆 , 默认是大根堆
+	push() //插入一个元素
+	top()  // 返回堆顶元素
+	pop() // 弹出堆顶元素
+	priority_queue&lt;int ,vector&lt;int&gt;, greater&lt;int&gt;&gt; heap; //这样就定义了一个小根堆
+stack 栈
+	push()
+	top()
+	pop()
+deque 双端队列（一个加强版的 vector）
+	size()
+	empty()
+	clear()
+	front()
+	back()
+	push_back()/pop_back()
+	push_front()/pop_front()
+	begin()/ end()
+set,map, multiset, multimap 基于平衡二叉树 ， 动态维护有序序列
+	size()
+	empty()
+	clear()
+	begin()/ end() ++ --返回前驱和后继
+	
+	set/multiset 
+		insert() 插入一个数 O(log n )
+		find() 
+		count()
+		erase()
+			输入一个数x，删除所有x O(K + log n)
+			输入一个迭代器，删除这个迭代器
+		lower_bound()/ upper_bound() 
+			lower_bound(x) 返回大于等于x的最小的数的迭代器 | 最小下界
+			uppper_bound(x) 返回大于x的最小的数的迭代器 | 最大上界
+	map/mutimap
+		insert() 插入的一个数是pair
+		erase() 输入的参数是pair 或 迭代器
+		find()
+		[] 时间复杂度是 O(logn)
+		lower_bound()/ upper_bound() 
+		
+unordered_set, unordered_map, unordered_multiset, unordered_multimap 哈希表
+	和上面类似，绝大部分操作的时间复杂度都是 O(1)
+	不支持lower_bound() / upper_bound()
+	不支持迭代器的++ -- 
+bitset ， 压位
+	当我们存储 bool 数组的时候,占用的内存是正常数组的 1/8 
+	bitset&lt;size&gt; s;
+	~ , &amp; , | , ^ 
+	&gt;&gt; , &lt;&lt;
+	== , !=
+	[]
+	count() 返回有多少个1
+	any() 判断是否至少有1个1
+	none() 判断是否全为 0 
+	set() 把所有位置设为1
+	set(k, v) 将第k位变为0
+	flip(k) 将第k位 取反
+	flip &lt;=&gt; ~
+</code></pre><h1 id="搜索与图论">搜索与图论</h1>
+<h2 id="dfs--bfs--树与图的存储--拓扑排序">DFS | BFS | 树与图的存储 | 拓扑排序</h2>
+<h3 id="dfs">DFS</h3>
+<p>全排列</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#ff79c6">import</span> java.util.*<span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Main</span><span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">static</span> <span style="color:#8be9fd">int</span> N <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">10</span><span style="color:#ff79c6">,</span> n<span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">static</span> <span style="color:#8be9fd">int</span> <span style="color:#ff79c6">[]</span> path <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> <span style="color:#8be9fd">int</span> <span style="color:#ff79c6">[</span>N<span style="color:#ff79c6">];</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">static</span> <span style="color:#8be9fd">boolean</span> <span style="color:#ff79c6">[]</span> st <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> <span style="color:#8be9fd">boolean</span><span style="color:#ff79c6">[</span>N<span style="color:#ff79c6">];</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">static</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">dfs</span><span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> u<span style="color:#ff79c6">)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">if</span><span style="color:#ff79c6">(</span> u <span style="color:#ff79c6">==</span> n<span style="color:#ff79c6">)</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">for</span><span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> i <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span> <span style="color:#ff79c6">;</span> i <span style="color:#ff79c6">&lt;</span> n<span style="color:#ff79c6">;</span> i<span style="color:#ff79c6">++)</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span>                System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">printf</span><span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;%d &#34;</span><span style="color:#ff79c6">,</span> path<span style="color:#ff79c6">[</span>i<span style="color:#ff79c6">]);</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">}</span>
+</span></span><span style="display:flex;"><span>            System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">printf</span><span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;\n&#34;</span><span style="color:#ff79c6">);</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">}</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#6272a4">// 每一个数字都遍历到， 不同高度的树主要通过 st[i] 来区分
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>        <span style="color:#ff79c6">for</span><span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> i <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">1</span><span style="color:#ff79c6">;</span> i <span style="color:#ff79c6">&lt;=</span> n <span style="color:#ff79c6">;</span>i<span style="color:#ff79c6">++)</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">if</span><span style="color:#ff79c6">(</span> <span style="color:#ff79c6">!</span>st<span style="color:#ff79c6">[</span>i<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">)</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span>                st<span style="color:#ff79c6">[</span>i<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">true</span><span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span>                path<span style="color:#ff79c6">[</span>u<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">=</span> i<span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span>                dfs<span style="color:#ff79c6">(</span>u <span style="color:#ff79c6">+</span> <span style="color:#bd93f9">1</span><span style="color:#ff79c6">);</span>
+</span></span><span style="display:flex;"><span>                st<span style="color:#ff79c6">[</span>i<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">false</span><span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">}</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">}</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">static</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">main</span><span style="color:#ff79c6">(</span>String <span style="color:#ff79c6">[]</span> argvs<span style="color:#ff79c6">)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span>        Scanner sc <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> Scanner<span style="color:#ff79c6">(</span>System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">in</span><span style="color:#ff79c6">);</span>
+</span></span><span style="display:flex;"><span>        n <span style="color:#ff79c6">=</span> sc<span style="color:#ff79c6">.</span><span style="color:#50fa7b">nextInt</span><span style="color:#ff79c6">();</span>
+</span></span><span style="display:flex;"><span>        dfs<span style="color:#ff79c6">(</span><span style="color:#bd93f9">0</span><span style="color:#ff79c6">);</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">}</span>
+</span></span></code></pre></div><p>N皇后</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#ff79c6">import</span> java.util.*<span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Main</span><span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">static</span> <span style="color:#8be9fd">int</span> N <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">20</span><span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">static</span> <span style="color:#8be9fd">boolean</span> <span style="color:#ff79c6">[]</span> col <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> <span style="color:#8be9fd">boolean</span> <span style="color:#ff79c6">[</span>N<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">,</span> dg <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> <span style="color:#8be9fd">boolean</span> <span style="color:#ff79c6">[</span>N<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">,</span> udg <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> <span style="color:#8be9fd">boolean</span> <span style="color:#ff79c6">[</span>N<span style="color:#ff79c6">];</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">static</span> <span style="color:#8be9fd">int</span> n <span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">static</span> <span style="color:#8be9fd">char</span> <span style="color:#ff79c6">[][]</span> g <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> <span style="color:#8be9fd">char</span> <span style="color:#ff79c6">[</span>N<span style="color:#ff79c6">][</span>N<span style="color:#ff79c6">];</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">static</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">dfs</span><span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> u<span style="color:#ff79c6">)</span> <span style="color:#6272a4">// 按行搜索
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>    <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">if</span><span style="color:#ff79c6">(</span> u <span style="color:#ff79c6">==</span> n <span style="color:#ff79c6">)</span> <span style="color:#6272a4">// 搜索到最后一行，输出
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>        <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">for</span><span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> i <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span> <span style="color:#ff79c6">;</span> i <span style="color:#ff79c6">&lt;</span> n <span style="color:#ff79c6">;</span> i<span style="color:#ff79c6">++)</span> 
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">for</span><span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> j <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span> <span style="color:#ff79c6">;</span> j <span style="color:#ff79c6">&lt;</span> n<span style="color:#ff79c6">;</span> j<span style="color:#ff79c6">++)</span>
+</span></span><span style="display:flex;"><span>                    System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">print</span><span style="color:#ff79c6">(</span>g<span style="color:#ff79c6">[</span>i<span style="color:#ff79c6">][</span>j<span style="color:#ff79c6">]);</span>
+</span></span><span style="display:flex;"><span>                System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">println</span><span style="color:#ff79c6">();</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">}</span>
+</span></span><span style="display:flex;"><span>                
+</span></span><span style="display:flex;"><span>            System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">println</span><span style="color:#ff79c6">();</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">}</span>
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">for</span><span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> i <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span> <span style="color:#ff79c6">;</span>i <span style="color:#ff79c6">&lt;</span> n<span style="color:#ff79c6">;</span> i<span style="color:#ff79c6">++)</span> <span style="color:#6272a4">// 搜索一行的每个位置
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>        <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">if</span><span style="color:#ff79c6">(</span> <span style="color:#ff79c6">!</span>col<span style="color:#ff79c6">[</span>i<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">&amp;&amp;</span> <span style="color:#ff79c6">!</span>dg<span style="color:#ff79c6">[</span>u <span style="color:#ff79c6">+</span> i<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">&amp;&amp;</span> <span style="color:#ff79c6">!</span>udg<span style="color:#ff79c6">[</span>i <span style="color:#ff79c6">-</span> u <span style="color:#ff79c6">+</span> n<span style="color:#ff79c6">])</span> <span style="color:#6272a4">// 剪枝
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>            <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span>                g<span style="color:#ff79c6">[</span>u<span style="color:#ff79c6">][</span>i<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;Q&#39;</span><span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span>                col<span style="color:#ff79c6">[</span>i<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">=</span>  dg<span style="color:#ff79c6">[</span>u <span style="color:#ff79c6">+</span> i<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">=</span> udg<span style="color:#ff79c6">[</span>i <span style="color:#ff79c6">-</span> u <span style="color:#ff79c6">+</span> n<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">true</span><span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span>                
+</span></span><span style="display:flex;"><span>                dfs<span style="color:#ff79c6">(</span> u <span style="color:#ff79c6">+</span> <span style="color:#bd93f9">1</span> <span style="color:#ff79c6">);</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#6272a4">//回溯
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>                col<span style="color:#ff79c6">[</span>i<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">=</span>  dg<span style="color:#ff79c6">[</span>u <span style="color:#ff79c6">+</span> i<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">=</span> udg<span style="color:#ff79c6">[</span>i <span style="color:#ff79c6">-</span> u <span style="color:#ff79c6">+</span> n<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">false</span><span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span>                g<span style="color:#ff79c6">[</span>u<span style="color:#ff79c6">][</span>i<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;.&#39;</span><span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">}</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">}</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">static</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">main</span><span style="color:#ff79c6">(</span>String <span style="color:#ff79c6">[]</span> argvs<span style="color:#ff79c6">)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span>        Scanner sc <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> Scanner<span style="color:#ff79c6">(</span>System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">in</span><span style="color:#ff79c6">);</span>
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        n <span style="color:#ff79c6">=</span> sc<span style="color:#ff79c6">.</span><span style="color:#50fa7b">nextInt</span><span style="color:#ff79c6">();</span>
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">for</span><span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> i <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span> <span style="color:#ff79c6">;</span> i <span style="color:#ff79c6">&lt;</span> n<span style="color:#ff79c6">;</span> i<span style="color:#ff79c6">++)</span> <span style="color:#6272a4">// 初始化棋盘
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>            <span style="color:#ff79c6">for</span><span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> j <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span><span style="color:#ff79c6">;</span> j <span style="color:#ff79c6">&lt;</span> n<span style="color:#ff79c6">;</span>j<span style="color:#ff79c6">++)</span>
+</span></span><span style="display:flex;"><span>                g<span style="color:#ff79c6">[</span>i<span style="color:#ff79c6">][</span>j<span style="color:#ff79c6">]</span> <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;.&#39;</span><span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        dfs<span style="color:#ff79c6">(</span><span style="color:#bd93f9">0</span><span style="color:#ff79c6">);</span>
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">}</span>
+</span></span></code></pre></div><p>图解过程：</p>
+<p>Pasted image 20221107210235.png</p>
+<h3 id="bfs">BFS</h3>
+<p>走迷宫</p>
+<pre tabindex="0"><code class="language-none" data-lang="none">#include &lt;iostream&gt;
+#include &lt;cstring&gt;
+using namespace std;
+
+
+typedef pair&lt;int , int &gt; PII;
+
+const int N = 110;
+int n , m;
+PII q[N * N];
+int d[N][N],g[N][N];
+
+int bfs(){
+    int hh = 0  , tt = 0;
+    q[0] = {0 , 0};
+    memset(d, -1, sizeof d);
+
+    d[0][0] = 0;
+
+    int dx[4] = {0, -1, 1, 0};
+    int dy[4] = {1, 0, 0, -1};
+
+
+    while( hh &lt;= tt)
+    {
+        auto node = q[hh++];
+
+        for(int i = 0 ; i &lt; 4; i++)
+        {
+            int x = node.first + dx[i], y = node.second + dy[i];
+
+            if( x &gt;= 0 &amp;&amp; x &lt; n &amp;&amp; y &gt;= 0 &amp;&amp; y &lt; m &amp;&amp; d[x][y] == -1 &amp;&amp; g[x][y] == 0)// 在范围内，且没来过
+            {
+                d[x][y] = d[node.first][node.second] + 1;
+                q[++tt] = {x, y};
+            }
+        }
+    }
+
+    return d[n - 1][m - 1];
+}
+
+
+int main ()
+{
+    cin&gt;&gt;n&gt;&gt;m;
+
+    for(int i = 0 ; i &lt; n; i++)
+        for(int j = 0; j &lt; m ;j ++)
+            cin&gt;&gt;g[i][j];
+
+    cout&lt;&lt;bfs()&lt;&lt;endl;
+
+    return 0;
+}
+</code></pre><h3 id="树和图的存储">树和图的存储</h3>
+<ol>
+<li>
+<p>树 ， 树就是无环连通图</p>
+</li>
+<li></li>
+</ol>
+<p>图</p>
+<p>存储方式：</p>
+<ol>
+<li>领接矩阵</li>
+<li>邻接表 &mdash; -&gt; 链式前向星（数组形式）</li>
+</ol>
+<p>树的重心</p>
+<pre tabindex="0"><code class="language-none" data-lang="none">#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+#include &lt;cstring&gt;
+using namespace std;
+
+const int N = 100010;
+const int M = N * 2;
+int h[N], e[M], ne[M], idx;
+int n , ans = N ;
+bool st[N];
+
+void add (int a , int b)
+{
+    e[idx] = b; ne[idx] = h[a]; h[a] = idx; idx++;
+}
+
+int dfs( int u )
+{
+    st[u] = true;
+    int res = 0; // 删除某个节点之后，最大的连通子图节点数
+    int sum = 1; // 以 u 为根的树的节点数，包括u本身
+    // 访问 u 的每一个子节点
+    for(int i = h[u] ; i != -1 ; i = ne[i])
+    {
+        int j = e[i]; // 取到节点
+        if( !st[j] )
+        {
+            int s = dfs(j); // 子树节点数
+            res = max(res, s); // 最大连通子图的节点数
+            sum += s;// 以j 为根的树的节点数
+        }
+    }
+    
+    res = max( res ,n - sum); // 选择以u节点为重心的，最大的 连接子图节点数
+    ans = min( res , ans); // 遍历过的假设重心中，最小的 最大连通子图的节点数
+    return sum ; // 返回这个子树的包含的节点个数
+}
+
+int main()
+{
+    cin&gt;&gt;n;
+    
+    memset(h , -1, sizeof h);
+    
+    int a, b;
+    for(int i = 0 ; i &lt; n ;i ++)
+    {
+        cin&gt;&gt;a&gt;&gt;b;
+        add(a,b), add(b,a);
+    }
+    
+    dfs(1);
+    
+    cout&lt;&lt;ans&lt;&lt;endl;
+    
+    return 0;
+}
+</code></pre><p>图的层次（bfs）</p>
+<pre tabindex="0"><code class="language-none" data-lang="none">#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+#include &lt;cstring&gt;
+using namespace std;
+
+const int N = 100010;
+const int M = N * 2;// 无向图有两条边
+int h[N] , e[M] , ne[M], idx;
+int d[N] , q[N];// 分别表示层次 、 队列
+int n , m;
+
+void add( int a, int b)
+{
+    e[idx] = b , ne[idx] = h[a], h[a] = idx++;
+}
+
+int bfs()
+{
+    int hh = 0 , tt =0;
+    q[0] = 1;
+    
+    memset(d, -1, sizeof d);
+    
+    d[1] = 0;
+    
+    while( hh &lt;= tt)
+    {
+        int t = q[hh++];
+        for(int i = h[t] ; i != -1; i = ne[i])
+        {
+            int j = e[i];
+            if( d[j] == -1)
+            {
+                d[j] = d[t] + 1;
+                q[++tt] = j;    
+            }
+        }
+    }
+    
+    return d[n];
+}
+
+
+int main()
+{
+    cin&gt;&gt;n&gt;&gt;m;
+    
+    memset(h, -1 ,sizeof h);
+    
+    int a, b;
+    for(int i = 0 ;i &lt; m ;i++)
+    {
+        cin&gt;&gt;a&gt;&gt;b;
+        add(a , b);
+    }
+    
+
+    
+    cout&lt;&lt;bfs()&lt;&lt;endl;
+    
+    return 0;
+}
+</code></pre><p>拓扑排序</p>
+<pre tabindex="0"><code class="language-none" data-lang="none">#include &lt;iostream&gt;
+#include &lt;cstring&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+
+const int N = 100010;
+const int M = 2 * N;
+int h[N], e[M], ne[M] , idx;
+int q[N], d[N]; // 这里的d数组代表入度
+int n , m ;
+
+void add( int a , int b)
+{
+    e[idx] = b;
+    ne[idx] = h[a];
+    h[a] = idx++;
+}
+
+bool top(){
+    int hh = 0, tt = -1;
+    
+    
+    //记得先将所有入度为0的点加入队列 | 注意遍历的是点， 下标从1开始
+    for(int i = 1 ;i &lt;= n; i++)
+        if( d[i] == 0)
+            q[++ tt] = i;
+    
+    while( hh &lt;= tt)
+    {
+        int t = q[hh++];
+        for(int i = h[t]; i != -1 ; i = ne[i])
+        {
+            int j = e[i];
+            d[j]--;
+            if( d[j] == 0)
+            {
+                q[++tt] = j;
+            }
+        }
+    }
+    
+    return tt == n - 1;// 这里是因为 tt 的初始值是 -1
+}
+
+
+int main()
+{
+    cin&gt;&gt;n&gt;&gt;m;
+    
+    memset(h , -1, sizeof h);
+    
+    int a, b;
+    for(int i = 0 ; i &lt; m ;i++)
+    {
+        cin&gt;&gt;a&gt;&gt;b;
+        add(a,b);
+        d[b]++;
+    }
+    
+    if( top() )
+    {
+        for(int i = 0 ;i &lt; n ;i ++) 
+            cout&lt;&lt;q[i]&lt;&lt;&#34; &#34;;
+    }
+    else puts(&#34;-1&#34;);
+    
+    return 0;
+}
+</code></pre><p>八数码</p>
+<ul>
+<li></li>
+</ul>
+<p>核心在于状态的抽象</p>
+<ul>
+<li></li>
+</ul>
+<p>转移的实现也是需要注意的点&mdash;&gt;数学转换</p>
+<pre tabindex="0"><code class="language-none" data-lang="none">#include &lt;iostream&gt;
+#include &lt;queue&gt;
+#include &lt;unordered_map&gt;
+
+using namespace std;
+
+int bfs(string start)
+{
+    queue&lt;string&gt; q ;
+    unordered_map&lt;string, int&gt; d;
+    
+    q.push(start);
+    d[start] = 0;
+    
+    int dx[4] = { 0 , -1, 1, 0}, dy[4] = {1 , 0 , 0, -1};
+    
+    string end = &#34;12345678x&#34;;
+    while( q.size() )
+    {
+        auto t = q.front();
+        q.pop();
+        
+        if( t == end ) return d[t];
+        
+        int k = t.find(&#39;x&#39;);
+        int x = k / 3 , y = k % 3;
+        
+        int distance = d[t];
+        
+        for(int i = 0 ; i &lt; 4 ; i++)
+        {
+            int a = x + dx[i] , b = y + dy[i];
+            if( a &gt;= 0 &amp;&amp; a &lt; 3 &amp;&amp; b &gt;= 0 &amp;&amp; b &lt; 3)
+            {
+                swap(t[a * 3 + b] , t[k]);
+                
+                if( !d.count(t) )
+                {
+                    d[t] = distance + 1;
+                    q.push(t);
+                }
+                
+                swap(t[a * 3 + b], t[k]);
+            }
+        }
+    }
+    
+    return -1;
+    
+}
+
+int main ()
+{
+    string start;
+    for(int i = 0 ; i &lt; 9 ; i++)
+    {
+        char a;
+        cin&gt;&gt;a;
+        start += a;
+    }
+    
+    cout&lt;&lt;bfs(start)&lt;&lt;endl;
+    
+    return 0;
+}
+</code></pre><h2 id="最短路">最短路</h2>
+<h3 id="概览">概览</h3>
+<p>一般分为两大类
+<code>n 为点数 m 为边数</code></p>
+<ul>
+<li></li>
+</ul>
+<p>单源最短路</p>
+<ul>
+<li></li>
+</ul>
+<pre><code>所有边权为正
+
+- 
+
+  朴素dijkstra 算法( O(n^2) ) --
+
+   
+
+  稠密图
+
+- 
+
+  堆优化的 dijkstra 算法( m * logn ) --
+
+   
+
+  稀疏图
+</code></pre>
+<ul>
+<li></li>
+</ul>
+<pre><code>有边权为负
+
+- 
+
+  Bellman-Ford ( O( nm ) )
+
+- 
+
+  spfa 最坏 ( O(nm ) ) 一般（ O(m) ）
+</code></pre>
+<ul>
+<li></li>
+</ul>
+<p>多源汇最短路</p>
+<p>- Floyd ( O(n ^ 3) )</p>
+<p>难点</p>
+<p>： 从实际问题中</p>
+<p>抽象</p>
+<p>出最短路的模型。</p>
+<h3 id="dijkstra">dijkstra</h3>
+<h4 id="朴素dijkstra">朴素dijkstra</h4>
+<p>稠密图 &mdash;&gt; 使用邻接矩阵存储</p>
+<pre tabindex="0"><code class="language-none" data-lang="none">#include &lt;iostream&gt;
+#include &lt;cstring&gt;
+using namespace std;
+
+const int N = 510;
+int g[N][N], dist[N], n, m;
+bool st[N];
+
+int dijkstra()
+{
+    memset(dist, 0x3f , sizeof dist);
+    dist[1] = 0;
+    
+    for(int i = 1; i &lt;= n ; i ++)
+    {
+        //找到最小未确定距离的点
+        int t = -1;
+        for(int j = 1; j &lt;= n ;j++)
+        {
+            if( !st[j] &amp;&amp; ( t == -1 || dist[t] &gt; dist[j]) )
+                t = j;
+        }
+        // 用最小的点更新距离
+        for(int j = 1; j &lt;= n ; j++)
+            dist[j] = min( dist[j] , dist[t] + g[t][j]); // 感觉这里很妙，如果不连通就取不到后面的值
+        // 标记已访问
+        st[t] = true;
+    }
+    //返回答案
+    return dist[n] == 0x3f3f3f3f ? -1 : dist[n]; // 找不到的话返回 -1
+}
+
+int main()
+{
+    cin&gt;&gt;n&gt;&gt;m;
+    
+    memset(g, 0x3f, sizeof g);
+    
+    for(int i = 0 ; i &lt; m ;i ++)
+    {
+        int a, b, c;
+        cin&gt;&gt;a&gt;&gt;b&gt;&gt;c;
+        
+        g[a][b] = min(g[a][b] , c);
+    }
+    
+    cout&lt;&lt;dijkstra()&lt;&lt;endl;
+    
+    return 0;
+}
+</code></pre><h4 id="堆优化版本">堆优化版本</h4>
+<p><a href="app://obsidian.md/index.html#tips">#tips</a> 没有调整过的cin 要比scanf 慢一倍左右</p>
+<p>优化的点在于寻找为确定的点中的路径最短的点 -》 用优先队列代替循环
+缺点：优先队列对空间的占用比较高，如果要追求空间利用率的话，需要自己实现一个优先队列（主要是实现删除操作）</p>
+<pre tabindex="0"><code class="language-none" data-lang="none">#include &lt;iostream&gt;
+#include &lt;cstring&gt;
+#include &lt;queue&gt;
+// #include &lt;vector&gt; 定义小根堆的时候不要把它引入进来
+using namespace std;
+
+typedef pair&lt;int , int&gt; PII;
+
+const int N = 1000010;
+int h[N], e[N], ne[N], w[N], idx;
+int n , m ;
+int dist[N];// 记录每个点的最短距离
+bool st[N]; // 标记已经是最短距离
+
+void add(int a, int b , int c) // 邻接表， 使用w数组存储权重
+{
+    e[idx] = b, w[idx] = c, ne[idx] = h[a], h[a] = idx++;
+}
+
+int dijkstra()
+{
+    memset(dist, 0x3f, sizeof dist);//单源最短路，初始化距离
+    dist[1] = 0;
+    priority_queue&lt;PII, vector&lt;PII&gt;, greater&lt;PII&gt;&gt; heap;
+    heap.push({0, 1}); // first 存储距离, second 存储编号
+    
+    while( heap.size() ) 
+    {
+        auto t = heap.top();
+        heap.pop();
+        
+        int ver = t.second,  distance = t.first;
+        
+        if(st[ver]) continue; // 已经找过了的，不用再找了
+        st[ver] = true;//已经是堆顶的了，最小的了，打上标记
+        
+        for(int i = h[ver]; i != -1 ; i = ne[i]) // 这里是通过邻接表存储，所以一定是能走到的
+        {
+            int j = e[i];
+            if( dist[j] &gt; dist[ver] + w[i])
+            {
+                dist[j] = dist[ver] + w[i];
+                heap.push({dist[j], j});
+            }
+        }
+    }
+    
+    return dist[n] == 0x3f3f3f3f ? -1 : dist[n];
+    
+}
+
+
+int main()
+{
+    memset(h , -1, sizeof h); // 初始化邻接表的头
+    scanf(&#34;%d%d&#34;, &amp;n, &amp;m);
+    
+    for(int i = 0 ; i &lt; m ; i++)
+    {
+        int a, b ,c;
+        scanf(&#34;%d%d%d&#34;, &amp;a, &amp;b, &amp;c);
+        add(a, b, c);
+    }
+    
+    cout&lt;&lt;dijkstra()&lt;&lt;endl;
+    
+    return 0;
+}
+</code></pre><h3 id="bellman---ford">Bellman - Ford</h3>
+<p>注意点：</p>
+<ul>
+<li></li>
+</ul>
+<p>图中不能有负权回路， 因为会在回路中循环， 形成 -∞的结果， 可以用来找</p>
+<p>负环</p>
+<p>， 当在第n重循环时候如果还在更新时，就说明回路中存在n条边， 也就是存在 n + 1 个点， 所以在最短路径中存在重复的点，也就是环，而且由于正在更新，所以是负环。</p>
+<ul>
+<li></li>
+</ul>
+<p>但是一般不用Bellman - Ford 来寻找负环， 因为SPFA可以更快</p>
+<ul>
+<li></li>
+</ul>
+<p>Bellman-Ford 算法的特点在于它的循环次数是有意义的：当循环k次，也就是经过</p>
+<p>不超过k条边</p>
+<p>能得到的最小距离</p>
+<pre tabindex="0"><code class="language-none" data-lang="none">#include &lt;iostream&gt;
+#include &lt;cstring&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+
+const int N = 510, M = 10010;
+
+struct Edge{ //使用结构体存边
+    int s, t, w;    
+}edges[M]; 
+
+int n, m, k;
+int dist[N];
+int backup[N];
+
+void bellman_ford(){
+    memset(dist, 0x3f, sizeof dist);
+    dist[1] = 0;
+    
+    for(int i = 0 ; i &lt; k ; i++) // 遍历每一个顶点
+    {
+        memcpy(backup, dist, sizeof dist); // 备份,存储上一次更新完成的距离，防止数据短路
+        for(int j =  0 ; j &lt; m ; j++)
+        {
+            auto e = edges[j];
+            dist[e.t] = min( dist[e.t], backup[e.s] + e.w); // 使用备份的距离来更新
+        }
+    }
+}
+
+int main (){
+    scanf(&#34;%d%d%d&#34;, &amp;n, &amp;m, &amp;k);
+    
+    for(int i = 0 ;i &lt; m ;i++)
+    {
+        int s, t, w;
+        scanf(&#34;%d%d%d&#34;, &amp;s, &amp;t, &amp;w);
+        edges[i] = {s, t, w};// 给边数组赋初值
+    }
+    
+    bellman_ford();
+    //因为有负权边， 所以可能会小于定义的最大值，但由于操作数有限制，所以最大值/2足够判断
+    if( dist[n] &gt; 0x3f3f3f3f / 2) puts(&#34;impossible&#34;);
+    else printf(&#34;%d\n&#34;, dist[n]);
+    
+    return 0;
+}
+</code></pre><h3 id="spfa">SPFA</h3>
+<p>注意点：</p>
+<ul>
+<li></li>
+</ul>
+<p>图中不能存在负环</p>
+<ul>
+<li></li>
+</ul>
+<p>核心就是只更新变小了的， 而Bellman-Ford是所有的都更新一遍</p>
+<ul>
+<li></li>
+</ul>
+<p>同时由于只更新变小了的，就不用备份数组了</p>
+<p>总体思路还是遍历所有边，只不过不是每一个点都要遍历到，只遍历那些变小了的点</p>
+<pre tabindex="0"><code class="language-none" data-lang="none">#include &lt;iostream&gt;
+#include &lt;cstring&gt;
+#include &lt;queue&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+
+const int N = 100010, M = 100010;
+int h[N], e[N], ne[N], w[N], idx;
+int n , m ;
+int dist[N];
+bool st[N];// 表示在队列里面的节点
+
+void add(int a, int b, int c)
+{
+    e[idx] = b;
+    w[idx] = c;
+    ne[idx] = h[a];
+    h[a] = idx++;
+}
+
+int spfa()
+{
+    memset(dist, 0x3f, sizeof dist);
+    dist[1] = 0;
+    
+    queue&lt;int&gt; q;
+    q.push(1);
+    st[1] = true;
+    
+    while( q.size() )
+    {
+        int t = q.front();
+        q.pop();
+        
+        st[t] = false; // 不要忘了取出来之后恢复状态
+        
+        for(int i = h[t]  ;i != -1 ; i = ne[i])
+        {
+            int j = e[i];
+            if( dist[j] &gt; dist[t] + w[i])
+            {
+                dist[j] = dist[t] + w[i];
+                if( !st[j] )
+                {
+                    q.push(j);
+                    st[j] = true;
+                }
+            }
+        }
+    }
+    
+    return dist[n]; // 在返回判断条件的时候注意题目要求
+     
+}
+
+int main()
+{
+    scanf(&#34;%d%d&#34;, &amp;n, &amp;m);
+    
+    memset(h , -1, sizeof h);
+    
+    while( m -- )
+    {
+        int a, b, c;
+        scanf(&#34;%d%d%d&#34;, &amp;a, &amp;b, &amp;c);
+        add(a, b, c);
+    }
+    
+    int res = spfa();
+    
+    if( res == 0x3f3f3f3f ) cout&lt;&lt;&#34;impossible&#34;&lt;&lt;endl;
+    else cout&lt;&lt;res&lt;&lt;endl;
+    
+    return 0;
+}
+</code></pre><p>spfa求负环</p>
+<p>原理和Bellman-Ford 相同，都是抽屉原理
+注意点：</p>
+<ul>
+<li></li>
+</ul>
+<p>负环并不一定存在于1-&gt;n</p>
+<ul>
+<li></li>
+</ul>
+<p>使用一个 cnt 数组来进行判定</p>
+<pre tabindex="0"><code class="language-none" data-lang="none">#include &lt;iostream&gt;
+#include &lt;cstring&gt;
+#include &lt;queue&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+
+const int N = 2010, M = 10010;
+
+int n , m;
+int h[N], e[M], ne[M], w[M], idx;
+int dist[N], cnt[N];
+bool st[N];
+
+
+void add(int a, int b ,int c)
+{
+    e[idx] = b;
+    ne[idx] = h[a];
+    w[idx] = c;
+    h[a] = idx ++;
+}
+
+bool spfa()
+{
+    queue&lt;int&gt; q ;
+    for(int i = 1 ;i &lt;= n; i++) 
+    {
+        q.push(i); // 所有的点都找一遍，负环不一定在以1为起点的最短路上 
+        st[i] = true;
+    }
+    
+    while( q.size() )
+    {
+        int t = q.front();
+        q.pop();
+        
+        st[t] = false;
+         
+        for(int i = h[t] ; i != -1; i = ne[i])
+        {
+            int j = e[i];
+            if( dist[j] &gt; dist[t] + w[i]){
+                
+                dist[j] = dist[t] + w[i];
+                cnt[j] = cnt[t] + 1; // 注意这里的递推关系
+                
+                if( cnt[j] &gt;= n) return true;
+                
+                if( !st[j] )
+                {
+                    q.push(j);
+                    st[j] = true;
+                }
+            }
+        }
+        
+    }
+    
+    return false;
+}
+
+int main ()
+{
+    scanf(&#34;%d%d&#34;, &amp;n , &amp;m);
+    
+    memset(h , -1, sizeof h);
+    
+    while( m -- &gt; 0)   
+    {
+        int a, b, c;
+        scanf( &#34;%d%d%d&#34;, &amp;a, &amp;b, &amp;c);
+        add(a, b, c);
+    }
+    
+    if( spfa() ) puts(&#34;Yes&#34;);
+    else puts(&#34;No&#34;);
+    
+    return 0;
+}
+</code></pre><h3 id="floyd">Floyd</h3>
+<pre tabindex="0"><code class="language-none" data-lang="none">#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+
+const int N = 210, INF = 0x3f3f3f3f;
+int g[N][N];
+int n , m , q;
+
+void floyd()
+{
+    for(int k = 1; k &lt;= n ; k++)
+        for(int i = 1 ; i &lt;= n ;i++)
+            for(int j = 1; j &lt;= n ; j++)
+                g[i][j] = min( g[i][j] , g[i][k] + g[k][j]);// 一段的长度和两端接起来的长度取小
+}
+
+int main ()
+{
+    cin&gt;&gt;n&gt;&gt;m&gt;&gt;q;
+    
+    for(int i = 1 ; i &lt;= n ; i++)
+        for(int j = 1 ;j &lt;= n ; j++)
+            if( i == j ) g[i][j] = 0;
+            else g[i][j] = INF;
+    
+    while( m --)
+    {
+        int s, t, w;
+        cin&gt;&gt;s&gt;&gt;t&gt;&gt;w;
+        g[s][t] = min(g[s][t], w); // 排除重复的、比较大的边
+    }
+    
+    floyd();
+    
+    while( q -- )
+    {
+        int s , t;
+        cin&gt;&gt;s&gt;&gt;t;
+        
+        if( g[s][t] &gt; INF / 2 ) puts(&#34;impossible&#34;);
+        else cout&lt;&lt;g[s][t]&lt;&lt;endl;
+    }
+    
+    return 0;
+}
+</code></pre><h3 id="小总结">小总结</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>---Dijkstra-朴素O(n^2)
+</span></span><span style="display:flex;"><span>初始化距离数组, dist[1] = 0, dist[i] = inf;
+</span></span><span style="display:flex;"><span>for n次循环 每次循环确定一个min加入S集合中，n次之后就得出所有的最短距离
+</span></span><span style="display:flex;"><span>将不在S中dist_min的点-&gt;t
+</span></span><span style="display:flex;"><span>t-&gt;S加入最短路集合
+</span></span><span style="display:flex;"><span>用t更新到其他点的距离
+</span></span><span style="display:flex;"><span>--tips: 这里的S集合是通过一个标记数组来实现的
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>---Dijkstra-堆优化O(mlogm)
+</span></span><span style="display:flex;"><span>利用邻接表，优先队列
+</span></span><span style="display:flex;"><span>在priority_queue[HTML_REMOVED], greater[HTML_REMOVED] &gt; heap;中将返回堆顶
+</span></span><span style="display:flex;"><span>利用堆顶来更新其他点，并加入堆中类似宽搜
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>---Bellman_fordO(nm)
+</span></span><span style="display:flex;"><span>注意连锁现象 需要备份, struct Edge{inta,b,c} Edge[M];
+</span></span><span style="display:flex;"><span>初始化dist, 松弛dist[x.b] = min(dist[x.b], backup[x.a]+x.w);
+</span></span><span style="display:flex;"><span>松弛k次，每次访问m条边
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>----Spfa O(n)~O(nm)
+</span></span><span style="display:flex;"><span>利用队列优化仅加入修改过的地方
+</span></span><span style="display:flex;"><span>for k次
+</span></span><span style="display:flex;"><span>for 所有边利用宽搜模型去优化bellman_ford算法
+</span></span><span style="display:flex;"><span>更新队列中当前点的所有出边
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>---Floyd O(n^3)
+</span></span><span style="display:flex;"><span>初始化d
+</span></span><span style="display:flex;"><span>k, i, j 去更新d
+</span></span></code></pre></div><h2 id="最小生成树">最小生成树</h2>
+<h3 id="prim-算法">Prim 算法</h3>
+<h4 id="稠密图朴素版on--2">稠密图（朴素版）O(n ^ 2)</h4>
+<p>算法流程：
+<strong>dijkstra</strong>:</p>
+<ol>
+<li>初始化距离数组</li>
+<li>迭代n次，每次寻找不在集合中的， 距离最小的点</li>
+<li>使用距离最小的点来更新其它点到<strong>起点</strong>的距离</li>
+</ol>
+<p><strong>Prim</strong> :</p>
+<ol>
+<li>初始化距离数组</li>
+<li>迭代，找到集合外距离最近的点 -&gt; t</li>
+<li>用 t 更新其它点到<strong>集合</strong>的距离</li>
+<li>将 t 加入到集合中</li>
+</ol>
+<pre tabindex="0"><code class="language-none" data-lang="none">#include &lt;iostream&gt;
+#include &lt;cstring&gt;
+
+using namespace std;
+const int N = 510, INF = 0x3f3f3f3f;
+int g[N][N], d[N]; // 稠密图，使用邻接矩阵 ， d存储点到集合的最短距离
+bool st[N]; // 标识集合
+int n , m;
+
+int prim(){
+    
+    memset(d, 0x3f, sizeof d);
+    
+    int res = 0;// 存储最小生成树的总权值
+    
+    for(int i = 0 ; i &lt; n ;i ++){
+	    //1.查找到集合距离最小的点
+        int t = -1;
+        for(int j = 1; j &lt;= n ;j++)
+            if( !st[j] &amp;&amp; ( t == -1 || d[t] &gt; d[j]))
+                t = j;
+    
+        if( i &amp;&amp; d[t] == INF) return INF;
+        
+        if( i ) res += d[t];
+        st[t] = true;
+        
+        for(int j = 1; j &lt;= n ;j++) d[j] = min(d[j] , g[j][t]); // 更新每个点到集合的最短距离
+    }
+    return res;
+}
+
+int main(){
+    
+    cin&gt;&gt;n&gt;&gt;m;
+    
+    memset(g, 0x3f , sizeof g);
+    
+    while( m -- &gt; 0 )
+    {
+        int a, b, c;
+        cin&gt;&gt;a&gt;&gt;b&gt;&gt;c;
+        g[a][b] = g[b][a] = min(g[a][b], c); // 无向图存两个方向
+    }
+    
+    int t = prim();
+    
+    if( t == INF) cout&lt;&lt;&#34;impossible&#34;&lt;&lt;endl;
+    else cout&lt;&lt;t&lt;&lt;endl;
+    
+    return 0;
+} 
+</code></pre><h4 id="稀疏图堆优化版omlogn----少用">稀疏图（堆优化版）O(mlogn) &ndash; 少用</h4>
+<blockquote>
+<p>暂时没讲</p>
+</blockquote>
+<h3 id="kruskal-算法-omlogm----稀疏图">Kruskal 算法 O(mlogm) &ndash; 稀疏图</h3>
+<p>算法流程：</p>
+<ol>
+<li>
+<p>将所有<strong>边</strong>按权重排序 O( mlogm ) ，算法的速度瓶颈</p>
+</li>
+<li></li>
+</ol>
+<p>枚举每条边 a -&gt; b ， 权重为 c</p>
+<ul>
+<li></li>
+</ul>
+<pre><code> 如果 a, b 不连通，将边加入集合中
+</code></pre>
+<pre tabindex="0"><code class="language-none" data-lang="none">#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+
+using namespace std;
+
+const int N = 100010, M = 200010, INF = 0x3f3f3f3f;
+int p[N];
+int n , m;
+
+struct Edge{
+    int a, b, w;
+    
+    bool operator &lt; (const Edge &amp; W) const//重载小于号
+    {
+        return w &lt; W.w;
+    }
+}edges[M];
+
+int find(int x)
+{
+    if( p[x] == x) return p[x];
+    return p[x] = find(p[x]);
+}
+
+int kruskal(){
+    
+    sort(edges, edges + m); // 给所有边排序
+    
+    for(int i = 1; i &lt;= n; i++) p[i] = i;
+    
+    int res = 0 , cnt = 0;
+    for(int i = 0 ; i &lt; m ; i++)
+    {
+        int a = edges[i].a, b = edges[i].b, w = edges[i].w;
+        
+        a = find(a), b = find(b);
+        if( a != b ) // 如果不连通就合并
+        {
+            p[a] = b;
+            res += w;
+            cnt++;
+        }
+    }
+    
+    if( cnt &lt; n - 1) return INF; // 如果最终有点没有合并进来，就说明无法构成生成树
+    else return res;
+}
+
+int main (){
+    
+    cin&gt;&gt;n&gt;&gt;m;
+    
+    for(int i = 0 ; i &lt; m ; i++)
+    {
+        int a, b, w;
+        scanf(&#34;%d%d%d&#34;, &amp;a, &amp;b, &amp;w);
+        edges[i] = {a, b, w};
+    }
+    
+    int t = kruskal();
+    
+    if( t == INF ) puts(&#34;impossible&#34;);
+    else printf(&#34;%d\n&#34;, t);
+    
+    return 0;
+}
+</code></pre><h2 id="二分图">二分图</h2>
+<p>定义：可以将一个二分图分为两个集合，只有集合之间存在边，而集合内部没有边
+性质：当且仅当图当中不含奇数环（充要条件）</p>
+<p>过程：</p>
+<ol>
+<li>选取一个点加入左边</li>
+<li>遍历它连通的第一层节点，加入右边</li>
+<li>再遍历下一层节点，加入左边</li>
+<li>递归实现以上过程，就可以完成染色</li>
+</ol>
+<p>不含有奇数环时，上述过程没有矛盾</p>
+<h3 id="染色法-o-m-n-">染色法 O( m +n )</h3>
+<pre tabindex="0"><code class="language-none" data-lang="none">#include &lt;iostream&gt;
+#include &lt;cstring&gt;
+
+using namespace std;
+
+const int N = 100010, M = 200020;
+
+int h[N] , e[M], ne[M], idx;
+int color[N];
+int n, m;
+
+void add(int a, int b){
+    e[idx] = b;
+    ne[idx] = h[a];
+    h[a] = idx++;
+}
+
+bool dfs(int u, int c)
+{
+    color[u] = c;// 给这个节点染色
+    
+    for(int i = h[u] ; i != -1 ; i = ne[i]) // 给它连通的节点染色
+    {
+        int j = e[i];
+        if( !color[j] )
+        {
+            if( !dfs(j , 3 - c)) return false; // 3 - c 是为了在 1 和 2 之间切换
+        }
+        else if( color[j] == c) return false ; // 和父节点一个颜色，冲突
+    }
+    
+    return true;
+}
+
+int main ()
+{
+    cin&gt;&gt;n&gt;&gt;m;
+    
+    memset(h, -1 , sizeof h);
+    
+    while( m -- )
+    {
+        int a, b;
+        cin&gt;&gt;a&gt;&gt;b;
+        add(a, b), add(b, a);
+    }
+    
+    bool flag = true;
+    
+    for(int i = 1; i &lt;= n ;i++) // 因为不一定是连通图，所以要确保遍历到所有点
+    {
+        if( !color[i] )
+        {
+            if( !dfs(i , 1) )
+            {
+                flag = false;
+                break;
+            }
+        }
+    }
+    
+    if( flag ) puts(&#34;Yes&#34;);
+    else puts(&#34;No&#34;);
+    
+    return 0;
+}
+</code></pre><p>TARGET DECK: 算法</p>
+<h3 id="匈牙利算法-omn">匈牙利算法 O(mn)</h3>
+<blockquote>
+<p>实际运行时间一般远小于 O(mn)</p>
+</blockquote>
+<p>基本思路：
+有两边</p>
+<ol>
+<li>选取左边的每一个点，在和它连通的点中寻找一个未匹配的点</li>
+<li><strong>核心</strong>： 如果所有点都已经匹配了， 那么让和右边点<strong>匹配的点</strong>寻找右边是否还有没匹配的点，如果有，就匹配</li>
+<li>然后将当前已经匹配的点和当前左边节点匹配</li>
+</ol>
+<blockquote>
+<p>两全其美~~~</p>
+</blockquote>
+<p>注意点：判重(这里主要是判右边) | find函数的意义 | 为啥存单边</p>
+<pre tabindex="0"><code class="language-none" data-lang="none">#include &lt;iostream&gt;
+#include &lt;cstring&gt;
+#include &lt;algorithm&gt;
+
+using namespace std;
+
+const int N = 510, M = 100010; // 这里虽然是无向边， 但是实际的算法流程中存有向边就可以完成
+int h[N], e[M], ne[M], idx;
+int match[N]; // 用来记录已经匹配的点
+int n1, n2 , m;
+bool st[N]; // 避免在一次find过程中访问重复的右边的点
+
+void add(int a, int b){
+    e[idx] = b, ne[idx] = h[a], h[a] = idx++;
+}
+
+bool find(int u )
+{
+    for(int i = h[u]; i != -1; i = ne[i]) // 给 u 寻找匹配
+    {
+        int j = e[i];
+        
+        if( !st[j] )
+        {
+            st[j] = true;
+            if( match[j] == 0 || find(match[j]) )
+            {
+                match[j] = u;
+                return true; // 可以找到，返回 true
+            }
+        }
+    }
+    
+    return false; // 找不到， 返回 false
+}
+
+int main (){
+    
+    cin&gt;&gt;n1&gt;&gt;n2&gt;&gt;m;
+    
+    memset(h , -1, sizeof h);
+    
+    while( m -- )
+    {
+        int a, b;
+        cin&gt;&gt;a&gt;&gt;b;
+        add(a,b);
+    }
+    
+    int res = 0; // 存储匹配数量
+    
+    for(int i = 1; i &lt;= n1 ;i ++) // 考虑每一个左边的点
+    {
+        memset(st , false , sizeof st);
+        
+        if( find( i ) ) res ++;
+    }
+    
+    cout&lt;&lt;res&lt;&lt;endl;
+    
+    return 0;
+}
+</code></pre><h1 id="数学知识">数学知识</h1>
+<h2 id="数论">数论</h2>
+<h3 id="质数">质数</h3>
+<pre tabindex="0"><code class="language-none" data-lang="none">1.质数和合数是针对所有大于1的 “自然数” 来定义的(所有小于等于1的数都不是质数).
+2.所有小于等于1的整数既不是质数也不是合数.
+3.质数和素数都是同一种性质,只是叫法不同.
+
+4.质数的判定------试除法 或 六倍原理.
+(1).”d|n”代表的含义是d能整除n,(这里的”|”代表整除).
+(2).一个合数的约数总是成对出现的,如果d|n,那么(n/d)|n,因此我们判断一个数是否为质数的时候,
+只需要判断较小的那一个数能否整除n就行了,即只需枚举d&lt;=(n/d),即dd&lt;=n,d&lt;=sqrt(n)就行了.
+(3).sqrt(n)这个函数执行的时候比较慢.
+
+
+5.分解质因数------试除法.(用到的原理:唯一分解定理(算数基本定理))
+(1).特别要注意------分解质因数与质因数不一样!!!!!!
+(2).分解质因数是一个过程,而质因数是一个数.
+(3).一个合数分解而成的质因数最多只包含一个大于sqrt(n)的质因数
+(反证法,若n可以被分解成两个大于sqrt(n)的质因数,则这两个质因数相乘的结果大于n,与事实矛盾).
+(4).当枚举到某一个数i的时候,n的因子里面已经不包含2-i-1里面的数,
+如果n%i==0,则i的因子里面也已经不包含2-i-1里面的数,因此每次枚举的数都是质数.
+(5).算数基本定理(唯一分解定理):任何一个大于1的自然数N,如果N不为质数,那么N可以唯一分解成有限个质数的乘积
+N=P1a1P2a2P3a3......Pnan，这里P1&lt;P2&lt;P3......&lt;Pn均为质数，其中指数ai是正整数。
+这样的分解称为 N 的标准分解式。最早证明是由欧几里得给出的，由陈述证明。
+此定理可推广至更一般的交换代数和代数数论。
+(6).质因子（或质因数）在数论里是指能整除给定正整数的质数。根据算术基本定理，不考虑排列顺序的情况下，
+每个正整数都能够以唯一的方式表示成它的质因数的乘积。
+(7).两个没有共同质因子的正整数称为互质。因为1没有质因子，1与任何正整数（包括1本身）都是互质。
+(8).只有一个质因子的正整数为质数。
+
+
+6.筛质数.
+6.1:朴素筛法.
+(1).做法:把2~(n-1)中的所有的数的倍数都标记上,最后没有被标记的数就是质数.
+(2).原理:假定有一个数p未被2~(p-1)中的数标记过,那么说明,不存在2~(p-1)中的任何一个数的倍数是p,
+也就是说p不是2~(p-1)中的任何数的倍数,也就是说2~(p-1)中不存在p的约数,因此,根据质数的定义可知:
+p是质数.
+(3).调和级数:当n趋近于正无穷的时候,1/2+1/3+1/4+1/5+…+1/n=lnn+c.(c是欧阳常数,约等于0.577左右.).
+(4).底数越大,log数越小
+(4).时间复杂度:约为O(nlogn);(注:此处的log数特指以2为底的log数).
+
+6.2:埃氏筛(稍加优化版的筛法).
+(1).质数定理:1~n中有n/lnn个质数.
+(2).原理:在朴素筛法的过程中只用质数项去筛.
+(3).时间复杂度:粗略估计:O(n).实际:O(nlog(logn)).
+(4).1~n中,只计算质数项的话,”1/2+1/3+1/4+1/5+…+1/n”的大小约为log(logn).
+
+6.3:线性筛
+(1).若n在10的6次方的话,线性筛和埃氏筛的时间效率差不多,若n在10的7次方的话,线性筛会比埃氏筛快了大概一倍.
+(2).思考:一:线性筛法为什么是线性的?
+二:线性筛法的原理是什么?
+(3).核心:1~n内的合数p只会被其最小质因子筛掉.
+(4).原理:1~n之内的任何一个合数一定会被筛掉,而且筛的时候只用最小质因子来筛,
+然后每一个数都只有一个最小质因子,因此每个数都只会被筛一次,因此线性筛法是线性的.
+(5).枚举到i的最小质因子的时候就会停下来,即”if(i%primes[j]==0) break;”.
+(6).因为从小到大枚举的所有质数,所以当”i%primes[j]!=0”时,primes[j]一定小于i的最小质因子,
+primes[j]一定是primes[j]i的最小质因子.
+(7).因为是从小到大枚举的所有质数,所以当”i % primes[j] == 0”时,primes[j]一定是i的最小质因子,
+而primes[j]又是primes[j]的最小质因子,因此primes[j]是i primes[j]的最小质因子.
+(8).关于for循环的解释:
+注:首先要把握住一个重点:我们枚举的时候是从小到大枚举的所有质数
+1.当i%primes[j]==0时,因为是从小到大枚举的所有质数,所以primes[j]就是i的最小质因子,而primes[j]又是其本身
+primes[j]的最小质因子,因此当i%primes[j]==0时,primes[j]是primes[j]i的最小质因子.
+2.当i%primes[j]!=0时,因为是从小到大枚举的所有质数,且此时并没有出现过有质数满足i%primes[j]==0,
+因此此时的primes[j]一定小于i的最小质因子,而primes[j]又是其本身primes[j]的最小质因子,
+所以当i%primes[j]!=0时,primes[j]也是primes[j]i的最小质因子.
+3.综合1,2得知,在内层for循环里面无论何时,primes[j]都是primes[j]i的最小质因子,因此”st[primes[j]i]=true”
+语句就是用primes[j]i这个数的最小质因子来筛掉这个数.
+</code></pre><h4 id="代码实现">代码实现</h4>
+<h6 id="试除法">试除法</h6>
+<ol>
+<li>试除法（定义） O( sqrt( n ) )</li>
+</ol>
+<pre tabindex="0"><code class="language-none" data-lang="none">#include &lt;iostream&gt;
+using namespace std;
+
+bool is_prime(int x)
+{
+    if( x &lt; 2) return false;
+    for(int i = 2 ; i &lt;= x / i ; i++) // 这种写法更推荐，不会爆 int ，效率也不低
+    {
+        if( x % i == 0) return false;
+    }
+    return true;
+}
+
+int main(){
+    
+    int n ;
+
+    cin&gt;&gt;n;
+    
+    while( n -- )
+    {
+        int a;
+        cin&gt;&gt;a;
+        
+        if( is_prime(a) ) cout&lt;&lt;&#34;Yes&#34;&lt;&lt;endl;
+        else cout&lt;&lt;&#34;No&#34;&lt;&lt;endl;
+    }
+    
+    return 0;
+}
+</code></pre><ol>
+<li>分解质因数 O( sqrt( n ) )
+这个 sqrt( n ) 的常数会更小， 时间复杂度是<code>log n --- sqrt(n)</code>
+思路：</li>
+</ol>
+<ul>
+<li></li>
+</ul>
+<p>从小到大尝试n 的所有约数</p>
+<pre tabindex="0"><code class="language-none" data-lang="none">#include &lt;iostream&gt;
+
+using namespace std;
+
+int divide( int n )
+{
+    for(int i = 2; i &lt;= n / i ; i++)
+    {
+        if( n % i == 0) // 这里是循环的，所以后面的质数不包含前面的质数，不会存在前面质数作为因子，也就是一定是一个质数
+        {
+            int s = 0;
+            while( n % i == 0)
+            {
+                n /= i;
+                s++;
+            }
+            printf(&#34;%d %d \n&#34;, i, s);
+        }
+    }
+    
+    if( n &gt; 1 ) printf(&#34;%d %d \n&#34;, n , 1);// 自己就是质因数
+    
+}
+
+int main()
+{
+    int n ;
+    cin&gt;&gt;n;
+    
+    while( n -- )
+    {
+        int x; 
+        cin&gt;&gt;x;
+        divide(x);
+        puts(&#34;&#34;);
+    }
+    
+    return 0;
+}
+</code></pre><h6 id="筛法">筛法</h6>
+<ol>
+<li>埃氏筛法
+时间复杂度接近于 O( n )</li>
+</ol>
+<pre tabindex="0"><code class="language-none" data-lang="none">#include &lt;iostream&gt;
+
+using namespace std;
+
+const int N = 1000010;
+
+int get_primes(int n)
+{
+    int primes[N];
+    bool st[N];
+    int cnt = 0;
+    for(int i = 2; i &lt;= n ;i++)
+    {
+        if( st[i] ) continue; // 筛过了
+        primes[cnt ++] = i; // 质数存起来
+        for(int j = i + i ; j &lt;= n ; j = j + i) // 把它的整数倍都筛掉 
+            st[j] = true;
+    }
+    
+    return cnt;
+}
+
+int main()
+{
+    int n ;
+    cin&gt;&gt;n;
+    
+    int res = get_primes(n);
+    
+    cout&lt;&lt;res&lt;&lt;endl;
+    
+    return 0;
+}
+</code></pre><ol>
+<li>线性筛</li>
+</ol>
+<p>核心在于保证了每一个合数一定是被自己的最小质因子筛掉的</p>
+<p>在实际的使用中，一般是使用线性筛，而埃氏筛更多的是用它的思路来解决其它问题</p>
+<pre tabindex="0"><code class="language-none" data-lang="none">#include &lt;iostream&gt;
+
+using namespace std;
+
+const int N = 1000010;
+
+int get_primes(int n)
+{
+    int primes[N];
+    bool st[N];
+    int cnt = 0;
+    
+    for(int i = 2;  i &lt;= n ;i++)
+    {
+        if( !st[i] ) primes[ cnt++ ] = i;
+        for(int j = 0 ; primes[j] &lt;= n / i ; j++) // 从当前已知的质因数里面选
+        {
+            st[ primes[j] * i ] = true; // 把所有质因数的  i  倍都筛掉
+            // 如果已经到了 i 的最小公因数，那么就完成对这个数的筛选
+            // 因为比 i 小的质因数都进行了筛选，所以完成之后 i 就是下一个最小质因数
+            if( i % primes[j] == 0 ) break;
+        }
+    }
+    
+    return cnt;
+}
+
+int main()
+{
+    int n ;
+    cin&gt;&gt;n;
+    
+    int res = get_primes(n);
+    
+    cout&lt;&lt;res&lt;&lt;endl;
+    
+    return 0;
+}
+</code></pre><h3 id="约数">约数</h3>
+<h4 id="试除法-1">试除法</h4>
+<ul>
+<li></li>
+</ul>
+<p>时间复杂度：O( sqrt(n) )</p>
+<ul>
+<li></li>
+</ul>
+<p>思路：</p>
+<ul>
+<li></li>
+</ul>
+<pre><code>从小到大枚举，因为 a | b , a / b | b ， 所以我们只需要枚举到 n / i ， 也就是开方的时间复杂度
+</code></pre>
+<ul>
+<li></li>
+</ul>
+<pre><code>约数有a, b两个，当我们找到 a | n 时， b = n / a， 但是这里需要考虑平方的情况，判断一下。
+</code></pre>
+<pre tabindex="0"><code class="language-none" data-lang="none">#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+#include &lt;vector&gt;
+
+using namespace std;
+
+vector&lt;int&gt; get_divitors(int n)
+{
+    vector&lt;int&gt; res;
+    for(int i = 1;  i &lt;= n / i ; i++)
+    {
+        if( n % i == 0) 
+        {
+            res.push_back(i); // 小的约数
+            if( i != n / i ) res.push_back( n / i );// 大的约数 
+        }
+    }
+    
+    sort(res.begin(), res.end());
+    
+    return res;
+}
+
+int main(){
+    
+    int n ;
+    cin&gt;&gt;n;
+
+    while( n -- )
+    {
+        int x ;
+        cin&gt;&gt;x;
+        
+        auto arr = get_divitors(x);   
+        
+        for(auto num : arr)
+        {
+            cout&lt;&lt;num&lt;&lt;&#34; &#34;;
+        }
+        
+        cout&lt;&lt;endl;
+    }
+    return 0;
+}
+</code></pre><h4 id="约数个数">约数个数</h4>
+<p>公式： <code>(a1 + 1 ) * (a2 + 1) *...* ( an + 1)</code> ， 这里的 a 是指约数的幂形式的<strong>指数</strong></p>
+<p>算法流程：</p>
+<ol>
+<li>先求约数</li>
+<li>使用公式计算约数的个数</li>
+</ol>
+<pre tabindex="0"><code class="language-none" data-lang="none">#include &lt;iostream&gt;
+#include &lt;unordered_map&gt;
+
+using namespace std;
+
+typedef long long LL;
+
+const int mod = 1e9 + 7;
+
+int main(){
+    
+    int n ;
+    cin&gt;&gt;n;
+    
+    unordered_map&lt;int , int&gt; primes;
+    
+    while( n -- )
+    {
+        int x;
+        cin&gt;&gt;x;
+        
+        for(int i = 2; i &lt;= x / i ; i ++)
+        {
+            while( x % i == 0 )
+            {
+                x /= i;
+                primes[i] ++; // 求出约数对应的次数
+            }
+        }
+        if( x &gt; 1) primes[x] ++; // 如果最后它没除完， 说明剩下的那个数也是约数
+    }
+    
+    LL res = 1;
+    for(auto p : primes ) res = res * ( p.second + 1) % mod; // 求约数的公式
+    
+    cout&lt;&lt;res&lt;&lt;endl;
+    
+    return 0;
+}
+</code></pre><h4 id="约数之和">约数之和</h4>
+<p>
+  <img src="app://local/C:/Users/kcp/OneDrive/Obisidian/%E5%A4%A7%E5%AD%A6-%E7%94%B5%E4%BF%A1&#43;&#43;/Pasted%20image%2020221204152937.png?1670138977000" alt="Pasted image 20221204152937.png">
+
+</p>
+<pre tabindex="0"><code class="language-none" data-lang="none">#include &lt;iostream&gt;
+#include &lt;unordered_map&gt;
+
+using namespace std;
+
+typedef long long LL;
+
+const int mod = 1e9 + 7;
+
+int main (){
+    
+    int x;
+    cin&gt;&gt;x;
+    
+    unordered_map&lt;int, int&gt; primes; 
+    
+    while( x -- ) // 将输入的数分解质因数
+    {
+        int n;
+        cin&gt;&gt;n;
+        
+        for(int i = 2; i &lt;= n / i ; i++)
+        {
+            int cnt = 0;
+            if( n % i == 0 )
+            {
+                while( n % i == 0 )
+                {
+                    n /= i;
+                    primes[i]++;
+                }
+            }
+        }
+        if( n &gt; 1 ) primes[n]++; 
+    }
+    
+    LL res = 1;
+    for( auto p : primes ) // 公式求解质因数的和
+    {
+        LL t = 1;
+        int a = p.first, b = p.second;
+        while( b -- ) t = ( t * a + 1 ) % mod;
+        res = res * t % mod;
+    }
+    
+    cout&lt;&lt;res&lt;&lt;endl;
+    
+    return 0;
+}
+</code></pre><h4 id="最大公约数">最大公约数</h4>
+<pre tabindex="0"><code>这里直接使用辗转相除法，这个算法的代码比较简单，倒是证明比较复杂
+#include &lt;iostream&gt;
+
+using namespace std;
+
+int gcd(int a, int b)
+{
+    return b ? gcd(b, a % b) : a;
+}
+
+int main ()
+{
+    int n ;
+    cin&gt;&gt;n;
+    
+    while( n -- )
+    {
+        int a, b;
+        cin&gt;&gt;a&gt;&gt;b;
+        
+        cout&lt;&lt;gcd(a, b)&lt;&lt;endl;
+        
+    }
+    
+    return 0;
+}
+</code></pre><h2 id="欧拉函数">欧拉函数</h2>
+<p>
+  <img src="app://local/C:/Users/kcp/OneDrive/Obisidian/%E5%A4%A7%E5%AD%A6-%E7%94%B5%E4%BF%A1&#43;&#43;/Pasted%20image%2020221125202428.png?1669379068000" alt="Pasted image 20221125202428.png">
+
+
+公式的原理是容斥原理
+
+  <img src="app://local/C:/Users/kcp/OneDrive/Obisidian/%E5%A4%A7%E5%AD%A6-%E7%94%B5%E4%BF%A1&#43;&#43;/Pasted%20image%2020221125222938.png?1669386578000" alt="Pasted image 20221125222938.png">
+
+</p>
+<h3 id="朴素实现">朴素实现</h3>
+<blockquote>
+<p>时间复杂度 O( sqrt( n ) ) ， 瓶颈在求质数</p>
+</blockquote>
+<pre tabindex="0"><code class="language-none" data-lang="none">#include &lt;iostream&gt;
+using namespace std;
+
+int euler (int n )
+{
+    int res = n; 
+    for(int i = 2 ; i &lt;= n / i ; i++)
+    {
+        if( n % i == 0 )
+        {
+            res = res / i * ( i - 1 );
+            while( n % i == 0 ) n /= i ;
+        }
+    }
+    if( n &gt; 1 ) res = res / n * (n - 1);
+    
+    return res;
+}
+
+int main()
+{
+    int n;
+    cin&gt;&gt;n;
+    
+    while(  n -- )
+    {
+        int x;
+        cin&gt;&gt;x;
+        cout&lt;&lt;euler(x)&lt;&lt;endl;
+    }
+    
+    return 0;
+    
+}
+</code></pre><h3 id="线性筛实现">线性筛实现</h3>
+<p>
+  <img src="app://local/C:/Users/kcp/OneDrive/Obisidian/%E5%A4%A7%E5%AD%A6-%E7%94%B5%E4%BF%A1&#43;&#43;/Pasted%20image%2020221126121729.png?1669436249000" alt="Pasted image 20221126121729.png">
+
+</p>
+<ul>
+<li></li>
+</ul>
+<p>重合的质因子</p>
+<p>只算一遍</p>
+<pre tabindex="0"><code class="language-none" data-lang="none">#include &lt;iostream&gt;
+
+using namespace std;
+
+typedef long long LL; // 因为累加可能会爆int
+
+const int N = 1000010;
+
+int primes[N];
+int phi[N];
+bool st[N];
+
+LL get_euler(int n ) // 在使用筛法的过程中进行求解
+{
+    int cnt = 0 ;
+    phi[1] = 1;// 根据定义得到
+    for(int i = 2 ; i &lt;= n; i++)
+    {
+        if( !st[i] ) // 是一个质数
+        {
+            phi[i] = i - 1; // 1 - i 的数都和它本身互质， 因为它就是一个质数
+            primes[ cnt++ ] = i;
+        }
+        for(int j = 0 ; primes[j] &lt;= n / i ; j ++)
+        {
+            st[primes[j] * i] = true;
+            if( i % primes[j] == 0 ) {
+                phi[primes[j] * i] = phi[i] * primes[j] ; //这里是因为 primes[j] 就是 i 的最小质因子
+                //欧拉函数的除了 N 的部分，表示出来和 phi[i] 是等价的，所以只需要再乘上一个 primes[j] 就好
+                break;
+            }
+            phi[ primes[j] * i ] = phi[i] * ( primes[j] - 1 );
+        }
+    }
+    
+    LL res = 0;
+    for(int i = 1 ; i &lt;= n ;i++) res+= phi[i];
+    
+    return res;
+}
+
+int main(){
+    
+    int n;
+    cin&gt;&gt;n;
+    
+    LL t = get_euler(n);
+    
+    cout&lt;&lt;t&lt;&lt;endl;
+    
+    return 0;
+}
+</code></pre><h2 id="快速幂">快速幂</h2>
+<p>
+  <img src="app://local/C:/Users/kcp/OneDrive/Obisidian/%E5%A4%A7%E5%AD%A6-%E7%94%B5%E4%BF%A1&#43;&#43;/Pasted%20image%2020221208220606.png?1670508366000" alt="Pasted image 20221208220606.png">
+
+
+总的来说就是通过将一个数的指数分解为2的幂的和， 因为积的模等于分别模之后再乘积，这样就可以通过分解计算、再求积的方式得到结果
+核心在于：分解指数为2的幂的和， 得到 O( log n ) 的时间复杂度</p>
+<pre tabindex="0"><code class="language-none" data-lang="none">#include &lt;iostream&gt;
+using namespace std;
+
+typedef long long LL ;
+
+int qmi(int a, int k, int m)
+{
+    int res = 1 % m;
+    
+    while( k )
+    {
+        if( k &amp; 1 )  res = res * a  %  m ; // 区分 k 是奇数还是偶数
+        
+        a = a * (LL)a % m ; // 相乘
+        
+        k &gt;&gt;= 1;
+    }
+    
+    return res;
+}
+
+int main (){
+    
+    int n ;
+    
+    scanf(&#34;%d&#34; , &amp;n);
+    
+    while( n --)
+    {
+        int a, k, m;
+    
+        scanf(&#34;%d%d%d&#34;, &amp;a, &amp;k, &amp;m);
+    
+        printf(&#34;%lld \n&#34;, qmi(a, k, m ));
+    
+    }
+    
+    return 0;
+}
+</code></pre><h3 id="快速幂求逆元">快速幂求逆元</h3>
+<p>
+  <img src="app://local/C:/Users/kcp/OneDrive/Obisidian/%E5%A4%A7%E5%AD%A6-%E7%94%B5%E4%BF%A1&#43;&#43;/Pasted%20image%2020221208225900.png?1670511540000" alt="Pasted image 20221208225900.png">
+
+
+理解的点：</p>
+<ol>
+<li>数 * 逆元 = 1</li>
+<li>费马小定理</li>
+</ol>
+<pre tabindex="0"><code class="language-none" data-lang="none">#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+
+using namespace std;
+
+typedef long long LL;
+
+
+LL qmi(int a, int b, int p)
+{
+    LL res = 1; // 结果可能爆int
+    while (b)
+    {
+        if (b &amp; 1) res = res * a % p;
+        a = a * (LL)a % p;
+        b &gt;&gt;= 1;
+    }
+    return res;
+}
+
+
+int main()
+{
+    int n;
+    scanf(&#34;%d&#34;, &amp;n);
+    while (n -- )
+    {
+        int a, p;
+        scanf(&#34;%d%d&#34;, &amp;a, &amp;p);
+        if (a % p == 0) puts(&#34;impossible&#34;);
+        else printf(&#34;%lld\n&#34;, qmi(a, p - 2, p));
+    }
+
+    return 0;
+}
+</code></pre><h2 id="拓展欧几里得算法">拓展欧几里得算法</h2>
+<h3 id="裴蜀定理">裴蜀定理</h3>
+<pre tabindex="0"><code>对于任意的正整数 a , b , 一定存在非零整数 x, y ，使得 ax + by = (a, b) ==&gt; a 和 b 的最大公约数
+</code></pre><p>使用拓展欧几里得算法来求解
+
+  <img src="app://local/C:/Users/kcp/OneDrive/Obisidian/%E5%A4%A7%E5%AD%A6-%E7%94%B5%E4%BF%A1&#43;&#43;/Pasted%20image%2020221209104109.png?1670553669931" alt="Pasted image 20221209104109.png">
+
+</p>
+<pre tabindex="0"><code class="language-none" data-lang="none">#include &lt;iostream&gt;
+using namespace std;
+
+int exgcd(int a, int b, int &amp;x, int &amp;y)
+{
+    if( !b )
+    {
+        x = 1, y = 0;
+        return a;
+    }
+    
+    int d = exgcd(b, a % b, y ,x );// 递归处理
+    y = y - a / b * x; // 这里的x y 在公式中的表示是替换过了的
+    
+    return d;
+}
+
+int main(){
+    
+    int n;
+    scanf(&#34;%d&#34;, &amp;n);
+    
+    while(n -- )
+    {
+        int a, b, x, y;
+        scanf(&#34;%d%d&#34;, &amp;a, &amp;b);
+        
+        exgcd(a, b, x, y);  
+        
+        printf(&#34;%d %d \n&#34;, x, y);
+    }
+    
+    return 0;
+}
+</code></pre><ul>
+<li></li>
+</ul>
+<p>推导不难，代码的理解有难度</p>
+<h3 id="求解线性同余方程">求解线性同余方程</h3>
+<p>
+  <img src="app://local/C:/Users/kcp/OneDrive/Obisidian/%E5%A4%A7%E5%AD%A6-%E7%94%B5%E4%BF%A1&#43;&#43;/Pasted%20image%2020221209112733.png?1670556453141" alt="Pasted image 20221209112733.png">
+
+</p>
+<ul>
+<li></li>
+</ul>
+<p>使用拓展欧几里得求得的是 gcd(a, m) ， 而 b 是它的倍数， 所以最后需要用</p>
+<pre tabindex="0"><code>b / d * x % m
+</code></pre><p>来确定</p>
+<pre tabindex="0"><code class="language-none" data-lang="none">#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+
+using namespace std;
+
+typedef long long LL;
+
+
+int exgcd(int a, int b, int &amp;x, int &amp;y)
+{
+    if (!b)
+    {
+        x = 1, y = 0;
+        return a;
+    }
+    int d = exgcd(b, a % b, y, x);
+    y -= a / b * x;
+    return d;
+}
+
+
+int main()
+{
+    int n;
+    scanf(&#34;%d&#34;, &amp;n);
+    while (n -- )
+    {
+        int a, b, m;
+        scanf(&#34;%d%d%d&#34;, &amp;a, &amp;b, &amp;m);
+
+        int x, y;
+        int d = exgcd(a, m, x, y);
+        if (b % d) puts(&#34;impossible&#34;);
+        else printf(&#34;%d\n&#34;, (LL)b / d * x % m);
+    }
+
+    return 0;
+}
+</code></pre><h2 id="中国剩余定理">中国剩余定理</h2>
+<h1 id="动态规划">动态规划</h1>
+<h2 id="常见模型">常见模型</h2>
+<h3 id="背包">背包</h3>
+<h4 id="01背包">01背包</h4>
+<p>每个物品只有一个</p>
+<blockquote>
+<p>题例：有 N件物品和一个容量是 V 的背包。每件物品只能使用一次。第 i 件物品的体积是 vi，价值是 wi。求解将哪些物品装入背包，可使这些物品的总体积不超过背包容量，且总价值最大。</p>
+</blockquote>
+<h5 id="分析">分析</h5>
+<ul>
+<li></li>
+</ul>
+<p>状态<strong>表示</strong></p>
+<ul>
+<li></li>
+</ul>
+<pre><code>集合
+
+- 
+
+  所有选择
+
+- 
+
+  
+
+  条件
+
+  - 
+
+    只从前 i 个物品中选
+
+  - 
+
+    总体积 &lt;= j
+</code></pre>
+<ul>
+<li></li>
+</ul>
+<pre><code>属性 -- min |
+
+ 
+
+max
+
+ 
+
+| 数量
+</code></pre>
+<ul>
+<li></li>
+</ul>
+<p>状态<strong>计算</strong>
+一般对应集合的划分 &mdash; <strong>不重 &amp; 不漏</strong>
+这里划分 f ( i , j )</p>
+<ul>
+<li></li>
+</ul>
+<pre><code>不包含 i ( 第 i 个物品) ， 从 i - 1中选 ， 体积小于 j ， 且不包含 i --- 最大值就是
+
+ 
+
+```
+f ( i - 1 , j)
+```
+</code></pre>
+<ul>
+<li></li>
+</ul>
+<pre><code>包含 i ， 从 i - 1 中选 ， 体积小于 j ， 且包含 i --- 最大值就是
+
+ 
+
+```
+f(i , j)
+```
+
+因为不论第
+
+```
+i 
+```
+
+个物品是否加入，都不影响
+
+ 
+
+```
+i - 1
+```
+
+ 
+
+个物品的最大值， 以此类推， 第
+
+ 
+
+```
+i - n 
+```
+
+和第
+
+ 
+
+```
+i - n - 1 
+```
+
+同样成立
+
+第
+
+ 
+
+```
+i
+```
+
+ 
+
+个物品在v下的最大值也就可以表示为
+
+ 
+
+```
+f(i - 1, v ) + w[i]
+```
+
+ 
+
+了
+</code></pre>
+<p>最后， 因为我们取的是二者的最大值，也就得到<code>f(i, j) = max( f(i, j ) , f(i - 1, v - w[i]) + v[i]</code> ，作为我们的结果</p>
+<pre tabindex="0"><code class="language-none" data-lang="none">#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+
+using namespace std;
+
+const int N = 1010;
+
+int n, m ;
+int v[N], w[N]; // 表示价值和重量
+int f[N][N]; // f[i][j] 表示在容量为 v 的条件下，1 ~ i - 1 件物品的最大价值
+
+int main(){
+    
+    cin&gt;&gt;n&gt;&gt;m;
+    
+    for(int i = 1; i &lt;= n ; i++ ) cin&gt;&gt; w[i] &gt;&gt; v[i];
+    
+    for(int i = 1 ;i &lt;= n ; i++ )
+        for(int j = 0; j &lt;= m ; j++)
+        {
+            // 不包含 i 的
+            f[i][j] = f[i - 1][j];
+            if( j &gt;= w[i] ) // 装得下的情况下
+            {
+                // 包含 i 的
+                f[i][j] = max( f[i][j] , f[i - 1][j - w[i] ] + v[i] );
+            }
+        }
+    
+    cout&lt;&lt; f[n][m] &lt;&lt;endl;
+    
+    return 0;
+}
+</code></pre><p>将状态<code>f[i][j]</code>优化到一维<code>f[j]</code>，实际上只需要做一个等价变形。</p>
+<p>为什么可以这样变形呢？我们定义的状态<code>f[i][j]</code>可以求得<strong>任意合法的<code>i</code>与<code>j</code>最优解</strong>，但题目只需要求得<strong>最终状态</strong><code>f[n][m]</code>，因此我们只需要一维的空间来更新状态。</p>
+<p>（1）状态<code>f[j]</code>定义：N件物品，背包容量<code>j</code>下的最优解。</p>
+<p>（2）注意枚举背包容量<code>j</code>必须从<code>m</code>开始。 &ndash; 背包变量的污染</p>
+<p>（3）为什么一维情况下枚举背包容量需要逆序？在二维情况下，状态<code>f[i][j]</code>是由上一轮<code>i - 1</code>的状态得来的，<code>f[i][j]</code>与<code>f[i - 1][j]</code>是独立的。而优化到一维后，如果我们还是正序，则有<code>f[较小体积]</code>更新到<code>f[较大体积]</code>，则有可能本应该用第<code>i-1</code>轮的状态却用的是第<code>i</code>轮的状态。</p>
+<p>（4）例如，一维状态第i轮对体积为3的物品进行决策，则<code>f[7]</code>由<code>f[4]</code>更新而来，这里的<code>f[4]</code>正确应该是<code>f[i - 1][4]</code>，但从小到大枚举j这里的<code>f[4]</code>在第<code>i</code>轮计算却变成了<code>f[i][4]</code>。当逆序枚举背包容量j时，我们求<code>f[7]</code>同样由<code>f[4]</code>更新，但由于是逆序，这里的<code>f[4]</code>还没有在第i轮计算，所以此时实际计算的<code>f[4]</code>仍然是<code>f[i - 1][4]</code>。</p>
+<p>（5）简单来说，一维情况正序更新状态<code>f[j]</code>需要用到前面计算的状态已经被「<strong>污染</strong>」，逆序则不会有这样的问题。</p>
+<p>状态转移方程为：<code>f[j] = max(f[j], f[j - v[i]] + w[i]</code> 。</p>
+<pre tabindex="0"><code class="language-none" data-lang="none">#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+
+const int N = 1010;
+
+int n, m ;
+int v[N], w[N]; // 表示价值和重量
+int f[N]; // f[j] ，表示在 j 的的容量下的最大价值
+
+int main(){
+    
+    cin&gt;&gt;n&gt;&gt;m;
+    
+    for(int i = 1; i &lt;= n ; i++ ) cin&gt;&gt; w[i] &gt;&gt; v[i];
+    
+    for(int i = 1 ;i &lt;= n ; i++ )
+        for(int j = m; j &gt;= w[i] ; j--) //  j &lt; w[i] 的情况会直接略过 ， 倒序是避免污染源数据。
+        {
+            // if( j &gt;= w[i] ) 
+            // {
+                // f[i][j] = max( f[i][j] , f[i - 1][j - w[i] ] + v[i] );
+                f[j] = max( f[j] , f[j - w[i]] + v[i] );
+            // }
+        }
+    
+    cout&lt;&lt; f[m] &lt;&lt;endl;
+    
+    return 0;
+}
+</code></pre><h4 id="完全背包">完全背包</h4>
+<p>每个物品有无限个</p>
+<h4 id="多重背包">多重背包</h4>
+<h4 id="分组背包">分组背包</h4>
+<h3 id="线性dp">线性DP</h3>
+<h3 id="区间-dp">区间 DP</h3>
+<h3 id="计数类-dp">计数类 DP</h3>
+<h3 id="数位统计dp">数位统计DP</h3>
+<h3 id="状态压缩-dp">状态压缩 DP</h3>
+<h3 id="树形-dp">树形 DP</h3>
+<h3 id="记忆化搜索">记忆化搜索</h3>
+
+
+                
+                
+<div class="entry-shang text-center">
+    
+	    <p>「真诚赞赏，手留余香」</p>
+	
+	<button class="zs show-zs btn btn-bred">赞赏支持</button>
+</div>
+<div class="zs-modal-bg"></div>
+<div class="zs-modal-box">
+	<div class="zs-modal-head">
+		<button type="button" class="close">×</button>
+		<span class="author"><a href="https://kcfuler.github.io"><img src="/img/favicon.png" />Kcfuler Blog</a></span>
+        
+	        <p class="tip"><i></i><span>真诚赞赏，手留余香</span></p>
+		
+ 
+	</div>
+	<div class="zs-modal-body">
+		<div class="zs-modal-btns">
+			<button class="btn btn-blink" data-num="2">2元</button>
+			<button class="btn btn-blink" data-num="5">5元</button>
+			<button class="btn btn-blink" data-num="10">10元</button>
+			<button class="btn btn-blink" data-num="50">50元</button>
+			<button class="btn btn-blink" data-num="100">100元</button>
+			<button class="btn btn-blink" data-num="1">任意金额</button>
+		</div>
+		<div class="zs-modal-pay">
+			<button class="btn btn-bred" id="pay-text">2元</button>
+			<p>使用<span id="pay-type">微信</span>扫描二维码完成支付</p>
+			<img src="/img/reward/wechat-2.png"  id="pay-image"/>
+		</div>
+	</div>
+	<div class="zs-modal-footer">
+		<label><input type="radio" name="zs-type" value="wechat" class="zs-type" checked="checked"><span ><span class="zs-wechat"><img src="/img/reward/wechat-btn.png"/></span></label>
+		<label><input type="radio" name="zs-type" value="alipay" class="zs-type" class="zs-alipay"><img src="/img/reward/alipay-btn.png"/></span></label>
+	</div>
+</div>
+<script type="text/javascript" src="/js/reward.js"></script>
+
+                
+
+                
+                <hr>
+                <ul class="pager">
+                    
+                    
+                    <li class="next">
+                        <a href="/2023/02/01/hello-world/" data-toggle="tooltip" data-placement="top" title="Welcome to kcfuler Blog">Next
+                            Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+                
+
+                
+
+
+
+            </div>
+
+            
+            
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
+            
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                </section>
+                
+
+                
+                
+                <section>
+                    <hr>
+                    <h5>FRIENDS</h5>
+                    <ul class="list-inline">
+                        
+                        <li><a target="_blank" href="https://cloudmoonocus.github.io">cloudmoon</a></li>
+                        
+                        <li><a target="_blank" href="https://github.com/shinyina">shinyina</a></li>
+                        
+                        <li><a target="_blank" href="https://github.com/L-H-X">Juns</a></li>
+                        
+                    </ul>
+                </section>
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">                  
+                    
+                    <li>
+                        <a href="mailto:2842961263@qq.com">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		           
+                    
+                    
+                    
+                    
+
+		            
+                    
+                    <li>
+                        <a target="_blank" href="/img/wechat_qrcode.png">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-weixin fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		            
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/kcfuler">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		            
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+            
+            
+            
+           
+                   <li>
+                       <a href='' rel="alternate" type="application/rss+xml" title="Kcfuler Blog" >
+                           <span class="fa-stack fa-lg">
+                               <i class="fas fa-circle fa-stack-2x"></i>
+                               <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+                           </span>
+                       </a>
+                   </li>
+            
+             </ul>
+		<p class="copyright text-muted">
+                    Copyright &copy; Kcfuler Blog 2023
+                    <br>
+                    <a href="https://themes.gohugo.io/hugo-theme-cleanwhite">CleanWhite Hugo Theme</a> by <a href="https://zhaohuabing.com">Huabing</a> |
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="100px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=zhaohuabing&repo=hugo-theme-cleanwhite&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function loadAsync(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        loadAsync("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    loadAsync("https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+
+<script type="text/javascript">
+    function generateCatalog(selector) {
+
+        
+        
+        
+        
+            _containerSelector = 'div.post-container'
+        
+
+        
+        var P = $(_containerSelector), a, n, t, l, i, c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+
+        
+        $(selector).html('')
+
+        
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#" + $(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="' + i + '" rel="nofollow">' + t + '</a>');
+            l = $('<li class="' + n + '_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;
+    }
+
+    generateCatalog(".catalog-body");
+
+    
+    $(".catalog-toggle").click((function (e) {
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    
+
+
+    loadAsync("\/js\/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+
+
+
+
+</body>
+</html>
