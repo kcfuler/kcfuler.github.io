@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>vue on Kcfuler Blog</title>
+    <link>https://kcfuler.github.io/tags/vue/</link>
+    <description>Recent content in vue on Kcfuler Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 23 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://kcfuler.github.io/tags/vue/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Vue中的响应式系统</title>
+      <link>https://kcfuler.github.io/2023/02/23/vuejs-reactivity/</link>
+      <pubDate>Thu, 23 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://kcfuler.github.io/2023/02/23/vuejs-reactivity/</guid>
+      <description>响应式系统 分支切换 问题： 在副作用函数中执行三元表达式时，会访问到表达式中的两个数据，但是最后访问到的数据只是表达式的结果， 这样就造成了不必要</description>
+    </item>
+    
+  </channel>
+</rss>
