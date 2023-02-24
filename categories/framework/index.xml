@@ -6,7 +6,16 @@
     <description>Recent content in framework on Kcfuler Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 23 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://kcfuler.github.io/categories/framework/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 24 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://kcfuler.github.io/categories/framework/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Vue的渲染器</title>
+      <link>https://kcfuler.github.io/2023/02/23/vuejs-renderer/</link>
+      <pubDate>Fri, 24 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://kcfuler.github.io/2023/02/23/vuejs-renderer/</guid>
+      <description>渲染器设计 渲染器与响应式系统 响应式系统为渲染器提供数据， 也就是当数据发生变化时，为渲染器提供新的数据供其渲染。 渲染器将响应式系统的数据渲染到</description>
+    </item>
+    
     <item>
       <title>Vue中的响应式系统</title>
       <link>https://kcfuler.github.io/2023/02/23/vuejs-reactivity/</link>
