@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Kcfuler Blog</title>
-    <link>https://kcfuler.github.io/</link>
-    <description>Recent content on Kcfuler Blog</description>
+    <title>tech on Kcfuler Blog</title>
+    <link>https://kcfuler.github.io/categories/tech/</link>
+    <description>Recent content in tech on Kcfuler Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 24 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://kcfuler.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 24 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://kcfuler.github.io/categories/tech/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Vue的渲染器</title>
       <link>https://kcfuler.github.io/2023/02/23/vuejs-renderer/</link>
@@ -35,49 +35,12 @@
     </item>
     
     <item>
-      <title>Welcome to kcfuler Blog</title>
-      <link>https://kcfuler.github.io/2023/02/01/hello-world/</link>
-      <pubDate>Wed, 01 Feb 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://kcfuler.github.io/2023/02/01/hello-world/</guid>
-      <description>hellow world 欢迎来到我的博客! content aosdhgvoadnoa;dfbhnvao;ergnowE;JWOEJFOAEFVNHO;ASDFBNVAEO SADNVOK;ADNVAWDFJ ADVBNAO;DFBVNAOEDSVJ APDVBN AOFBADO&amp;rsquo;VNASODFJV ADFBNVA&amp;rsquo; ODVNOD&amp;rsquo;FNVAO&amp;rsquo;DFVN</description>
-    </item>
-    
-    <item>
       <title>基础算法模板</title>
       <link>https://kcfuler.github.io/2023/02/01/basic-algorithm/</link>
       <pubDate>Wed, 01 Feb 2023 00:00:00 +0000</pubDate>
       
       <guid>https://kcfuler.github.io/2023/02/01/basic-algorithm/</guid>
       <description>基础算法 排序 快排 #include &amp;lt;iostream&amp;gt; using namespace std; const int N = 1e6 + 10; int a[N]; void quick_sort(int a[] , int l , int r){ if( l &amp;gt;= r) return ; int x = a[(r+l)/2] , i = l - 1 , j = r + 1; while( i &amp;lt; j ){ do i ++ ; while( x &amp;gt; a[i]); do j -- ;</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://kcfuler.github.io/about/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://kcfuler.github.io/about/</guid>
-      <description>About Me kcfuler is a passionate frontend developer .
-stack common data structure and algorithm vue react node </description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://kcfuler.github.io/search/placeholder/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://kcfuler.github.io/search/placeholder/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Posts Archive</title>
-      <link>https://kcfuler.github.io/archive/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://kcfuler.github.io/archive/</guid>
-      <description></description>
     </item>
     
   </channel>

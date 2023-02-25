@@ -17,6 +17,15 @@
     </item>
     
     <item>
+      <title>Vue的组件化</title>
+      <link>https://kcfuler.github.io/2023/02/23/vuejs-component/</link>
+      <pubDate>Fri, 24 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://kcfuler.github.io/2023/02/23/vuejs-component/</guid>
+      <description>组件的实现原理 组件渲染 定义组件 01 // MyComponent 是一个组件，它的值是一个选项对象 02 const MyComponent = { 03 name: &amp;#39;MyComponent&amp;#39;, 04 data() { 05 return { foo: 1 } 06 } 07 } 渲染组件 01 function patch(n1, n2, container, anchor) { 02 if (n1 &amp;amp;&amp;amp;</description>
+    </item>
+    
+    <item>
       <title>Vue中的响应式系统</title>
       <link>https://kcfuler.github.io/2023/02/23/vuejs-reactivity/</link>
       <pubDate>Thu, 23 Feb 2023 00:00:00 +0000</pubDate>
