@@ -7,17 +7,16 @@ export default {
   "title": "My Site",
   "tagline": "Dinosaurs are cool",
   "favicon": "img/favicon.ico",
-  "url": "https://kcfuler.github.io",
+  "url": "https://your-docusaurus-test-site.com",
   "baseUrl": "/",
-  "deploymentBranch": "main",
   "organizationName": "kcfuler",
-  "projectName": "kcfuler.github.io",
+  "projectName": "blog",
   "onBrokenLinks": "throw",
   "onBrokenMarkdownLinks": "warn",
   "i18n": {
-    "defaultLocale": "zh-Hans",
+    "defaultLocale": "en",
     "locales": [
-      "zh-Hans"
+      "en"
     ],
     "path": "i18n",
     "localeConfigs": {}
@@ -27,7 +26,7 @@ export default {
       "classic",
       {
         "docs": {
-          "sidebarPath": "E:\\repository\\learn\\kcfuler.github.io\\sidebars.js",
+          "sidebarPath": "E:\\repository\\learn\\my-website\\sidebars.js",
           "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/"
         },
         "blog": {
@@ -35,7 +34,7 @@ export default {
           "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/"
         },
         "theme": {
-          "customCss": "E:\\repository\\learn\\kcfuler.github.io\\src\\css\\custom.css"
+          "customCss": "E:\\repository\\learn\\my-website\\src\\css\\custom.css"
         }
       }
     ]
