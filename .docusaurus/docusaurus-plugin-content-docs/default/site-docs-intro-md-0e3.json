@@ -2,7 +2,7 @@
   "unversionedId": "intro",
   "id": "intro",
   "title": "intro",
-  "description": "",
+  "description": "这里是我的学习记录。把一些学习的知识记录下来，希望能够记录下自己理解了的知识。",
   "source": "@site/docs/intro.md",
   "sourceDirName": ".",
   "slug": "/intro",
@@ -17,7 +17,7 @@
   },
   "sidebar": "Records",
   "next": {
-    "title": "算法学习",
-    "permalink": "/docs/category/算法学习"
+    "title": "web前端",
+    "permalink": "/docs/category/web前端"
   }
 }

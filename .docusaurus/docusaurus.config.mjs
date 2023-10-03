@@ -40,6 +40,7 @@ export default {
       }
     ]
   ],
+  "trailingSlash": false,
   "themeConfig": {
     "image": "img/docusaurus-social-card.jpg",
     "navbar": {
