@@ -1,3 +1,9 @@
+---
+sidebar_position: 3
+---
+
+
+
 > [掘金小册](https://juejin.cn/book/7086408430491172901/section)
 
 # 基础部分
@@ -1397,5 +1403,4 @@ function logMiddleware() {
 这一部分是比较重要，因为类型检查全开和全关的TypeScript区别很大
 ### 工程相关
 。。。
-
 

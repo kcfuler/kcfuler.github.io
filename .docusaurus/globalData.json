@@ -26,8 +26,23 @@
               "sidebar": "Records"
             },
             {
+              "id": "web前端/JavaScript/JS内置数据结构",
+              "path": "/docs/web前端/JavaScript/JS内置数据结构",
+              "sidebar": "Records"
+            },
+            {
+              "id": "web前端/JavaScript/垃圾回收机制",
+              "path": "/docs/web前端/JavaScript/垃圾回收机制",
+              "sidebar": "Records"
+            },
+            {
               "id": "web前端/ts学习",
               "path": "/docs/web前端/ts学习",
+              "sidebar": "Records"
+            },
+            {
+              "id": "web前端/UI框架/React与Vue的响应式原理",
+              "path": "/docs/web前端/UI框架/React与Vue的响应式原理",
               "sidebar": "Records"
             },
             {

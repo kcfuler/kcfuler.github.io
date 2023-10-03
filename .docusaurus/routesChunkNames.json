@@ -149,7 +149,7 @@
     },
     "content": "content---markdown-page-393-028"
   },
-  "/docs-800": {
+  "/docs-bc8": {
     "__comp": "__comp---theme-doc-page-1-be-9be",
     "__context": {
       "plugin": "plugin---docs-875-8dc"
@@ -180,9 +180,21 @@
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-dev-ops-概览eaa-0e9"
   },
+  "/docs/web前端/JavaScript/JS内置数据结构-982": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-web前端-java-script-j-s内置数据结构-385-acc"
+  },
+  "/docs/web前端/JavaScript/垃圾回收机制-abf": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-web前端-java-script-垃圾回收机制-79-c-e6e"
+  },
   "/docs/web前端/ts学习-2c7": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-web前端-ts学习b-32-5d9"
+  },
+  "/docs/web前端/UI框架/React与Vue的响应式原理-813": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-web前端-ui框架-react与-vue的响应式原理-596-377"
   },
   "/docs/web前端/概览-d6b": {
     "__comp": "__comp---theme-doc-item-178-a40",

@@ -32,6 +32,40 @@
             "label": "ts学习",
             "href": "/docs/web前端/ts学习",
             "docId": "web前端/ts学习"
+          },
+          {
+            "type": "category",
+            "label": "JavaScript",
+            "collapsible": true,
+            "collapsed": true,
+            "items": [
+              {
+                "type": "link",
+                "label": "JS内置数据结构",
+                "href": "/docs/web前端/JavaScript/JS内置数据结构",
+                "docId": "web前端/JavaScript/JS内置数据结构"
+              },
+              {
+                "type": "link",
+                "label": "概览",
+                "href": "/docs/web前端/JavaScript/垃圾回收机制",
+                "docId": "web前端/JavaScript/垃圾回收机制"
+              }
+            ]
+          },
+          {
+            "type": "category",
+            "label": "UI框架",
+            "collapsible": true,
+            "collapsed": true,
+            "items": [
+              {
+                "type": "link",
+                "label": "React与Vue的响应式原理",
+                "href": "/docs/web前端/UI框架/React与Vue的响应式原理",
+                "docId": "web前端/UI框架/React与Vue的响应式原理"
+              }
+            ]
           }
         ],
         "href": "/docs/category/web前端"
@@ -105,10 +139,28 @@
       "description": "目前还没有很深入的学习，目前了解到的主要包括以下几个部分:",
       "sidebar": "Records"
     },
+    "web前端/JavaScript/JS内置数据结构": {
+      "id": "web前端/JavaScript/JS内置数据结构",
+      "title": "JS内置数据结构",
+      "description": "总结JS中内置的数据结构，作为阶段性复习吧",
+      "sidebar": "Records"
+    },
+    "web前端/JavaScript/垃圾回收机制": {
+      "id": "web前端/JavaScript/垃圾回收机制",
+      "title": "概览",
+      "description": "image-20231003234855890",
+      "sidebar": "Records"
+    },
     "web前端/ts学习": {
       "id": "web前端/ts学习",
       "title": "ts学习",
       "description": "掘金小册",
+      "sidebar": "Records"
+    },
+    "web前端/UI框架/React与Vue的响应式原理": {
+      "id": "web前端/UI框架/React与Vue的响应式原理",
+      "title": "React与Vue的响应式原理",
+      "description": "",
       "sidebar": "Records"
     },
     "web前端/概览": {

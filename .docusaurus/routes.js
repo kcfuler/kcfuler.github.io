@@ -89,7 +89,7 @@ export default [
   },
   {
     path: '/docs',
-    component: ComponentCreator('/docs', '800'),
+    component: ComponentCreator('/docs', 'bc8'),
     routes: [
       {
         path: '/docs/category/sre学习',
@@ -128,8 +128,26 @@ export default [
         sidebar: "Records"
       },
       {
+        path: '/docs/web前端/JavaScript/JS内置数据结构',
+        component: ComponentCreator('/docs/web前端/JavaScript/JS内置数据结构', '982'),
+        exact: true,
+        sidebar: "Records"
+      },
+      {
+        path: '/docs/web前端/JavaScript/垃圾回收机制',
+        component: ComponentCreator('/docs/web前端/JavaScript/垃圾回收机制', 'abf'),
+        exact: true,
+        sidebar: "Records"
+      },
+      {
         path: '/docs/web前端/ts学习',
         component: ComponentCreator('/docs/web前端/ts学习', '2c7'),
+        exact: true,
+        sidebar: "Records"
+      },
+      {
+        path: '/docs/web前端/UI框架/React与Vue的响应式原理',
+        component: ComponentCreator('/docs/web前端/UI框架/React与Vue的响应式原理', '813'),
         exact: true,
         sidebar: "Records"
       },
