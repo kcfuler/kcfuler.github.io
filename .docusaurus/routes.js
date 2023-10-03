@@ -39,7 +39,7 @@ export default [
   },
   {
     path: '/blog',
-    component: ComponentCreator('/blog', 'da2'),
+    component: ComponentCreator('/blog', '47a'),
     exact: true
   },
   {
@@ -48,8 +48,13 @@ export default [
     exact: true
   },
   {
+    path: '/blog/blog再构建',
+    component: ComponentCreator('/blog/blog再构建', 'aa7'),
+    exact: true
+  },
+  {
     path: '/blog/react18如何提高应用性能',
-    component: ComponentCreator('/blog/react18如何提高应用性能', '1e8'),
+    component: ComponentCreator('/blog/react18如何提高应用性能', '99e'),
     exact: true
   },
   {
@@ -59,7 +64,22 @@ export default [
   },
   {
     path: '/blog/tags/react',
-    component: ComponentCreator('/blog/tags/react', 'f79'),
+    component: ComponentCreator('/blog/tags/react', '273'),
+    exact: true
+  },
+  {
+    path: '/blog/tags/travel',
+    component: ComponentCreator('/blog/tags/travel', '5dd'),
+    exact: true
+  },
+  {
+    path: '/blog/tags/trifling',
+    component: ComponentCreator('/blog/tags/trifling', '703'),
+    exact: true
+  },
+  {
+    path: '/blog/国庆游',
+    component: ComponentCreator('/blog/国庆游', 'dd3'),
     exact: true
   },
   {

@@ -1,7 +1,17 @@
 [
   {
+    "label": "trifling",
+    "permalink": "/blog/tags/trifling",
+    "count": 1
+  },
+  {
     "label": "react",
     "permalink": "/blog/tags/react",
+    "count": 1
+  },
+  {
+    "label": "travel",
+    "permalink": "/blog/tags/travel",
     "count": 1
   }
 ]

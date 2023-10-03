@@ -2,8 +2,16 @@
   "title": "Recent posts",
   "items": [
     {
+      "title": "blog再构建",
+      "permalink": "/blog/blog再构建"
+    },
+    {
       "title": "react18如何提高应用性能",
       "permalink": "/blog/react18如何提高应用性能"
+    },
+    {
+      "title": "国庆游",
+      "permalink": "/blog/国庆游"
     }
   ]
 }
