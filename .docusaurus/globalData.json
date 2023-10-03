@@ -46,6 +46,11 @@
               "sidebar": "Records"
             },
             {
+              "id": "算法/面试经典150题",
+              "path": "/docs/算法/面试经典150题",
+              "sidebar": "Records"
+            },
+            {
               "id": "/category/web前端",
               "path": "/docs/category/web前端",
               "sidebar": "Records"

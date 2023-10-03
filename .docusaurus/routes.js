@@ -89,7 +89,7 @@ export default [
   },
   {
     path: '/docs',
-    component: ComponentCreator('/docs', '1ce'),
+    component: ComponentCreator('/docs', '800'),
     routes: [
       {
         path: '/docs/category/sre学习',
@@ -148,6 +148,12 @@ export default [
       {
         path: '/docs/算法/算法基础模板',
         component: ComponentCreator('/docs/算法/算法基础模板', '365'),
+        exact: true,
+        sidebar: "Records"
+      },
+      {
+        path: '/docs/算法/面试经典150题',
+        component: ComponentCreator('/docs/算法/面试经典150题', 'd2e'),
         exact: true,
         sidebar: "Records"
       }

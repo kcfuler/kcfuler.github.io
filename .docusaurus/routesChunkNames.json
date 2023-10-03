@@ -149,7 +149,7 @@
     },
     "content": "content---markdown-page-393-028"
   },
-  "/docs-1ce": {
+  "/docs-800": {
     "__comp": "__comp---theme-doc-page-1-be-9be",
     "__context": {
       "plugin": "plugin---docs-875-8dc"
@@ -195,6 +195,10 @@
   "/docs/算法/算法基础模板-365": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-算法-算法基础模板-097-1fd"
+  },
+  "/docs/算法/面试经典150题-d2e": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-算法-面试经典-150-题f-0-f-775"
   },
   "/-a40": {
     "__comp": "__comp---site-src-pages-index-tsx-1-df-d3e",

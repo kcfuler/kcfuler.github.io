@@ -74,6 +74,12 @@
             "label": "算法基础模板",
             "href": "/docs/算法/算法基础模板",
             "docId": "算法/算法基础模板"
+          },
+          {
+            "type": "link",
+            "label": "面试经典150题",
+            "href": "/docs/算法/面试经典150题",
+            "docId": "算法/面试经典150题"
           }
         ],
         "href": "/docs/category/算法学习"
@@ -121,6 +127,12 @@
       "id": "算法/算法基础模板",
       "title": "算法基础模板",
       "description": "理论参考：OI Wiki - OI Wiki",
+      "sidebar": "Records"
+    },
+    "算法/面试经典150题": {
+      "id": "算法/面试经典150题",
+      "title": "面试经典150题",
+      "description": "数组 & 字符串",
       "sidebar": "Records"
     }
   }
