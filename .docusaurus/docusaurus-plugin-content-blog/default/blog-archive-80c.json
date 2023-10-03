@@ -1,30 +1,22 @@
 {
   "blogPosts": [
     {
-      "id": "welcome",
+      "id": "react18如何提高应用性能",
       "metadata": {
-        "permalink": "/blog/welcome",
-        "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/blog/2021-08-26-welcome/index.md",
-        "source": "@site/blog/2021-08-26-welcome/index.md",
-        "title": "Welcome",
-        "description": "Docusaurus blogging features are powered by the blog plugin.",
-        "date": "2021-08-26T00:00:00.000Z",
-        "formattedDate": "2021年8月26日",
+        "permalink": "/blog/react18如何提高应用性能",
+        "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/blog/2023-10-3-React 18 如何提高应用性能.md",
+        "source": "@site/blog/2023-10-3-React 18 如何提高应用性能.md",
+        "title": "react18如何提高应用性能",
+        "description": "How React 18 Improves Application Performance – Vercel",
+        "date": "2023-10-03T00:00:00.000Z",
+        "formattedDate": "2023年10月3日",
         "tags": [
           {
-            "label": "facebook",
-            "permalink": "/blog/tags/facebook"
-          },
-          {
-            "label": "hello",
-            "permalink": "/blog/tags/hello"
-          },
-          {
-            "label": "docusaurus",
-            "permalink": "/blog/tags/docusaurus"
+            "label": "react",
+            "permalink": "/blog/tags/react"
           }
         ],
-        "readingTime": 0.405,
+        "readingTime": 5.84,
         "hasTruncateMarker": false,
         "authors": [
           {
@@ -36,167 +28,15 @@
           }
         ],
         "frontMatter": {
-          "slug": "welcome",
-          "title": "Welcome",
+          "slug": "react18如何提高应用性能",
+          "title": "react18如何提高应用性能",
           "authors": "kcfuler",
           "tags": [
-            "facebook",
-            "hello",
-            "docusaurus"
+            "react"
           ]
-        },
-        "nextItem": {
-          "title": "my MDX Blog Post",
-          "permalink": "/blog/mdx-blog-post"
         }
       },
-      "content": "[Docusaurus blogging features](https://docusaurus.io/docs/blog) are powered by the [blog plugin](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-blog).\r\n\r\nSimply add Markdown files (or folders) to the `blog` directory.\r\n\r\nRegular blog authors can be added to `authors.yml`.\r\n\r\nThe blog post date can be extracted from filenames, such as:\r\n\r\n- `2019-05-30-welcome.md`\r\n- `2019-05-30-welcome/index.md`\r\n\r\nA blog post folder can be convenient to co-locate blog post images:\r\n\r\n![Docusaurus Plushie](./docusaurus-plushie-banner.jpeg)\r\n\r\nThe blog supports tags as well!\r\n\r\n**And if you don't want a blog**: just delete this directory, and use `blog: false` in your Docusaurus config."
-    },
-    {
-      "id": "mdx-blog-post",
-      "metadata": {
-        "permalink": "/blog/mdx-blog-post",
-        "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/blog/2021-08-01-mdx-blog-post.mdx",
-        "source": "@site/blog/2021-08-01-mdx-blog-post.mdx",
-        "title": "my MDX Blog Post",
-        "description": "Blog posts support Docusaurus Markdown features, such as MDX.",
-        "date": "2021-08-01T00:00:00.000Z",
-        "formattedDate": "2021年8月1日",
-        "tags": [
-          {
-            "label": "docusaurus",
-            "permalink": "/blog/tags/docusaurus"
-          }
-        ],
-        "readingTime": 0.175,
-        "hasTruncateMarker": false,
-        "authors": [
-          {
-            "name": "kcfuler",
-            "title": "passionate software engineer",
-            "url": "https://github.com/kcfuler",
-            "imageURL": "https://avatars.githubusercontent.com/u/87866012?s=400&u=a887d6d8c95b833cadbbd3c9e1d2277cab33af17&v=4",
-            "key": "kcfuler"
-          }
-        ],
-        "frontMatter": {
-          "slug": "mdx-blog-post",
-          "title": "my MDX Blog Post",
-          "authors": [
-            "kcfuler"
-          ],
-          "tags": [
-            "docusaurus"
-          ]
-        },
-        "prevItem": {
-          "title": "Welcome",
-          "permalink": "/blog/welcome"
-        },
-        "nextItem": {
-          "title": "Long Blog Post",
-          "permalink": "/blog/long-blog-post"
-        }
-      },
-      "content": "Blog posts support [Docusaurus Markdown features](https://docusaurus.io/docs/markdown-features), such as [MDX](https://mdxjs.com/).\r\n\r\n:::tip\r\n\r\nUse the power of React to create interactive blog posts.\r\n\r\n```js\r\n<button onClick={() => alert('button clicked!')}>Click me!</button>\r\n```\r\n\r\n<button onClick={() => alert('button clicked!')}>Click me!</button>\r\n\r\n:::"
-    },
-    {
-      "id": "long-blog-post",
-      "metadata": {
-        "permalink": "/blog/long-blog-post",
-        "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/blog/2019-05-29-long-blog-post.md",
-        "source": "@site/blog/2019-05-29-long-blog-post.md",
-        "title": "Long Blog Post",
-        "description": "This is the summary of a very long blog post,",
-        "date": "2019-05-29T00:00:00.000Z",
-        "formattedDate": "2019年5月29日",
-        "tags": [
-          {
-            "label": "hello",
-            "permalink": "/blog/tags/hello"
-          },
-          {
-            "label": "docusaurus",
-            "permalink": "/blog/tags/docusaurus"
-          }
-        ],
-        "readingTime": 2.05,
-        "hasTruncateMarker": true,
-        "authors": [
-          {
-            "name": "kcfuler",
-            "title": "passionate software engineer",
-            "url": "https://github.com/kcfuler",
-            "imageURL": "https://avatars.githubusercontent.com/u/87866012?s=400&u=a887d6d8c95b833cadbbd3c9e1d2277cab33af17&v=4",
-            "key": "kcfuler"
-          }
-        ],
-        "frontMatter": {
-          "slug": "long-blog-post",
-          "title": "Long Blog Post",
-          "authors": "kcfuler",
-          "tags": [
-            "hello",
-            "docusaurus"
-          ]
-        },
-        "prevItem": {
-          "title": "my MDX Blog Post",
-          "permalink": "/blog/mdx-blog-post"
-        },
-        "nextItem": {
-          "title": "First Blog Post",
-          "permalink": "/blog/first-blog-post"
-        }
-      },
-      "content": "This is the summary of a very long blog post,\r\n\r\nUse a `<!--` `truncate` `-->` comment to limit blog post size in the list view.\r\n\r\n<!--truncate-->\r\n\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet\r\n\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet\r\n\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet\r\n\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet\r\n\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet\r\n\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet\r\n\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet\r\n\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet\r\n\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet\r\n\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet\r\n\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet\r\n\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet\r\n\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet\r\n\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet\r\n\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet\r\n\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet"
-    },
-    {
-      "id": "first-blog-post",
-      "metadata": {
-        "permalink": "/blog/first-blog-post",
-        "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/blog/2019-05-28-first-blog-post.md",
-        "source": "@site/blog/2019-05-28-first-blog-post.md",
-        "title": "First Blog Post",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet",
-        "date": "2019-05-28T00:00:00.000Z",
-        "formattedDate": "2019年5月28日",
-        "tags": [
-          {
-            "label": "hola",
-            "permalink": "/blog/tags/hola"
-          },
-          {
-            "label": "docusaurus",
-            "permalink": "/blog/tags/docusaurus"
-          }
-        ],
-        "readingTime": 0.12,
-        "hasTruncateMarker": false,
-        "authors": [
-          {
-            "name": "kcfuler",
-            "title": "passionate software engineer",
-            "url": "https://github.com/kcfuler",
-            "imageURL": "https://avatars.githubusercontent.com/u/87866012?s=400&u=a887d6d8c95b833cadbbd3c9e1d2277cab33af17&v=4",
-            "key": "kcfuler"
-          }
-        ],
-        "frontMatter": {
-          "slug": "first-blog-post",
-          "title": "First Blog Post",
-          "authors": "kcfuler",
-          "tags": [
-            "hola",
-            "docusaurus"
-          ]
-        },
-        "prevItem": {
-          "title": "Long Blog Post",
-          "permalink": "/blog/long-blog-post"
-        }
-      },
-      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet"
+      "content": "> [How React 18 Improves Application Performance – Vercel](https://vercel.com/blog/how-react-18-improves-application-performance)\n\n# 主线程和长任务\n\n1. 长任务( >= 50ms)\n2. 一些指标(Core Web Vitals metric)\n- Total Blocking Time\n- First Contentful Paint\n- Time To Interactive\n- Interaction to Next Paint (INP), new core metric\n### Traditional React Rendering\n\n- render: compute\n- commit: update\n\n![image.png](https://cdn.nlark.com/yuque/0/2023/png/22577092/1690252168433-f8737d66-06ab-4612-bee2-e4d227dd825e.png#averageHue=%23f9f8f4&clientId=ud75be37b-ab2a-4&from=paste&height=856&id=uc7df3636&originHeight=1711&originWidth=3521&originalType=binary&ratio=2&rotation=0&showTitle=false&size=646119&status=done&style=none&taskId=u54f50ea8-602a-43b1-a8df-c8f0e2fe329&title=&width=1760.5)\nIn a traditional synchronous render, React would give the same priority to all elements within a component tree. \n![image.png](https://cdn.nlark.com/yuque/0/2023/png/22577092/1690252322834-533311e5-e08d-40c8-a452-473de18e2219.png#averageHue=%23f3f3f1&clientId=ud75be37b-ab2a-4&from=paste&height=376&id=uf2d22cf2&originHeight=751&originWidth=3521&originalType=binary&ratio=2&rotation=0&showTitle=false&size=293154&status=done&style=none&taskId=ubdbabac1-60e3-4492-a3d2-a4ed1dd32b3&title=&width=1760.5)\nA synchronous render is an “all-or-nothing” operation, where it’s guaranteed that a component that starts rendering will always finish.\n\n---\n\nReact 18 introduces a new **concurrent** renderer that that operates behind the scenes.\n![image.png](https://cdn.nlark.com/yuque/0/2023/png/22577092/1690266559606-1a43a62f-9b0a-4f00-ac96-718dcd7b2d74.png#averageHue=%23fafafa&clientId=ud75be37b-ab2a-4&from=paste&height=940&id=uc07e55a4&originHeight=1879&originWidth=3521&originalType=binary&ratio=2&rotation=0&showTitle=false&size=674395&status=done&style=none&taskId=u2a0c9d44-e113-45e8-a765-6b33a5afa2d&title=&width=1760.5)\n> When rendering the low-priority components(pink), React yields back to the main thead to check for more important tasks\n\nIn that case, React will yield back to the main thread every 5 ms to see if there are more important tasks to handle instead.\n![image.png](https://cdn.nlark.com/yuque/0/2023/png/22577092/1690267068136-bc592a95-6fea-46a0-9bc8-f5faa5e6be96.png#averageHue=%23f4f5f2&clientId=ud75be37b-ab2a-4&from=paste&height=560&id=u88c61d30&originHeight=1120&originWidth=3521&originalType=binary&ratio=2&rotation=0&showTitle=false&size=495114&status=done&style=none&taskId=u5362903e-2112-4c45-97dc-349c92973c2&title=&width=1760.5)\nAdditionally, the concurrent renderer is able to “concurrently” render multiple versions of the component tree in the background without immediately committing the result.\nWhereas a synchronous render is an all-or-nothing computation, the concurrent renderer allows React to pause and resume the rendering of one or multiple component trees to achieve the most optimal user experience.\n![image.png](https://cdn.nlark.com/yuque/0/2023/png/22577092/1690267349086-12adb9fd-4f7d-4933-bbfc-430ee91193d3.png#averageHue=%23f9f9f9&clientId=ud75be37b-ab2a-4&from=paste&height=1085&id=ud6d38dc8&originHeight=2170&originWidth=3521&originalType=binary&ratio=2&rotation=0&showTitle=false&size=1010730&status=done&style=none&taskId=u3df985fa-a3b2-49c0-bf19-e80dee927bd&title=&width=1760.5)\nUsing concurrent features, React can pause and resume the rendering of components based on external events such as user interaction. When the user started interacting with **ComponentTwo**, React paused the current rendering, prioritized and render **ComponentTwo**, after which it resumed rendering **ComponentOne**. We'll talk about this more in the section on **Suspense.**\n## Transitions\nWe can mark an update as non-urgent by using the **startTransition** function made available by the **useTransition** hook. This is a powerful new feature that allows us to mark certain state updates as “transitions”, indicating that they can lead to visual changes that could potentially disrupt user experience if they were rendered synchronously.\nBy wrapping a state update in **startTransition**, we can tell React that we’re okay with deferring or interrupting the rendering to prioritize more important tasks to keep the current user interface interactive.\n![image.png](https://cdn.nlark.com/yuque/0/2023/png/22577092/1690267716311-992a7ec6-a8d2-46d6-99e9-90606b81bac6.png#averageHue=%23f9f9f9&clientId=ud75be37b-ab2a-4&from=paste&height=1247&id=u44e12dd6&originHeight=2494&originWidth=3536&originalType=binary&ratio=2&rotation=0&showTitle=false&size=1128370&status=done&style=none&taskId=u6e927baa-1ab4-4540-8d00-d2874dbd6c4&title=&width=1768)\nTransitions are part of a fundamental shift in React's rendering model, enabling React to render muliple versions of the UI concurrently, and manage priorities between different tasks. This allows for a smoother and more responsive user experience, especially when dealing with high-frequency updates or CPU-intensive rendering tasks.\n# React Server Componnent\n![image.png](https://cdn.nlark.com/yuque/0/2023/png/22577092/1690268488074-5c705077-9fbb-450d-8f81-4d47ca91adf4.png#averageHue=%23f7f7f7&clientId=ud75be37b-ab2a-4&from=paste&height=1428&id=u0d26b5c1&originHeight=2855&originWidth=3840&originalType=binary&ratio=2&rotation=0&showTitle=false&size=1476809&status=done&style=none&taskId=u57cc47e6-4e88-4ae4-8a99-594388cf514&title=&width=1920)\nBoth approaches rely on the fact that the **synchronous React renderer needs to rebuild the component tree client-side which the use of the shipped JavaScript bundle, even though this component tree was already available on the server.**\nReact Server Components allow React to send the **actual serialized component tree** to the client. The client-side React renderer understands this format and uses it to performantly reconstruct the React component tree without having to send the HTML file or JavaScript bundle.\n![image.png](https://cdn.nlark.com/yuque/0/2023/png/22577092/1690268656642-35197a87-e288-4829-a223-809e779414da.png#averageHue=%23f9f9f9&clientId=ud75be37b-ab2a-4&from=paste&height=676&id=u4b95a1d3&originHeight=1351&originWidth=3840&originalType=binary&ratio=2&rotation=0&showTitle=false&size=661028&status=done&style=none&taskId=ua9003e84-2eac-49d9-b063-ab40d23617b&title=&width=1920)\nWe can use this new rendering pattern by combining `**react-server-dom-webpack/server**'s **renderToPipeableStream**` method with `**react-dom/client**`'s `**createRoot**` method.\nBy default, React won't hydrate React Server Components. The components aren't expected to use any client-side interactivity like accessing the **window** object or use hooks like **useState** or **useEffect**.\nTo add a component and its imports to a JavaScript bundle that gets shipped to the client, thus making it interactive, you can use the [\"use client\" bundler directive](https://react.dev/reference/react/use-client) on the top of the file. This tells the bundler to add **this component and its imports** to the client bundle and tells React to hydrate the tree client-side to add interactivity. Such components are referred to as Client Components.\n![image.png](https://cdn.nlark.com/yuque/0/2023/png/22577092/1690269029259-7302d886-64e6-4647-9eff-5a40ae353f25.png#averageHue=%23f1e2ce&clientId=ud75be37b-ab2a-4&from=paste&height=634&id=u203facdc&originHeight=1268&originWidth=3840&originalType=binary&ratio=2&rotation=0&showTitle=false&size=788979&status=done&style=none&taskId=u507a01a5-0848-4040-bdc4-5fe2781612b&title=&width=1920)\nIt's up to the developer to optimize bundle size when working with Client Components. Developers can do this by:\n\n- Ensuring that only the leaf-most node of the interactive component defines the **\"use client\"** directive. This may require some component decoupling.\n- Passing component trees **as props** rather than importing them directly. This allows React to render the **children** as React Server Components without adding them to the client bundle.\n\n## Suspense\n the new capabilities introduced with React 18 extend **Suspense** to data fetching.\n```tsx\nasync function BlogPosts() {\n  const posts = await db.posts.findAll();\n  return '...';\n}\n\nexport default function Page() {\n  return (\n    <Suspense fallback={<Skeleton />}>\n      <BlogPosts />\n    </Suspense>\n  )\n}\n```\nThe true power of **Suspense** comes from its deep integration with React's Concurrent features. When a component is suspended, for example because it’s still waiting for data to load, React doesn't just sit idle until the component has received the data. Instead, it pauses the rendering of the suspended component and shifts its focus to other tasks.\n![image.png](https://cdn.nlark.com/yuque/0/2023/png/22577092/1690269935138-b3ad7a3a-0326-4262-b131-26a5456d0c76.png#averageHue=%23f8f8f8&clientId=ud75be37b-ab2a-4&from=paste&height=993&id=u3240a1eb&originHeight=1986&originWidth=3484&originalType=binary&ratio=2&rotation=0&showTitle=false&size=1027302&status=done&style=none&taskId=u84ec620b-7198-4ee4-af96-05f9aeef375&title=&width=1742)\nDuring this time, we can tell React to render a fallback UI to indicate that this component is still loading. Once the awaited data becomes available, React can seamlessly resume the rendering of the previously suspended component in an interruptible way, like we previously saw happening with transitions.\nReact can also reprioritize components based on user interaction. For example, when a user interacts with a suspended component that's not currently being rendered, React suspends the ongoing render and prioritizes the component that the user is interacting with.\n![image.png](https://cdn.nlark.com/yuque/0/2023/png/22577092/1690270453641-f8bea9c9-f974-4a26-80ca-d8696e092726.png#averageHue=%23f9f8f7&clientId=ud75be37b-ab2a-4&from=paste&height=856&id=ud7a66ee8&originHeight=1712&originWidth=3840&originalType=binary&ratio=2&rotation=0&showTitle=false&size=852712&status=done&style=none&taskId=u2edb5693-6bf0-44d5-8a34-d1215a10f2e&title=&width=1920)\n# Data Fetching\nBesides rendering updates, React 18 also introduces a new API to fetch data and memoize the result efficiently.\nReact 18 now has a [cache function](https://nextjs.org/docs/app/building-your-application/data-fetching/caching#react-cache) that remembers the result of the wrapped function call. If you call the same function with the same arguments _within the same render pass_, it will use the memoized value without the need to execute the function again.\n```tsx\nimport { cache } from 'react'\n \nexport const getUser = cache(async (id) => {\n  const user = await db.user.findUnique({ id })\n  return user;\n})\n\ngetUser(1)\ngetUser(1) // Called within same render pass: returns memoized result.\n```\nIn **fetch** calls, React 18 now includes a similar caching mechanism by default without having to use **cache**. This helps to reduce the number of network requests in a single render pass, which improves application performance and lowers API costs.\n```tsx\nexport const fetchPost = (id) => {\n  const res = await fetch(`https://.../posts/${id}`);\n  const data = await res.json();\n  return { post: data.post } \n}\n\nfetchPost(1)\nfetchPost(1) // Called within same render pass: returns memoized result.\n```\n![image.png](https://cdn.nlark.com/yuque/0/2023/png/22577092/1690270738188-a3ff0075-8aa2-4402-a1a1-2e218ddb33c3.png#averageHue=%23f7f6f6&clientId=ud75be37b-ab2a-4&from=paste&height=704&id=ubc3a3b10&originHeight=1408&originWidth=3840&originalType=binary&ratio=2&rotation=0&showTitle=false&size=625164&status=done&style=none&taskId=u9d55bbed-1078-4821-850f-45b64b8092c&title=&width=1920)\n# Conclusion\nIn summary, React 18's latest features improve performance in many ways.\n\n- With **Concurrent React**, the rendering process can be paused and resumed later or even abandoned. This means the UI can respond immediately to user input even if a large rendering task is in progress.\n- The **Transitions API **allows for smoother transitions during data fetches or screen changes without blocking user input.\n- **React Server Components** lets developers build components that work on both the server and client, combining the interactivity of client-side apps with the performance of traditional server rendering without the cost of hydration.\n- The extended **Suspense** functionality improves loading performance by allowing parts of the application to render before others that may take longer to fetch data."
     }
   ]
 }

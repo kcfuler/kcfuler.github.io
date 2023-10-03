@@ -11,8 +11,23 @@
           "mainDocId": "概述",
           "docs": [
             {
+              "id": "devOps/rust入门篇",
+              "path": "/docs/devOps/rust入门篇",
+              "sidebar": "Records"
+            },
+            {
+              "id": "devOps/rust自动化测试",
+              "path": "/docs/devOps/rust自动化测试",
+              "sidebar": "Records"
+            },
+            {
               "id": "devOps/概览",
               "path": "/docs/devOps/概览",
+              "sidebar": "Records"
+            },
+            {
+              "id": "web前端/ts学习",
+              "path": "/docs/web前端/ts学习",
               "sidebar": "Records"
             },
             {

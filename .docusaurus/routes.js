@@ -39,7 +39,7 @@ export default [
   },
   {
     path: '/blog',
-    component: ComponentCreator('/blog', 'b3f'),
+    component: ComponentCreator('/blog', 'da2'),
     exact: true
   },
   {
@@ -48,18 +48,8 @@ export default [
     exact: true
   },
   {
-    path: '/blog/first-blog-post',
-    component: ComponentCreator('/blog/first-blog-post', '8a9'),
-    exact: true
-  },
-  {
-    path: '/blog/long-blog-post',
-    component: ComponentCreator('/blog/long-blog-post', '83f'),
-    exact: true
-  },
-  {
-    path: '/blog/mdx-blog-post',
-    component: ComponentCreator('/blog/mdx-blog-post', 'fdd'),
+    path: '/blog/react18如何提高应用性能',
+    component: ComponentCreator('/blog/react18如何提高应用性能', '1e8'),
     exact: true
   },
   {
@@ -68,28 +58,8 @@ export default [
     exact: true
   },
   {
-    path: '/blog/tags/docusaurus',
-    component: ComponentCreator('/blog/tags/docusaurus', '47b'),
-    exact: true
-  },
-  {
-    path: '/blog/tags/facebook',
-    component: ComponentCreator('/blog/tags/facebook', 'c92'),
-    exact: true
-  },
-  {
-    path: '/blog/tags/hello',
-    component: ComponentCreator('/blog/tags/hello', '7a3'),
-    exact: true
-  },
-  {
-    path: '/blog/tags/hola',
-    component: ComponentCreator('/blog/tags/hola', 'a00'),
-    exact: true
-  },
-  {
-    path: '/blog/welcome',
-    component: ComponentCreator('/blog/welcome', 'e39'),
+    path: '/blog/tags/react',
+    component: ComponentCreator('/blog/tags/react', 'f79'),
     exact: true
   },
   {
@@ -99,7 +69,7 @@ export default [
   },
   {
     path: '/docs',
-    component: ComponentCreator('/docs', '63e'),
+    component: ComponentCreator('/docs', '1ce'),
     routes: [
       {
         path: '/docs/category/sre学习',
@@ -120,8 +90,26 @@ export default [
         sidebar: "Records"
       },
       {
+        path: '/docs/devOps/rust入门篇',
+        component: ComponentCreator('/docs/devOps/rust入门篇', 'eca'),
+        exact: true,
+        sidebar: "Records"
+      },
+      {
+        path: '/docs/devOps/rust自动化测试',
+        component: ComponentCreator('/docs/devOps/rust自动化测试', '8d0'),
+        exact: true,
+        sidebar: "Records"
+      },
+      {
         path: '/docs/devOps/概览',
         component: ComponentCreator('/docs/devOps/概览', 'd29'),
+        exact: true,
+        sidebar: "Records"
+      },
+      {
+        path: '/docs/web前端/ts学习',
+        component: ComponentCreator('/docs/web前端/ts学习', '2c7'),
         exact: true,
         sidebar: "Records"
       },

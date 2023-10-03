@@ -26,6 +26,12 @@
             "label": "概述",
             "href": "/docs/web前端/概览",
             "docId": "web前端/概览"
+          },
+          {
+            "type": "link",
+            "label": "ts学习",
+            "href": "/docs/web前端/ts学习",
+            "docId": "web前端/ts学习"
           }
         ],
         "href": "/docs/category/web前端"
@@ -41,6 +47,18 @@
             "label": "概览",
             "href": "/docs/devOps/概览",
             "docId": "devOps/概览"
+          },
+          {
+            "type": "link",
+            "label": "rust入门篇",
+            "href": "/docs/devOps/rust入门篇",
+            "docId": "devOps/rust入门篇"
+          },
+          {
+            "type": "link",
+            "label": "编写测试及控制执行",
+            "href": "/docs/devOps/rust自动化测试",
+            "docId": "devOps/rust自动化测试"
           }
         ],
         "href": "/docs/category/sre学习"
@@ -63,10 +81,28 @@
     ]
   },
   "docs": {
+    "devOps/rust入门篇": {
+      "id": "devOps/rust入门篇",
+      "title": "rust入门篇",
+      "description": "安装",
+      "sidebar": "Records"
+    },
+    "devOps/rust自动化测试": {
+      "id": "devOps/rust自动化测试",
+      "title": "编写测试及控制执行",
+      "description": "在Rust中，测试通过函数的方式实现的，它可以用于验证被测试代码的正确性。测试函数往往一次执行以下三种行为：",
+      "sidebar": "Records"
+    },
     "devOps/概览": {
       "id": "devOps/概览",
       "title": "概览",
       "description": "目前还没有很深入的学习，目前了解到的主要包括以下几个部分:",
+      "sidebar": "Records"
+    },
+    "web前端/ts学习": {
+      "id": "web前端/ts学习",
+      "title": "ts学习",
+      "description": "掘金小册",
       "sidebar": "Records"
     },
     "web前端/概览": {
