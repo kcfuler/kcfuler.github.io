@@ -8,21 +8,21 @@
           "label": "Next",
           "isLast": true,
           "path": "/docs",
-          "mainDocId": "intro",
+          "mainDocId": "概述",
           "docs": [
             {
-              "id": "intro",
-              "path": "/docs/intro",
-              "sidebar": "Records"
-            },
-            {
-              "id": "SRE/概览",
-              "path": "/docs/SRE/概览",
+              "id": "devOps/概览",
+              "path": "/docs/devOps/概览",
               "sidebar": "Records"
             },
             {
               "id": "web前端/概览",
               "path": "/docs/web前端/概览",
+              "sidebar": "Records"
+            },
+            {
+              "id": "概述",
+              "path": "/docs/概述",
               "sidebar": "Records"
             },
             {
@@ -50,8 +50,8 @@
           "sidebars": {
             "Records": {
               "link": {
-                "path": "/docs/intro",
-                "label": "intro"
+                "path": "/docs/概述",
+                "label": "概述"
               }
             }
           }

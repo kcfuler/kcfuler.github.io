@@ -11,9 +11,9 @@
     "Records": [
       {
         "type": "link",
-        "label": "intro",
-        "href": "/docs/intro",
-        "docId": "intro"
+        "label": "概述",
+        "href": "/docs/概述",
+        "docId": "概述"
       },
       {
         "type": "category",
@@ -39,8 +39,8 @@
           {
             "type": "link",
             "label": "概览",
-            "href": "/docs/SRE/概览",
-            "docId": "SRE/概览"
+            "href": "/docs/devOps/概览",
+            "docId": "devOps/概览"
           }
         ],
         "href": "/docs/category/sre学习"
@@ -63,22 +63,22 @@
     ]
   },
   "docs": {
-    "intro": {
-      "id": "intro",
-      "title": "intro",
-      "description": "这里是我的学习记录。把一些学习的知识记录下来，希望能够记录下自己理解了的知识。",
-      "sidebar": "Records"
-    },
-    "SRE/概览": {
-      "id": "SRE/概览",
+    "devOps/概览": {
+      "id": "devOps/概览",
       "title": "概览",
-      "description": "",
+      "description": "目前还没有很深入的学习，目前了解到的主要包括以下几个部分:",
       "sidebar": "Records"
     },
     "web前端/概览": {
       "id": "web前端/概览",
       "title": "概述",
       "description": "web开发目前的主流还是以普通业务开发为主，例如官网、后台管理。此外也有一些其它常见的业务方向，如富文本、3d可视化等方向，但整体来说",
+      "sidebar": "Records"
+    },
+    "概述": {
+      "id": "概述",
+      "title": "概述",
+      "description": "这里是我的学习记录。把一些学习的知识记录下来，希望能够记录下自己理解了的知识。",
       "sidebar": "Records"
     },
     "算法/算法基础模板": {

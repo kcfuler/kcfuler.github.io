@@ -3,6 +3,41 @@ import ComponentCreator from '@docusaurus/ComponentCreator';
 
 export default [
   {
+    path: '/__docusaurus/debug',
+    component: ComponentCreator('/__docusaurus/debug', 'fd1'),
+    exact: true
+  },
+  {
+    path: '/__docusaurus/debug/config',
+    component: ComponentCreator('/__docusaurus/debug/config', 'c6e'),
+    exact: true
+  },
+  {
+    path: '/__docusaurus/debug/content',
+    component: ComponentCreator('/__docusaurus/debug/content', '070'),
+    exact: true
+  },
+  {
+    path: '/__docusaurus/debug/globalData',
+    component: ComponentCreator('/__docusaurus/debug/globalData', 'eec'),
+    exact: true
+  },
+  {
+    path: '/__docusaurus/debug/metadata',
+    component: ComponentCreator('/__docusaurus/debug/metadata', 'e1a'),
+    exact: true
+  },
+  {
+    path: '/__docusaurus/debug/registry',
+    component: ComponentCreator('/__docusaurus/debug/registry', '4dd'),
+    exact: true
+  },
+  {
+    path: '/__docusaurus/debug/routes',
+    component: ComponentCreator('/__docusaurus/debug/routes', '95c'),
+    exact: true
+  },
+  {
     path: '/blog',
     component: ComponentCreator('/blog', 'b3f'),
     exact: true
@@ -64,7 +99,7 @@ export default [
   },
   {
     path: '/docs',
-    component: ComponentCreator('/docs', '3b0'),
+    component: ComponentCreator('/docs', '63e'),
     routes: [
       {
         path: '/docs/category/sre学习',
@@ -85,20 +120,20 @@ export default [
         sidebar: "Records"
       },
       {
-        path: '/docs/intro',
-        component: ComponentCreator('/docs/intro', 'e8a'),
-        exact: true,
-        sidebar: "Records"
-      },
-      {
-        path: '/docs/SRE/概览',
-        component: ComponentCreator('/docs/SRE/概览', '441'),
+        path: '/docs/devOps/概览',
+        component: ComponentCreator('/docs/devOps/概览', 'd29'),
         exact: true,
         sidebar: "Records"
       },
       {
         path: '/docs/web前端/概览',
         component: ComponentCreator('/docs/web前端/概览', 'd6b'),
+        exact: true,
+        sidebar: "Records"
+      },
+      {
+        path: '/docs/概述',
+        component: ComponentCreator('/docs/概述', '93c'),
         exact: true,
         sidebar: "Records"
       },
