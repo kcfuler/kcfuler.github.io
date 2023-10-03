@@ -3,6 +3,41 @@ import ComponentCreator from '@docusaurus/ComponentCreator';
 
 export default [
   {
+    path: '/__docusaurus/debug',
+    component: ComponentCreator('/__docusaurus/debug', 'fd1'),
+    exact: true
+  },
+  {
+    path: '/__docusaurus/debug/config',
+    component: ComponentCreator('/__docusaurus/debug/config', 'c6e'),
+    exact: true
+  },
+  {
+    path: '/__docusaurus/debug/content',
+    component: ComponentCreator('/__docusaurus/debug/content', '070'),
+    exact: true
+  },
+  {
+    path: '/__docusaurus/debug/globalData',
+    component: ComponentCreator('/__docusaurus/debug/globalData', 'eec'),
+    exact: true
+  },
+  {
+    path: '/__docusaurus/debug/metadata',
+    component: ComponentCreator('/__docusaurus/debug/metadata', 'e1a'),
+    exact: true
+  },
+  {
+    path: '/__docusaurus/debug/registry',
+    component: ComponentCreator('/__docusaurus/debug/registry', '4dd'),
+    exact: true
+  },
+  {
+    path: '/__docusaurus/debug/routes',
+    component: ComponentCreator('/__docusaurus/debug/routes', '95c'),
+    exact: true
+  },
+  {
     path: '/blog',
     component: ComponentCreator('/blog', 'b3f'),
     exact: true
@@ -64,83 +99,47 @@ export default [
   },
   {
     path: '/docs',
-    component: ComponentCreator('/docs', '69e'),
+    component: ComponentCreator('/docs', '16a'),
     routes: [
       {
-        path: '/docs/category/java学习',
-        component: ComponentCreator('/docs/category/java学习', '2a3'),
+        path: '/docs/category/sre学习',
+        component: ComponentCreator('/docs/category/sre学习', '2af'),
         exact: true,
         sidebar: "Records"
       },
       {
-        path: '/docs/category/tutorial---basics',
-        component: ComponentCreator('/docs/category/tutorial---basics', '756'),
+        path: '/docs/category/web前端',
+        component: ComponentCreator('/docs/category/web前端', '218'),
         exact: true,
         sidebar: "Records"
       },
       {
-        path: '/docs/category/tutorial---extras',
-        component: ComponentCreator('/docs/category/tutorial---extras', '84d'),
+        path: '/docs/category/算法学习',
+        component: ComponentCreator('/docs/category/算法学习', '913'),
         exact: true,
         sidebar: "Records"
       },
       {
-        path: '/docs/intro',
-        component: ComponentCreator('/docs/intro', 'e8a'),
+        path: '/docs/SRE/概览',
+        component: ComponentCreator('/docs/SRE/概览', '441'),
         exact: true,
         sidebar: "Records"
       },
       {
-        path: '/docs/Java学习/Java基础',
-        component: ComponentCreator('/docs/Java学习/Java基础', 'ca9'),
+        path: '/docs/web前端/概览',
+        component: ComponentCreator('/docs/web前端/概览', 'd6b'),
         exact: true,
         sidebar: "Records"
       },
       {
-        path: '/docs/tutorial-basics/congratulations',
-        component: ComponentCreator('/docs/tutorial-basics/congratulations', 'e24'),
+        path: '/docs/介绍',
+        component: ComponentCreator('/docs/介绍', '41f'),
         exact: true,
         sidebar: "Records"
       },
       {
-        path: '/docs/tutorial-basics/create-a-blog-post',
-        component: ComponentCreator('/docs/tutorial-basics/create-a-blog-post', 'a80'),
-        exact: true,
-        sidebar: "Records"
-      },
-      {
-        path: '/docs/tutorial-basics/create-a-document',
-        component: ComponentCreator('/docs/tutorial-basics/create-a-document', '361'),
-        exact: true,
-        sidebar: "Records"
-      },
-      {
-        path: '/docs/tutorial-basics/create-a-page',
-        component: ComponentCreator('/docs/tutorial-basics/create-a-page', 'eee'),
-        exact: true,
-        sidebar: "Records"
-      },
-      {
-        path: '/docs/tutorial-basics/deploy-your-site',
-        component: ComponentCreator('/docs/tutorial-basics/deploy-your-site', '519'),
-        exact: true,
-        sidebar: "Records"
-      },
-      {
-        path: '/docs/tutorial-basics/markdown-features',
-        component: ComponentCreator('/docs/tutorial-basics/markdown-features', '738'),
-        exact: true,
-        sidebar: "Records"
-      },
-      {
-        path: '/docs/tutorial-extras/manage-docs-versions',
-        component: ComponentCreator('/docs/tutorial-extras/manage-docs-versions', 'ae5'),
-        exact: true,
-        sidebar: "Records"
-      },
-      {
-        path: '/docs/tutorial-extras/translate-your-site',
-        component: ComponentCreator('/docs/tutorial-extras/translate-your-site', '6b7'),
+        path: '/docs/算法/算法基础模板',
+        component: ComponentCreator('/docs/算法/算法基础模板', '365'),
         exact: true,
         sidebar: "Records"
       }

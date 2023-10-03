@@ -4,8 +4,8 @@
   "permalink": "/docs/category/tutorial---extras",
   "navigation": {
     "previous": {
-      "title": "概览",
-      "permalink": "/docs/Java学习/Java基础"
+      "title": "Tutorial Intro",
+      "permalink": "/docs/intro"
     },
     "next": {
       "title": "Manage Docs Versions",

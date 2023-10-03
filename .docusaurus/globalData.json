@@ -8,71 +8,41 @@
           "label": "Next",
           "isLast": true,
           "path": "/docs",
-          "mainDocId": "intro",
+          "mainDocId": "介绍",
           "docs": [
             {
-              "id": "intro",
-              "path": "/docs/intro",
+              "id": "SRE/概览",
+              "path": "/docs/SRE/概览",
               "sidebar": "Records"
             },
             {
-              "id": "Java学习/Java基础",
-              "path": "/docs/Java学习/Java基础",
+              "id": "web前端/概览",
+              "path": "/docs/web前端/概览",
               "sidebar": "Records"
             },
             {
-              "id": "tutorial-basics/congratulations",
-              "path": "/docs/tutorial-basics/congratulations",
+              "id": "介绍",
+              "path": "/docs/介绍",
               "sidebar": "Records"
             },
             {
-              "id": "tutorial-basics/create-a-blog-post",
-              "path": "/docs/tutorial-basics/create-a-blog-post",
+              "id": "算法/算法基础模板",
+              "path": "/docs/算法/算法基础模板",
               "sidebar": "Records"
             },
             {
-              "id": "tutorial-basics/create-a-document",
-              "path": "/docs/tutorial-basics/create-a-document",
+              "id": "/category/web前端",
+              "path": "/docs/category/web前端",
               "sidebar": "Records"
             },
             {
-              "id": "tutorial-basics/create-a-page",
-              "path": "/docs/tutorial-basics/create-a-page",
+              "id": "/category/sre学习",
+              "path": "/docs/category/sre学习",
               "sidebar": "Records"
             },
             {
-              "id": "tutorial-basics/deploy-your-site",
-              "path": "/docs/tutorial-basics/deploy-your-site",
-              "sidebar": "Records"
-            },
-            {
-              "id": "tutorial-basics/markdown-features",
-              "path": "/docs/tutorial-basics/markdown-features",
-              "sidebar": "Records"
-            },
-            {
-              "id": "tutorial-extras/manage-docs-versions",
-              "path": "/docs/tutorial-extras/manage-docs-versions",
-              "sidebar": "Records"
-            },
-            {
-              "id": "tutorial-extras/translate-your-site",
-              "path": "/docs/tutorial-extras/translate-your-site",
-              "sidebar": "Records"
-            },
-            {
-              "id": "/category/tutorial---basics",
-              "path": "/docs/category/tutorial---basics",
-              "sidebar": "Records"
-            },
-            {
-              "id": "/category/java学习",
-              "path": "/docs/category/java学习",
-              "sidebar": "Records"
-            },
-            {
-              "id": "/category/tutorial---extras",
-              "path": "/docs/category/tutorial---extras",
+              "id": "/category/算法学习",
+              "path": "/docs/category/算法学习",
               "sidebar": "Records"
             }
           ],
@@ -80,8 +50,8 @@
           "sidebars": {
             "Records": {
               "link": {
-                "path": "/docs/intro",
-                "label": "intro"
+                "path": "/docs/介绍",
+                "label": "介绍"
               }
             }
           }
