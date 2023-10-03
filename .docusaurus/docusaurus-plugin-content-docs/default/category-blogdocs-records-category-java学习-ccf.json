@@ -1,0 +1,16 @@
+{
+  "title": "Java学习",
+  "description": "record my java learning",
+  "slug": "/category/java学习",
+  "permalink": "/Blog/docs/category/java学习",
+  "navigation": {
+    "previous": {
+      "title": "Congratulations!",
+      "permalink": "/Blog/docs/tutorial-basics/congratulations"
+    },
+    "next": {
+      "title": "概览",
+      "permalink": "/Blog/docs/Java学习/Java基础"
+    }
+  }
+}
