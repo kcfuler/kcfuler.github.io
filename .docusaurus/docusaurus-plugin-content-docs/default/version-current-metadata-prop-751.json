@@ -277,7 +277,7 @@
     "web前端/工程化/vite实现原理": {
       "id": "web前端/工程化/vite实现原理",
       "title": "vite实现原理",
-      "description": "待补充",
+      "description": "静态资源处理",
       "sidebar": "Records"
     },
     "web前端/工程化/webpack实现原理": {
