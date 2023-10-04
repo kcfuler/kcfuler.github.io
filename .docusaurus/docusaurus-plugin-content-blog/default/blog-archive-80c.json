@@ -1,6 +1,48 @@
 {
   "blogPosts": [
     {
+      "id": "23-9月总结",
+      "metadata": {
+        "permalink": "/blog/23-9月总结",
+        "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/blog/2023-10-4-9月总结.md",
+        "source": "@site/blog/2023-10-4-9月总结.md",
+        "title": "23-9月总结",
+        "description": "​\t9月总体来说还是发生了不少事，实习和心态上的变化对之前的计划带来了不小的冲击，部分预期的事都没有做完。",
+        "date": "2023-10-04T00:00:00.000Z",
+        "formattedDate": "2023年10月4日",
+        "tags": [
+          {
+            "label": "plan",
+            "permalink": "/blog/tags/plan"
+          }
+        ],
+        "readingTime": 3.945,
+        "hasTruncateMarker": false,
+        "authors": [
+          {
+            "name": "kcfuler",
+            "title": "passionate software engineer",
+            "url": "https://github.com/kcfuler",
+            "imageURL": "https://avatars.githubusercontent.com/u/87866012?s=400&u=a887d6d8c95b833cadbbd3c9e1d2277cab33af17&v=4",
+            "key": "kcfuler"
+          }
+        ],
+        "frontMatter": {
+          "slug": "23-9月总结",
+          "title": "23-9月总结",
+          "authors": "kcfuler",
+          "tags": [
+            "plan"
+          ]
+        },
+        "nextItem": {
+          "title": "blog再构建",
+          "permalink": "/blog/blog再构建"
+        }
+      },
+      "content": "​\t9月总体来说还是发生了不少事，实习和心态上的变化对之前的计划带来了不小的冲击，部分预期的事都没有做完。\r\n\r\n### 大事记\r\n\r\n1. 9.18入职，继续实习\r\n2. 10月开始课程压力++\r\n3. blog重启\r\n\r\n​\t首先，变化最直接的影响就是时间，实习+课程导致学习的时间大大缩减，原来每天大概有6h左右的自由时间可以用于学习，现在大幅降低课内学习质量后，也只有2h左右了。\r\n\r\n​\t第二点是心态上的变化。之前实习离职的原因主要是想学习、接触新东西、兼顾课程进度。但后面发现学习到的新知识并没有什么使用场景（比如java、机组的学习），学起来**没有反馈**，学着学着就不想学了。课内的东西学习节奏比较慢，很容易忘记之前学习的东西，学习有割裂感。\r\n\r\n​\t第三点就是钱，经济压力比我想象的要大，之前攒的不足以消除压力，也不够后续生活的需要，还是需要实习。\r\n\r\n​\t最后也是最重要的一点：**学习的方式、反馈**。\r\n\r\n- 之前在没有基础的时候，将自己所学的每一个内容都总结为博客难度很大，在学习内容的压力下成本太高。现在对于求职方向而言，需要学习的大部分内容已经学过，在准备面试时也有复习，对单个知识点的掌握基本足够。问题在于**知识之间的连接**，像软件工程->模块化->vue & react->响应式原理->数据结构和算法，这些模块之间都有很多内在的联系，但之前显然没有将内容串联起来。\r\n- 现在的状态应该可以将方向做一下转变，通过文章的方式，提炼、加深对知识的理解，让学到的知识更有用\r\n\r\n### 计划完成情况\r\n\r\n![image-20231004183843206](https://s2.loli.net/2023/10/04/WlEFLjGxBf3bSqV.png)\t没有完成的内容主要是计算机基础相关的\r\n\r\n- 算法：只是完成了剑指offer中的一部分，算法提高课部分的内容总体来说离实践太远，很难将它和已有的知识建立连接，每一次练习感觉都是独立的单元 | 但算法带来的思维锻炼也是其它部分很难带来的，还是需要坚持\r\n- 计算机组成原理：主要的难点在于里面涉及到的电路相关的原理，很烦，混杂着计算机系统相关的东西，很难看下去\r\n- vue & webpack：vue是复习了一下之前学习的内容，webpack还没有复习，因为实际项目中需要配置webpack的场景很少，实习之后离面试的距离也比较远，原理相关的知识后面用到的时候再复习吧。\r\n\r\n### 10月计划\r\n\r\n- 完成实习工作-- 6/10\r\n- 处理课内，实验课、点名 -- 2/10\r\n- 补齐、复习浏览器内的技术栈，探索新技术-- 2/10"
+    },
+    {
       "id": "blog再构建",
       "metadata": {
         "permalink": "/blog/blog再构建",
@@ -34,6 +76,10 @@
           "tags": [
             "trifling"
           ]
+        },
+        "prevItem": {
+          "title": "23-9月总结",
+          "permalink": "/blog/23-9月总结"
         },
         "nextItem": {
           "title": "react18如何提高应用性能",

@@ -39,7 +39,12 @@ export default [
   },
   {
     path: '/blog',
-    component: ComponentCreator('/blog', '47a'),
+    component: ComponentCreator('/blog', 'bf0'),
+    exact: true
+  },
+  {
+    path: '/blog/23-9月总结',
+    component: ComponentCreator('/blog/23-9月总结', 'b08'),
     exact: true
   },
   {
@@ -60,6 +65,11 @@ export default [
   {
     path: '/blog/tags',
     component: ComponentCreator('/blog/tags', 'b5e'),
+    exact: true
+  },
+  {
+    path: '/blog/tags/plan',
+    component: ComponentCreator('/blog/tags/plan', 'fc1'),
     exact: true
   },
   {
@@ -89,7 +99,7 @@ export default [
   },
   {
     path: '/docs',
-    component: ComponentCreator('/docs', 'c5a'),
+    component: ComponentCreator('/docs', '0bc'),
     routes: [
       {
         path: '/docs/category/devops学习',
@@ -110,14 +120,14 @@ export default [
         sidebar: "Records"
       },
       {
-        path: '/docs/devOps/rust入门篇',
-        component: ComponentCreator('/docs/devOps/rust入门篇', 'eca'),
+        path: '/docs/devOps/rust/rust入门篇',
+        component: ComponentCreator('/docs/devOps/rust/rust入门篇', '966'),
         exact: true,
         sidebar: "Records"
       },
       {
-        path: '/docs/devOps/rust自动化测试',
-        component: ComponentCreator('/docs/devOps/rust自动化测试', '8d0'),
+        path: '/docs/devOps/rust/rust自动化测试',
+        component: ComponentCreator('/docs/devOps/rust/rust自动化测试', '85d'),
         exact: true,
         sidebar: "Records"
       },

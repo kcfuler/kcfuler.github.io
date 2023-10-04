@@ -11,13 +11,13 @@
           "mainDocId": "概述",
           "docs": [
             {
-              "id": "devOps/rust入门篇",
-              "path": "/docs/devOps/rust入门篇",
+              "id": "devOps/rust/rust入门篇",
+              "path": "/docs/devOps/rust/rust入门篇",
               "sidebar": "Records"
             },
             {
-              "id": "devOps/rust自动化测试",
-              "path": "/docs/devOps/rust自动化测试",
+              "id": "devOps/rust/rust自动化测试",
+              "path": "/docs/devOps/rust/rust自动化测试",
               "sidebar": "Records"
             },
             {
