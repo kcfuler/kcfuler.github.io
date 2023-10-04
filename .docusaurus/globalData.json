@@ -101,6 +101,11 @@
               "sidebar": "Records"
             },
             {
+              "id": "阅读/思考，快与慢",
+              "path": "/docs/阅读/思考，快与慢",
+              "sidebar": "Records"
+            },
+            {
               "id": "/category/算法学习",
               "path": "/docs/category/算法学习",
               "sidebar": "Records"
@@ -113,6 +118,11 @@
             {
               "id": "/category/devops学习",
               "path": "/docs/category/devops学习",
+              "sidebar": "Records"
+            },
+            {
+              "id": "/category/阅读",
+              "path": "/docs/category/阅读",
               "sidebar": "Records"
             }
           ],

@@ -99,7 +99,7 @@ export default [
   },
   {
     path: '/docs',
-    component: ComponentCreator('/docs', '0bc'),
+    component: ComponentCreator('/docs', '37f'),
     routes: [
       {
         path: '/docs/category/devops学习',
@@ -116,6 +116,12 @@ export default [
       {
         path: '/docs/category/算法学习',
         component: ComponentCreator('/docs/category/算法学习', '913'),
+        exact: true,
+        sidebar: "Records"
+      },
+      {
+        path: '/docs/category/阅读',
+        component: ComponentCreator('/docs/category/阅读', 'd4a'),
         exact: true,
         sidebar: "Records"
       },
@@ -224,6 +230,12 @@ export default [
       {
         path: '/docs/算法/面试经典150题',
         component: ComponentCreator('/docs/算法/面试经典150题', 'd2e'),
+        exact: true,
+        sidebar: "Records"
+      },
+      {
+        path: '/docs/阅读/思考，快与慢',
+        component: ComponentCreator('/docs/阅读/思考，快与慢', 'f99'),
         exact: true,
         sidebar: "Records"
       }

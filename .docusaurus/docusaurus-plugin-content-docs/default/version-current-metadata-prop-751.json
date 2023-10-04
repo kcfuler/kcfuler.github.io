@@ -183,6 +183,21 @@
           }
         ],
         "href": "/docs/category/devops学习"
+      },
+      {
+        "type": "category",
+        "label": "阅读",
+        "collapsible": true,
+        "collapsed": true,
+        "items": [
+          {
+            "type": "link",
+            "label": "思考，快与慢",
+            "href": "/docs/阅读/思考，快与慢",
+            "docId": "阅读/思考，快与慢"
+          }
+        ],
+        "href": "/docs/category/阅读"
       }
     ]
   },
@@ -226,31 +241,31 @@
     "web前端/W3C/Frame和window": {
       "id": "web前端/W3C/Frame和window",
       "title": "Frame和window",
-      "description": "",
+      "description": "学习中...",
       "sidebar": "Records"
     },
     "web前端/W3C/web_component": {
       "id": "web前端/W3C/web_component",
       "title": "web_component",
-      "description": "",
+      "description": "学习中...",
       "sidebar": "Records"
     },
     "web前端/W3C/二进制数据、文件": {
       "id": "web前端/W3C/二进制数据、文件",
       "title": "二进制数据、文件",
-      "description": "",
+      "description": "学习中...",
       "sidebar": "Records"
     },
     "web前端/W3C/浏览器存储": {
       "id": "web前端/W3C/浏览器存储",
       "title": "浏览器存储",
-      "description": "",
+      "description": "学习中...",
       "sidebar": "Records"
     },
     "web前端/W3C/网络请求": {
       "id": "web前端/W3C/网络请求",
       "title": "网络请求",
-      "description": "",
+      "description": "学习中...",
       "sidebar": "Records"
     },
     "web前端/工程化/ts学习": {
@@ -293,6 +308,12 @@
       "id": "算法/面试经典150题",
       "title": "面试经典150题",
       "description": "数组 & 字符串",
+      "sidebar": "Records"
+    },
+    "阅读/思考，快与慢": {
+      "id": "阅读/思考，快与慢",
+      "title": "思考，快与慢",
+      "description": "《思考，快与慢》的读书笔记",
       "sidebar": "Records"
     }
   }
