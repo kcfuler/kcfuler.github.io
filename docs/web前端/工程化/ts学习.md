@@ -1,9 +1,3 @@
----
-sidebar_position: 3
----
-
-
-
 > [掘金小册](https://juejin.cn/book/7086408430491172901/section)
 
 # 基础部分

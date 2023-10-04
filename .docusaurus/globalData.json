@@ -36,13 +36,38 @@
               "sidebar": "Records"
             },
             {
-              "id": "web前端/ts学习",
-              "path": "/docs/web前端/ts学习",
+              "id": "web前端/UI框架/React与Vue的响应式原理",
+              "path": "/docs/web前端/UI框架/React与Vue的响应式原理",
               "sidebar": "Records"
             },
             {
-              "id": "web前端/UI框架/React与Vue的响应式原理",
-              "path": "/docs/web前端/UI框架/React与Vue的响应式原理",
+              "id": "web前端/W3C/Frame和window",
+              "path": "/docs/web前端/W3C/Frame和window",
+              "sidebar": "Records"
+            },
+            {
+              "id": "web前端/W3C/web_component",
+              "path": "/docs/web前端/W3C/web_component",
+              "sidebar": "Records"
+            },
+            {
+              "id": "web前端/W3C/二进制数据、文件",
+              "path": "/docs/web前端/W3C/二进制数据、文件",
+              "sidebar": "Records"
+            },
+            {
+              "id": "web前端/W3C/浏览器存储",
+              "path": "/docs/web前端/W3C/浏览器存储",
+              "sidebar": "Records"
+            },
+            {
+              "id": "web前端/W3C/网络请求",
+              "path": "/docs/web前端/W3C/网络请求",
+              "sidebar": "Records"
+            },
+            {
+              "id": "web前端/工程化/ts学习",
+              "path": "/docs/web前端/工程化/ts学习",
               "sidebar": "Records"
             },
             {
@@ -76,18 +101,18 @@
               "sidebar": "Records"
             },
             {
+              "id": "/category/算法学习",
+              "path": "/docs/category/算法学习",
+              "sidebar": "Records"
+            },
+            {
               "id": "/category/web前端",
               "path": "/docs/category/web前端",
               "sidebar": "Records"
             },
             {
-              "id": "/category/sre学习",
-              "path": "/docs/category/sre学习",
-              "sidebar": "Records"
-            },
-            {
-              "id": "/category/算法学习",
-              "path": "/docs/category/算法学习",
+              "id": "/category/devops学习",
+              "path": "/docs/category/devops学习",
               "sidebar": "Records"
             }
           ],

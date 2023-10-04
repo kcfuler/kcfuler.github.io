@@ -17,6 +17,27 @@
       },
       {
         "type": "category",
+        "label": "算法学习",
+        "collapsible": true,
+        "collapsed": true,
+        "items": [
+          {
+            "type": "link",
+            "label": "算法基础模板",
+            "href": "/docs/算法/算法基础模板",
+            "docId": "算法/算法基础模板"
+          },
+          {
+            "type": "link",
+            "label": "面试经典150题",
+            "href": "/docs/算法/面试经典150题",
+            "docId": "算法/面试经典150题"
+          }
+        ],
+        "href": "/docs/category/算法学习"
+      },
+      {
+        "type": "category",
         "label": "web前端",
         "collapsible": true,
         "collapsed": true,
@@ -26,12 +47,6 @@
             "label": "概述",
             "href": "/docs/web前端/概览",
             "docId": "web前端/概览"
-          },
-          {
-            "type": "link",
-            "label": "ts学习",
-            "href": "/docs/web前端/ts学习",
-            "docId": "web前端/ts学习"
           },
           {
             "type": "category",
@@ -69,6 +84,44 @@
           },
           {
             "type": "category",
+            "label": "W3C",
+            "collapsible": true,
+            "collapsed": true,
+            "items": [
+              {
+                "type": "link",
+                "label": "Frame和window",
+                "href": "/docs/web前端/W3C/Frame和window",
+                "docId": "web前端/W3C/Frame和window"
+              },
+              {
+                "type": "link",
+                "label": "web_component",
+                "href": "/docs/web前端/W3C/web_component",
+                "docId": "web前端/W3C/web_component"
+              },
+              {
+                "type": "link",
+                "label": "二进制数据、文件",
+                "href": "/docs/web前端/W3C/二进制数据、文件",
+                "docId": "web前端/W3C/二进制数据、文件"
+              },
+              {
+                "type": "link",
+                "label": "浏览器存储",
+                "href": "/docs/web前端/W3C/浏览器存储",
+                "docId": "web前端/W3C/浏览器存储"
+              },
+              {
+                "type": "link",
+                "label": "网络请求",
+                "href": "/docs/web前端/W3C/网络请求",
+                "docId": "web前端/W3C/网络请求"
+              }
+            ]
+          },
+          {
+            "type": "category",
             "label": "工程化",
             "collapsible": true,
             "collapsed": true,
@@ -84,6 +137,12 @@
                 "label": "vite实现原理",
                 "href": "/docs/web前端/工程化/vite实现原理",
                 "docId": "web前端/工程化/vite实现原理"
+              },
+              {
+                "type": "link",
+                "label": "ts学习",
+                "href": "/docs/web前端/工程化/ts学习",
+                "docId": "web前端/工程化/ts学习"
               }
             ]
           }
@@ -92,7 +151,7 @@
       },
       {
         "type": "category",
-        "label": "SRE学习",
+        "label": "devOps学习",
         "collapsible": true,
         "collapsed": true,
         "items": [
@@ -115,28 +174,7 @@
             "docId": "devOps/rust自动化测试"
           }
         ],
-        "href": "/docs/category/sre学习"
-      },
-      {
-        "type": "category",
-        "label": "算法学习",
-        "collapsible": true,
-        "collapsed": true,
-        "items": [
-          {
-            "type": "link",
-            "label": "算法基础模板",
-            "href": "/docs/算法/算法基础模板",
-            "docId": "算法/算法基础模板"
-          },
-          {
-            "type": "link",
-            "label": "面试经典150题",
-            "href": "/docs/算法/面试经典150题",
-            "docId": "算法/面试经典150题"
-          }
-        ],
-        "href": "/docs/category/算法学习"
+        "href": "/docs/category/devops学习"
       }
     ]
   },
@@ -171,16 +209,46 @@
       "description": "image-20231003234855890",
       "sidebar": "Records"
     },
-    "web前端/ts学习": {
-      "id": "web前端/ts学习",
-      "title": "ts学习",
-      "description": "掘金小册",
-      "sidebar": "Records"
-    },
     "web前端/UI框架/React与Vue的响应式原理": {
       "id": "web前端/UI框架/React与Vue的响应式原理",
       "title": "React与Vue的响应式原理",
       "description": "为什么说 Vue 的响应式更新比 React 快？（原理深度解析）-腾讯云开发者社区-腾讯云 (tencent.com)",
+      "sidebar": "Records"
+    },
+    "web前端/W3C/Frame和window": {
+      "id": "web前端/W3C/Frame和window",
+      "title": "Frame和window",
+      "description": "",
+      "sidebar": "Records"
+    },
+    "web前端/W3C/web_component": {
+      "id": "web前端/W3C/web_component",
+      "title": "web_component",
+      "description": "",
+      "sidebar": "Records"
+    },
+    "web前端/W3C/二进制数据、文件": {
+      "id": "web前端/W3C/二进制数据、文件",
+      "title": "二进制数据、文件",
+      "description": "",
+      "sidebar": "Records"
+    },
+    "web前端/W3C/浏览器存储": {
+      "id": "web前端/W3C/浏览器存储",
+      "title": "浏览器存储",
+      "description": "",
+      "sidebar": "Records"
+    },
+    "web前端/W3C/网络请求": {
+      "id": "web前端/W3C/网络请求",
+      "title": "网络请求",
+      "description": "",
+      "sidebar": "Records"
+    },
+    "web前端/工程化/ts学习": {
+      "id": "web前端/工程化/ts学习",
+      "title": "ts学习",
+      "description": "掘金小册",
       "sidebar": "Records"
     },
     "web前端/工程化/vite实现原理": {

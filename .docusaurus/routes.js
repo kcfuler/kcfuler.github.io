@@ -89,11 +89,11 @@ export default [
   },
   {
     path: '/docs',
-    component: ComponentCreator('/docs', '382'),
+    component: ComponentCreator('/docs', 'c5a'),
     routes: [
       {
-        path: '/docs/category/sre学习',
-        component: ComponentCreator('/docs/category/sre学习', '2af'),
+        path: '/docs/category/devops学习',
+        component: ComponentCreator('/docs/category/devops学习', '224'),
         exact: true,
         sidebar: "Records"
       },
@@ -140,14 +140,44 @@ export default [
         sidebar: "Records"
       },
       {
-        path: '/docs/web前端/ts学习',
-        component: ComponentCreator('/docs/web前端/ts学习', '2c7'),
+        path: '/docs/web前端/UI框架/React与Vue的响应式原理',
+        component: ComponentCreator('/docs/web前端/UI框架/React与Vue的响应式原理', '813'),
         exact: true,
         sidebar: "Records"
       },
       {
-        path: '/docs/web前端/UI框架/React与Vue的响应式原理',
-        component: ComponentCreator('/docs/web前端/UI框架/React与Vue的响应式原理', '813'),
+        path: '/docs/web前端/W3C/Frame和window',
+        component: ComponentCreator('/docs/web前端/W3C/Frame和window', 'c64'),
+        exact: true,
+        sidebar: "Records"
+      },
+      {
+        path: '/docs/web前端/W3C/web_component',
+        component: ComponentCreator('/docs/web前端/W3C/web_component', 'e45'),
+        exact: true,
+        sidebar: "Records"
+      },
+      {
+        path: '/docs/web前端/W3C/二进制数据、文件',
+        component: ComponentCreator('/docs/web前端/W3C/二进制数据、文件', '92d'),
+        exact: true,
+        sidebar: "Records"
+      },
+      {
+        path: '/docs/web前端/W3C/浏览器存储',
+        component: ComponentCreator('/docs/web前端/W3C/浏览器存储', '81d'),
+        exact: true,
+        sidebar: "Records"
+      },
+      {
+        path: '/docs/web前端/W3C/网络请求',
+        component: ComponentCreator('/docs/web前端/W3C/网络请求', 'e5c'),
+        exact: true,
+        sidebar: "Records"
+      },
+      {
+        path: '/docs/web前端/工程化/ts学习',
+        component: ComponentCreator('/docs/web前端/工程化/ts学习', 'b84'),
         exact: true,
         sidebar: "Records"
       },

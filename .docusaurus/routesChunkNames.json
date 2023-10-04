@@ -149,16 +149,16 @@
     },
     "content": "content---markdown-page-393-028"
   },
-  "/docs-382": {
+  "/docs-c5a": {
     "__comp": "__comp---theme-doc-page-1-be-9be",
     "__context": {
       "plugin": "plugin---docs-875-8dc"
     },
     "versionMetadata": "versionMetadata---docs-935-398"
   },
-  "/docs/category/sre学习-2af": {
+  "/docs/category/devops学习-224": {
     "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
-    "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-sre学习-672-11d"
+    "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-devops学习aa-1-3c2"
   },
   "/docs/category/web前端-218": {
     "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
@@ -188,13 +188,33 @@
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-web前端-java-script-垃圾回收机制-79-c-e6e"
   },
-  "/docs/web前端/ts学习-2c7": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-web前端-ts学习b-32-5d9"
-  },
   "/docs/web前端/UI框架/React与Vue的响应式原理-813": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-web前端-ui框架-react与-vue的响应式原理-596-377"
+  },
+  "/docs/web前端/W3C/Frame和window-c64": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-web前端-w-3-c-frame和windowb-98-531"
+  },
+  "/docs/web前端/W3C/web_component-e45": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-web前端-w-3-c-web-componente-17-111"
+  },
+  "/docs/web前端/W3C/二进制数据、文件-92d": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-web前端-w-3-c-二进制数据、文件-6-b-6-8f2"
+  },
+  "/docs/web前端/W3C/浏览器存储-81d": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-web前端-w-3-c-浏览器存储f-09-7d7"
+  },
+  "/docs/web前端/W3C/网络请求-e5c": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-web前端-w-3-c-网络请求-7-eb-215"
+  },
+  "/docs/web前端/工程化/ts学习-b84": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-web前端-工程化-ts学习-2-ff-304"
   },
   "/docs/web前端/工程化/vite实现原理-6f1": {
     "__comp": "__comp---theme-doc-item-178-a40",
