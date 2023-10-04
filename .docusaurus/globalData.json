@@ -46,6 +46,11 @@
               "sidebar": "Records"
             },
             {
+              "id": "web前端/工程化/vite实现原理",
+              "path": "/docs/web前端/工程化/vite实现原理",
+              "sidebar": "Records"
+            },
+            {
               "id": "web前端/工程化/webpack实现原理",
               "path": "/docs/web前端/工程化/webpack实现原理",
               "sidebar": "Records"

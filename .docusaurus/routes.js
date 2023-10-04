@@ -89,7 +89,7 @@ export default [
   },
   {
     path: '/docs',
-    component: ComponentCreator('/docs', '75b'),
+    component: ComponentCreator('/docs', '382'),
     routes: [
       {
         path: '/docs/category/sre学习',
@@ -148,6 +148,12 @@ export default [
       {
         path: '/docs/web前端/UI框架/React与Vue的响应式原理',
         component: ComponentCreator('/docs/web前端/UI框架/React与Vue的响应式原理', '813'),
+        exact: true,
+        sidebar: "Records"
+      },
+      {
+        path: '/docs/web前端/工程化/vite实现原理',
+        component: ComponentCreator('/docs/web前端/工程化/vite实现原理', '6f1'),
         exact: true,
         sidebar: "Records"
       },

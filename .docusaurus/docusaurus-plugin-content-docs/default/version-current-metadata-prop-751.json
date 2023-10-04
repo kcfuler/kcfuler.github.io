@@ -47,7 +47,7 @@
               },
               {
                 "type": "link",
-                "label": "概览",
+                "label": "垃圾回收机制",
                 "href": "/docs/web前端/JavaScript/垃圾回收机制",
                 "docId": "web前端/JavaScript/垃圾回收机制"
               }
@@ -78,6 +78,12 @@
                 "label": "webpack实现原理",
                 "href": "/docs/web前端/工程化/webpack实现原理",
                 "docId": "web前端/工程化/webpack实现原理"
+              },
+              {
+                "type": "link",
+                "label": "vite实现原理",
+                "href": "/docs/web前端/工程化/vite实现原理",
+                "docId": "web前端/工程化/vite实现原理"
               }
             ]
           }
@@ -156,12 +162,12 @@
     "web前端/JavaScript/JS内置数据结构": {
       "id": "web前端/JavaScript/JS内置数据结构",
       "title": "JS内置数据结构",
-      "description": "总结JS中内置的数据结构，作为阶段性复习吧",
+      "description": "​\t总结JS中内置的数据结构，作为阶段性复习吧",
       "sidebar": "Records"
     },
     "web前端/JavaScript/垃圾回收机制": {
       "id": "web前端/JavaScript/垃圾回收机制",
-      "title": "概览",
+      "title": "垃圾回收机制",
       "description": "image-20231003234855890",
       "sidebar": "Records"
     },
@@ -174,13 +180,19 @@
     "web前端/UI框架/React与Vue的响应式原理": {
       "id": "web前端/UI框架/React与Vue的响应式原理",
       "title": "React与Vue的响应式原理",
-      "description": "​\t之前通过《vuejs设计与实现》了解了vue3的实现原理以及它和vue2的区别，也在各个博客中了解过react的实现原理，但对它们之间的实现机制的区别一直没有一个很清晰的认知，通过这篇文章来整理一下自己的知识，也算是解答自己的疑惑。",
+      "description": "为什么说 Vue 的响应式更新比 React 快？（原理深度解析）-腾讯云开发者社区-腾讯云 (tencent.com)",
+      "sidebar": "Records"
+    },
+    "web前端/工程化/vite实现原理": {
+      "id": "web前端/工程化/vite实现原理",
+      "title": "vite实现原理",
+      "description": "待补充",
       "sidebar": "Records"
     },
     "web前端/工程化/webpack实现原理": {
       "id": "web前端/工程化/webpack实现原理",
       "title": "webpack实现原理",
-      "description": "",
+      "description": "待补充",
       "sidebar": "Records"
     },
     "web前端/概览": {
