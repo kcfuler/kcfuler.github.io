@@ -252,5 +252,83 @@ optimizeDeps: {
 
 ## 双引擎架构
 
+> vite的架构并不是"开发阶段用 Esbuild，生产环境用Rollup"那么简单
 
+![image-20231005141812902](https://s2.loli.net/2023/10/05/KEFPOQoWy541BXp.png)
+
+### 性能利器-Esbuild
+
+​	esbuild在很多`关键的构建阶段` 让vite获得了相当优异的性能，这些阶段如果用传统的打包器/编译器来完成的话，开发体验要下降一大截。
+
+#### 依赖预构建-作为 Bundle 工具
+
+![image-20231005142057418](https://s2.loli.net/2023/10/05/SLJuplK2tzHwUmr.png)
+
+一般来说，`node_module`依赖的大小动辄几百MB甚至上GB，会远超项目源代码，这些依赖如果直接在vite中使用，会有一系列的问题。esbuild就完成了对第三方依赖的**打包**和**格式转换**
+
+esbuild作为打包工具也有一些缺点：
+
+- 不支持降级到`es5`的代码
+- 不支持`const enum`等语法
+- 不提供操作打包产物的接口，像Rollup中灵活处理打包产物的能力在esbuild中是没有的
+
+#### 单文件编译-作为TS和JSX编译工具
+
+在依赖预构建阶段，esbuild作为bundler的角色存在。而在 `ts/jsx`单文件编译上，vite也使用esbuild进行语法转译，也就是将esbuild作为**transformer**来使用![image-20231005142759780](https://s2.loli.net/2023/10/05/noUMFYltAdEpDjT.png)
+
+图中的这个阶段。也就是说，esbuild转译ts或者jsx的能力通过vite插件提供，这个vite插件在开发环境和生产环境都会执行。这部分的工作原先是Babel或者TSC来执行，但它们都有性能问题。这里是几个常用工具的性能对比。![image-20231005143051902](https://s2.loli.net/2023/10/05/veHl7Og1DBocTG9.png)
+
+#### 代码压缩--作为压缩工具
+
+![image-20231005143253036](https://s2.loli.net/2023/10/05/GcPU4jwzDZXCAko.png)
+
+在生产环境中，esbuild通过插件的形式融入到了rollup的打包流程中。传统的方式是使用terser这种js开发的压缩器来实现，在webpack或者rollup中作为一个plugin来完成代码打包后的压缩混淆的工作。但terser很慢，主要有两个原因：
+
+1. 压缩工作涉及大量的AST操作，并且在传统的构建流程中，AST在各个工具之间无法共享
+2. JS本身语言的执行效率问题
+
+### 构建基石-rollup
+
+#### 生产环境bundle
+
+rollup在vite中的地位并不亚于esbuild，它成熟的生态、插件系统都是vite所需要的。vite也基于rollup的打包能力做了一些拓展优化：
+
+1. CSS代码分割，如果异步模块中引入了CSS，vite会抽离单文件，提高线上产物的`缓存复用率` 
+2. 自动预加载。Vite会自动为入口 chunk 的依赖自动生成预加载标签`<link ref = "modulepreload">`， 如：
+
+```html
+<head>
+  <!-- 省略其它内容 -->
+  <!-- 入口 chunk -->
+  <script type="module" crossorigin src="/assets/index.250e0340.js"></script>
+  <!--  自动预加载入口 chunk 所依赖的 chunk-->
+  <link rel="modulepreload" href="/assets/vendor.293dca09.js">
+</head>
+```
+
+3. 异步 Chunk 加载优化。在异步引入的时候，通常会有多级依赖模块。rollup的打包产物会一层一层寻找依赖，再发起请求。而vite就会将这部分chunk在请求上层依赖时预加载它的依赖，优化网络请求的时间。
+
+![image-20231005145419125](https://s2.loli.net/2023/10/05/zCW5aAHhFIo1q7M.png)
+
+#### 兼容插件机制
+
+vite的插件机制设计兼容rollup生态，这样就保证了能够使用rollup多年沉淀下来的插件，减少了插件开发的成本。
+
+### ESbuild功能使用与插件开发实战
+
+#### esbuild快的原因
+
+esbuild是Figma的CTO Evan Wallace基于Golang开发的一款打包工具，相比传统的打包工具，主打性能优势。
+
+1. **使用Golang开发**。构建逻辑代码直接被编译为原生机器码，而不用像JS一样代码先解析为字节码，然后再转换为机器码，提高了逻辑的执行效率
+2. **多核并行**。内部打包算法很好的利用了多核处理的优势，所有步骤尽可能并行执行，这也是得益于Go中多线程共享内存的优势
+3. **从零造轮子**。几乎没有使用任何第三方库，所有逻辑自己编写，大到AST解析，小到字符串的操作，保证极致的代码性能
+4. **高效的内存利用**。esbuild中从头到尾尽可能复用同一份AST节点数据，而不像JS打包工具中频繁地解析和传递AST数据（如string -> TS -> JS -> string），造成大量的内存浪费。
+
+#### esbuild使用
+
+```typescript
+pnpm init -y
+pnpm i esbuild
+```
 
