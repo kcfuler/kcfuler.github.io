@@ -1,6 +1,48 @@
 {
   "blogPosts": [
     {
+      "id": "viteConf简记",
+      "metadata": {
+        "permalink": "/blog/viteConf简记",
+        "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/blog/2023-10-6-viteConf.md",
+        "source": "@site/blog/2023-10-6-viteConf.md",
+        "title": "viteConf简记",
+        "description": "Evan you",
+        "date": "2023-10-06T00:00:00.000Z",
+        "formattedDate": "2023年10月6日",
+        "tags": [
+          {
+            "label": "vite",
+            "permalink": "/blog/tags/vite"
+          }
+        ],
+        "readingTime": 2.23,
+        "hasTruncateMarker": false,
+        "authors": [
+          {
+            "name": "kcfuler",
+            "title": "passionate software engineer",
+            "url": "https://github.com/kcfuler",
+            "imageURL": "https://s2.loli.net/2023/10/04/i7A3Mb81YwvNmGl.jpg",
+            "key": "kcfuler"
+          }
+        ],
+        "frontMatter": {
+          "slug": "viteConf简记",
+          "title": "viteConf简记",
+          "authors": "kcfuler",
+          "tags": [
+            "vite"
+          ]
+        },
+        "nextItem": {
+          "title": "23-9月总结",
+          "permalink": "/blog/23-9月总结"
+        }
+      },
+      "content": "## Evan you\r\n\r\n### state of vite\r\n\r\n#### 4.0\r\n\r\n- rollup 3.0\r\n- swc\r\n\r\n#### 4.2\r\n\r\n- source-map debug improvement\r\n\r\n#### 4.3\r\n\r\n- performance improvement\r\n\r\n#### 4.4\r\n\r\n- Experimental Lightning CSS support\r\n- Solid and Qwik templates in create-vite\r\n\r\n#### 5.0(bate)\r\n\r\n- node 18\r\n- CommonJS API deprecated\r\n\r\n#### mission\r\n\r\nThe shared **foundation** for higher-level innovations in the web ecosystem\r\n\r\n#### vite's Philosophy\r\n\r\n- Lean and Extensible Core\r\n- Push for the Modern Web\r\n- A Pragmatic Approach to Performance\r\n- Support Higher-Level Frameworks\r\n- Foster a Collaborative Ecosystem\r\n\r\n### Next\r\n\r\n#### Current Problems of Vite\r\n\r\n> vite is far from perfect\r\n\r\n- Relatively slow production build speed\r\n- Inconsistency between dev & prod environments\r\n- Network overhead of unbundled ESM during dev\r\n- Confusing SSR externals issues\r\n- Limited control over chunk splitting\r\n- Lack of first-party Module Federation support\r\n\r\n#### challenges\r\n\r\n- Most issues need to be resolved at the bundler level\r\n- esbuild(or bun) is extremely fast, but:\r\n  - very limited control for build asset optimization\r\n  - Plugin API not flexible enough\r\n- Rollup is mature and flexible, but:\r\n  - Still slow compared to native bundlers\r\n  - Handling of ESM/CJS interop can be improved\r\n- Two bundlers that cannot fully replace one another, and with subtle behavior inconsistencies\r\n\r\n### Rolldown\r\n\r\n> a rust port of Rollup\r\n\r\n- focus: performance with best-effort compatibility with Rollup\r\n- Goal: switch to it in Vite with minimal impact on end users\r\n\r\n#### state\r\n\r\n![image-20231006121545472](https://s2.loli.net/2023/10/06/YHueZR4nmIdocwA.png)\r\n\r\n#### Roadmap\r\n\r\n1. basic bundling\r\n\r\n   replace esbuild for dependency pre-bundling\r\n\r\n   - CommonJS & Faux-ESM compatibility\r\n\r\n2. Advanced Bundling\r\n\r\n   - rollup feature parity\r\n     - plugin compatibility\r\n     - tree-shaking\r\n     - Advanced Chunk-splitting control\r\n\r\n3. Build-in Transforms\r\n\r\n   - TS\r\n   - JSX\r\n   - Minification\r\n   - Syntax lowering\r\n\r\n4. Rustify Vite\r\n\r\n   - Rolldown exposing plugin container as API\r\n   - Vite introducing a Rust core , Rolldown as dependency\r\n   - Rustify perf critical Vite internal pugins & ssrLoadModule transform\r\n   - Full-bundle mode alternative to unbundled ESM\r\n\r\n   后面的主要就是看兴趣来了。一个个写下来比较费时间。\r\n\r\n   \r\n\r\n## Dr. Lukas\r\n\r\n> maintainer of RollupJS\r\n\r\n### main complaint\r\n\r\n- speed\r\n- memory comsuption\r\n\r\n![image-20231006141021957](https://s2.loli.net/2023/10/06/yIMGUQu6aitWeZc.png)\r\n\r\n![image-20231006141323621](https://s2.loli.net/2023/10/06/vqgH5rNI3RTCzWo.png)\r\n\r\n`rolldown`这个名字确实搞😂\r\n\r\n![image-20231006142117800](https://s2.loli.net/2023/10/06/NAVdQzUkwhT8OI6.png)\r\n\r\n## Design System\r\n\r\n### Figma - Emil sjolander\r\n\r\n> Bringing developers into the design process -- figma\r\n\r\n![image-20231006144224773](https://s2.loli.net/2023/10/06/opExiR3GMzSDfdh.png)\r\n\r\n#### problems\r\n\r\n1. design software is not built for devs\r\n2. Designs don't easily translate to code\r\n3. miscommunication leads to mistakes\r\n\r\n> nothing great made alone\r\n\r\n### Storybook - Jeppe Reinholt\r\n\r\n> Storybook & Vite: It Keeps Getting Better\r\n\r\n## Framework\r\n\r\n### unjs - Pooya Parsa\r\n\r\n> State of Nitro 2023\r\n\r\n![image-20231006150714710](https://s2.loli.net/2023/10/06/zpOq6at8y5WmxI3.png)\r\n\r\n### vitest\r\n\r\n..."
+    },
+    {
       "id": "23-9月总结",
       "metadata": {
         "permalink": "/blog/23-9月总结",
@@ -34,6 +76,10 @@
           "tags": [
             "plan"
           ]
+        },
+        "prevItem": {
+          "title": "viteConf简记",
+          "permalink": "/blog/viteConf简记"
         },
         "nextItem": {
           "title": "blog再构建",

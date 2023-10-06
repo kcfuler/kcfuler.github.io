@@ -42,13 +42,16 @@
       "plugin": "plugin---docusaurus-debug-01-b-a9b"
     }
   },
-  "/blog-bf0": {
+  "/blog-38b": {
     "__comp": "__comp---theme-blog-list-pagea-6-a-7ba",
     "__context": {
       "plugin": "plugin---blogc-83-838"
     },
     "sidebar": "sidebar---blog-814-8ac",
     "items": [
+      {
+        "content": "content---blog-499-943"
+      },
       {
         "content": "content---blog-08-c-7b4"
       },
@@ -158,6 +161,28 @@
     ],
     "tag": "tag---blog-tags-triflinga-56-a20",
     "listMetadata": "listMetadata---blog-tags-trifling-2-c-8-649"
+  },
+  "/blog/tags/vite-9b3": {
+    "__comp": "__comp---theme-blog-tags-posts-page-687-b6c",
+    "__context": {
+      "plugin": "plugin---blogc-83-838"
+    },
+    "sidebar": "sidebar---blog-814-8ac",
+    "items": [
+      {
+        "content": "content---blog-499-943"
+      }
+    ],
+    "tag": "tag---blog-tags-vited-08-f31",
+    "listMetadata": "listMetadata---blog-tags-vite-6-bf-a2e"
+  },
+  "/blog/viteConf简记-f66": {
+    "__comp": "__comp---theme-blog-post-pageccc-cab",
+    "__context": {
+      "plugin": "plugin---blogc-83-838"
+    },
+    "sidebar": "sidebar---blog-814-8ac",
+    "content": "content---blog-vite-conf简记acd-abd"
   },
   "/blog/国庆游-dd3": {
     "__comp": "__comp---theme-blog-post-pageccc-cab",

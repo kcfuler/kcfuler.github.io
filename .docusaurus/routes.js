@@ -39,7 +39,7 @@ export default [
   },
   {
     path: '/blog',
-    component: ComponentCreator('/blog', 'bf0'),
+    component: ComponentCreator('/blog', '38b'),
     exact: true
   },
   {
@@ -85,6 +85,16 @@ export default [
   {
     path: '/blog/tags/trifling',
     component: ComponentCreator('/blog/tags/trifling', '703'),
+    exact: true
+  },
+  {
+    path: '/blog/tags/vite',
+    component: ComponentCreator('/blog/tags/vite', '9b3'),
+    exact: true
+  },
+  {
+    path: '/blog/viteConf简记',
+    component: ComponentCreator('/blog/viteConf简记', 'f66'),
     exact: true
   },
   {

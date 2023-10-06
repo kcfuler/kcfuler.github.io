@@ -2,6 +2,10 @@
   "title": "Recent posts",
   "items": [
     {
+      "title": "viteConf简记",
+      "permalink": "/blog/viteConf简记"
+    },
+    {
       "title": "23-9月总结",
       "permalink": "/blog/23-9月总结"
     },
