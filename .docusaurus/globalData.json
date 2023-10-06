@@ -11,6 +11,31 @@
           "mainDocId": "概述",
           "docs": [
             {
+              "id": "概述",
+              "path": "/docs/概述",
+              "sidebar": "Records"
+            },
+            {
+              "id": "算法/面试经典150题",
+              "path": "/docs/算法/面试经典150题",
+              "sidebar": "Records"
+            },
+            {
+              "id": "算法/算法基础模板",
+              "path": "/docs/算法/算法基础模板",
+              "sidebar": "Records"
+            },
+            {
+              "id": "阅读/思考，快与慢",
+              "path": "/docs/阅读/思考，快与慢",
+              "sidebar": "Records"
+            },
+            {
+              "id": "devOps/概览",
+              "path": "/docs/devOps/概览",
+              "sidebar": "Records"
+            },
+            {
               "id": "devOps/rust/rust入门篇",
               "path": "/docs/devOps/rust/rust入门篇",
               "sidebar": "Records"
@@ -21,48 +46,8 @@
               "sidebar": "Records"
             },
             {
-              "id": "devOps/概览",
-              "path": "/docs/devOps/概览",
-              "sidebar": "Records"
-            },
-            {
-              "id": "web前端/JavaScript/JS内置数据结构",
-              "path": "/docs/web前端/JavaScript/JS内置数据结构",
-              "sidebar": "Records"
-            },
-            {
-              "id": "web前端/JavaScript/垃圾回收机制",
-              "path": "/docs/web前端/JavaScript/垃圾回收机制",
-              "sidebar": "Records"
-            },
-            {
-              "id": "web前端/UI框架/React与Vue的响应式原理",
-              "path": "/docs/web前端/UI框架/React与Vue的响应式原理",
-              "sidebar": "Records"
-            },
-            {
-              "id": "web前端/W3C/Frame和window",
-              "path": "/docs/web前端/W3C/Frame和window",
-              "sidebar": "Records"
-            },
-            {
-              "id": "web前端/W3C/web_component",
-              "path": "/docs/web前端/W3C/web_component",
-              "sidebar": "Records"
-            },
-            {
-              "id": "web前端/W3C/二进制数据、文件",
-              "path": "/docs/web前端/W3C/二进制数据、文件",
-              "sidebar": "Records"
-            },
-            {
-              "id": "web前端/W3C/浏览器存储",
-              "path": "/docs/web前端/W3C/浏览器存储",
-              "sidebar": "Records"
-            },
-            {
-              "id": "web前端/W3C/网络请求",
-              "path": "/docs/web前端/W3C/网络请求",
+              "id": "web前端/概览",
+              "path": "/docs/web前端/概览",
               "sidebar": "Records"
             },
             {
@@ -81,28 +66,43 @@
               "sidebar": "Records"
             },
             {
-              "id": "web前端/概览",
-              "path": "/docs/web前端/概览",
+              "id": "web前端/JavaScript/垃圾回收机制",
+              "path": "/docs/web前端/JavaScript/垃圾回收机制",
               "sidebar": "Records"
             },
             {
-              "id": "概述",
-              "path": "/docs/概述",
+              "id": "web前端/JavaScript/JS内置数据结构",
+              "path": "/docs/web前端/JavaScript/JS内置数据结构",
               "sidebar": "Records"
             },
             {
-              "id": "算法/算法基础模板",
-              "path": "/docs/算法/算法基础模板",
+              "id": "web前端/UI框架/React与Vue的响应式原理",
+              "path": "/docs/web前端/UI框架/React与Vue的响应式原理",
               "sidebar": "Records"
             },
             {
-              "id": "算法/面试经典150题",
-              "path": "/docs/算法/面试经典150题",
+              "id": "web前端/W3C/二进制数据、文件",
+              "path": "/docs/web前端/W3C/二进制数据、文件",
               "sidebar": "Records"
             },
             {
-              "id": "阅读/思考，快与慢",
-              "path": "/docs/阅读/思考，快与慢",
+              "id": "web前端/W3C/浏览器存储",
+              "path": "/docs/web前端/W3C/浏览器存储",
+              "sidebar": "Records"
+            },
+            {
+              "id": "web前端/W3C/网络请求",
+              "path": "/docs/web前端/W3C/网络请求",
+              "sidebar": "Records"
+            },
+            {
+              "id": "web前端/W3C/Frame和window",
+              "path": "/docs/web前端/W3C/Frame和window",
+              "sidebar": "Records"
+            },
+            {
+              "id": "web前端/W3C/web_component",
+              "path": "/docs/web前端/W3C/web_component",
               "sidebar": "Records"
             },
             {
