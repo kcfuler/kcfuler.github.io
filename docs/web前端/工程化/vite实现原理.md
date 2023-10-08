@@ -815,3 +815,254 @@ export function initState() {
 }
 ```
 
+## 常见工程化需求
+
+### 代码拆包
+
+在生产环境下，为了提高页面的加载性能，构建工具一般将代码打包(bundle)到一起，这样上线之后只需要请求少量的 JS 文件，大大减少 HTTP 请求。默认情况下 vite 使用 rollup 完成项目的打包
+
+在实际的项目场景中，只用 vite 的默认策略是不够的，需要使用 rollup 底层拆包的能力。也需要解决**循环引用**的问题
+
+几个拆包常用概念的解释：
+
+- `bundle` 指的是整体的打包产物，包含 JS 和各种静态资源
+- `chunk`指的是打包后的 JS 文件，是`bundle`的子集
+- `vendor` 是指第三方包的打包产物，是一种特殊的 chunk
+
+#### `Code Splitting`解决的问题
+
+传统的单`chunk`打包模式下，当项目代码越来越庞大，最后会导致浏览器下载一个巨大的文件，从页面加载性能的角度来说，主要会导致两个问题：
+
+1. 无法做到**按需加载**，即使是当前页面不需要的代码也会进行加载
+2. 线上**缓存复用率低**，改动一行代码就会导致整个 bundle 产物的缓存失效
+
+一般而言，一个前端页面中的 JS 代码可以分为两个部分：`Initial Chunk`和`Async Chunk`，前者指页面首屏需要的代码，而后者当前页面并不一定需要，一个典型的例子就是`路由组件`，与当前路由无关的组件不用加载。项目被打包成单`bundle`之后，无论是`Initial Chunk`还是`Async Chunk`，都会打包进同一个产物。
+
+线上的缓存命中率是一个很重要的性能指标。对于线上站点而言，服务端一般在响应资源时加上一些 HTTP 响应头 ，最常见的响应头之一就是`cache-control`，可以制定浏览器的强缓存。在单 chunk打包模式下，一旦有一行代码变动，整个 chunk 的 url 地址都会变化，
+
+![image-20231008212847352](https://s2.loli.net/2023/10/08/dSpo1f8YeM9OyuD.png)
+
+由于构建工具一般都会根据产物的内容生成哈希值，一旦内容变化就会导致整个 chunk 产物的强缓存失效，所以单 chunk 打包模式的缓存命中率极低。
+
+进行`Code Splitting`之后，代码的改动只会影响部分的 chunk 哈希改动![image-20231008213044069](https://s2.loli.net/2023/10/08/GBpWy2lr3XeMFHv.png)
+
+#### Vite 默认拆包策略
+
+![image-20231008213317709](https://s2.loli.net/2023/10/08/KqYIOEt6oCaciZx.png)
+
+1. 一方面是CSS的自动代码分割能力，每个单独的css 文件都会单独生成
+2. 另一方面就是 Vite 基于 rollup 的`manualChunks`API 实现了应用拆包的策略：
+   - 对于`Initial Chunk`而言，业务代码和第三方代码分别打包为单独的 chunk，在上述的例子中分别对应`index.js`和`vendor.js`。vite2.9之后的版本会直接将所有的 js 代码全部打包到`index.js`中。
+   - 对于`Async Chunk`而言，动态`import`的代码会被拆分成单独的`chunk`，如上述的`Dynamic`组件
+
+vite 默认拆包的优势在于实现了 CSS 代码分割与业务代码、第三方库代码、动态 import 模块代码三者的分离，但缺点也比较直观，第三方库的打包产物容易变得比较臃肿。
+
+#### 自定义拆包策略
+
+对于更细粒度的拆包，Vite 的底层打包引擎 rollup 提供了`manualChunks`，让我们能自定义拆包策略，它属于 vite 配置的一部分：
+
+```typescript
+// vite.config.ts
+export default {
+  build: {
+    rollupOptions: {
+      output: {
+        // manualChunks 配置
+        manualChunks: {},
+      },
+    }
+  },
+}
+```
+
+`nanualChunks`主要有两种配置的方式：
+
+1. 对象
+
+```typescript
+// vite.config.ts
+{
+  build: {
+    rollupOptions: {
+      output: {
+        // manualChunks 配置
+        manualChunks: {
+          // 将 React 相关库打包成单独的 chunk 中
+          'react-vendor': ['react', 'react-dom'],
+          // 将 Lodash 库的代码单独打包
+          'lodash': ['lodash-es'],
+          // 将组件库的代码打包
+          'library': ['antd', '@arco-design/web-react'],
+        },
+      },
+    }
+  },
+}
+```
+
+2. 函数
+
+```typescript
+// Vite 部分源码
+function createMoveToVendorChunkFn(config: ResolvedConfig): GetManualChunk {
+  const cache = new Map<string, boolean>()
+  // 返回值为 manualChunks 的配置
+  return (id, { getModuleInfo }) => {
+    // Vite 默认的配置逻辑其实很简单
+    // 主要是为了把 Initial Chunk 中的第三方包代码单独打包成`vendor.[hash].js`
+    if (
+      id.includes('node_modules') &&
+      !isCSSRequest(id) &&
+      // 判断是否为 Initial Chunk
+      staticImportedByEntry(id, getModuleInfo, cache)
+    ) {
+      return 'vendor'
+    }
+  }
+}
+// 对象配置中的第三方拆包逻辑
+manualChunks(id) {
+  if (id.includes('antd') || id.includes('@arco-design/web-react')) {
+    return 'library';
+  }
+  if (id.includes('lodash')) {
+    return 'lodash';
+  }
+  if (id.includes('react')) {
+    return 'react';
+  }
+}
+```
+
+Rollup 会对每一个模块调用 manualChunks 函数，在 manualChunks 的函数入参中你可以拿到`模块 id` 及`模块详情信息`，经过一定的处理后返回 `chunk 文件的名称`，这样当前 id 代表的模块便会打包到你所指定的 chunk 文件中。
+
+如果直接使用函数的方式进行拆包，容易发生循环引用的问题
+
+```typescript
+// a.js
+import { funcB } from './b.js';
+
+funcB();
+
+export var funcA = () => {
+  console.log('a');
+} 
+// b.js
+import { funcA } from './a.js';
+
+funcA();
+
+export var funcB = () => {
+  console.log('b')
+}
+```
+
+- JS 引擎执行 `a.js` 时，发现引入了 `b.js`，于是去执行 `b.js`
+- 引擎执行`b.js`，发现里面引入了`a.js`(出现循环引用)，**认为`a.js`已经加载完成**，继续往下执行
+- 执行到`funcA()`语句时发现 funcA 并没有定义，于是报错。
+
+![image-20231008222144155](https://s2.loli.net/2023/10/08/3wyVoatuXrciGhW.png)
+
+![image-20231008222223230](https://s2.loli.net/2023/10/08/pkH9wzQm8yZxKF3.png)
+
+报错的原因主要在于react 的依赖，它们可能并没有引入进来。
+
+那我们能不能避免这种问题呢？当然是可以的，之前的 `manualChunks`逻辑过于简单粗暴，仅仅通过路径 id 来决定打包到哪个 chunk 中，而漏掉了间接依赖的情况。如果针对像`object-assign`这种间接依赖，我们也能识别出它属于 react 的依赖，将其自动打包到`react-vendor`中，这样就可以避免循环引用的问题。
+
+解决思路如下：
+
+1. 确定 react 相关包的入口路径
+2. 在 manualChunk 中拿到模块的详细信息，向上追溯它的引用者，如果命中 react 的路径，则将模块放到`react-vendor`中
+
+```typescript
+// 确定 react 相关包的入口路径
+const chunkGroups = {
+  'react-vendor': [
+    require.resolve('react'),
+    require.resolve('react-dom')
+  ],
+}
+
+// Vite 中的 manualChunks 配置
+function manualChunks(id, { getModuleInfo }) { 
+  for (const group of Object.keys(chunkGroups)) {
+    const deps = chunkGroups[group];
+    if (
+      id.includes('node_modules') && 
+      // 递归向上查找引用者，检查是否命中 chunkGroups 声明的包 
+      isDepInclude(id, deps, [], getModuleInfo)
+     ) { 
+      return group;
+    }
+  }
+}
+```
+
+```typescript
+// 缓存对象
+const cache = new Map();
+
+function isDepInclude (id: string, depPaths: string[], importChain: string[], getModuleInfo): boolean | undefined  {
+  const key = `${id}-${depPaths.join('|')}`;
+  // 出现循环依赖，不考虑
+  if (importChain.includes(id)) {
+    cache.set(key, false);
+    return false;
+  }
+  // 验证缓存
+  if (cache.has(key)) {
+    return cache.get(key);
+  }
+  // 命中依赖列表
+  if (depPaths.includes(id)) {
+    // 引用链中的文件都记录到缓存中
+    importChain.forEach(item => cache.set(`${item}-${depPaths.join('|')}`, true));
+    return true;
+  }
+  const moduleInfo = getModuleInfo(id);
+  if (!moduleInfo || !moduleInfo.importers) {
+    cache.set(key, false);
+    return false;
+  }
+  // 核心逻辑，递归查找上层引用者
+  const isInclude = moduleInfo.importers.some(
+    importer => isDepInclude(importer, depPaths, importChain.concat(id), getModuleInfo)
+  );
+  // 设置缓存
+  cache.set(key, isInclude);
+  return isInclude;
+};
+```
+
+#### 终极解决方案
+
+`vite-plugin-chunk-split`
+
+```typescript
+// vite.config.ts
+import { chunkSplitPlugin } from 'vite-plugin-chunk-split';
+
+export default {
+  chunkSplitPlugin({
+    // 指定拆包策略
+    customSplitting: {
+      // 1. 支持填包名。`react` 和 `react-dom` 会被打包到一个名为`render-vendor`的 chunk 里面(包括它们的依赖，如 object-assign)
+      'react-vendor': ['react', 'react-dom'],
+      // 2. 支持填正则表达式。src 中 components 和 utils 下的所有文件被会被打包为`component-util`的 chunk 中
+      'components-util': [/src\/components/, /src\/utils/]
+    }
+  })
+}
+```
+
+### 语法降级与 polyfill
+
+> 联合前端编译工具链，消灭低版本浏览器兼容问题
+
+> 通过 Vite 构建，我们完全可以兼容各种低版本浏览器，打包出既支持现代浏览器又支持旧版浏览器的产物
+
+常用的工具库：
+
+1. babel
+2. core-js
+3. regenerator-runtime
