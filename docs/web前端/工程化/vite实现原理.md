@@ -1066,3 +1066,330 @@ export default {
 1. babel
 2. core-js
 3. regenerator-runtime
+
+### 模块联邦：如何实现优雅的跨应用代码共享
+
+#### 模块共享方式
+
+1. 发布 npm 包
+
+   ![image-20231011205401516](https://s2.loli.net/2023/10/11/CqcfAvVKmbolgkn.png)
+
+存在的问题：
+
+- 开发效率，每次改动都需要发版，所有相关的应用安装新依赖，流程比较复杂
+- 项目构建，引入了公共库后，公共库的代码都需要打包到项目最后的产物中，导致产物体积偏大，构建速度相对较慢
+
+2. git Submodule
+
+问题和 npm 包类似
+
+3. 依赖外部化（external）+ CDN 引入
+
+可以通过构建工具添加依赖 CDN 地址的方式
+
+存在的问题：
+
+- 兼容性问题。并不是所有的产物都有 UMD 格式的产物。因此这种格式的产物不能覆盖所有的第三方 npm 包
+
+- 依赖顺序问题。第三方库一般也有自己的依赖，我们需要自己处理它们之间的依赖关系，工作量很大
+
+- 产物体积问题。由于依赖包被声明之后，应用在引用 CDN 地址时，会全量引用依赖的代码，这种情况就没有办法通过Tree Shaking来去除无用代码了，会导致应用的性能有所下降
+
+4. Monorepo
+
+![image-20231011205515263](https://s2.loli.net/2023/10/11/FozGjlvx3k6CYSn.png)
+
+对于应用间模块复用的问题，Monorepo 是一种优秀的解决方案，但它也会给团队带来一些挑战：
+
+1. **所有的应用代码必须放到同一个仓库**。如果是旧有项目，并且每个应用使用一个 Git 仓库的情况，那么使用 Monorepo 之后项目架构调整会比较大，也就是说改造成本会相对比较高。
+2. Monorepo 本身也存在一些天然的局限性，如项目数量多起来之后依赖安装时间会很久、项目整体构建时间会变长等等，我们也需要去解决这些局限性所带来的的开发效率问题。而这项工作一般需要投入专业的人去解决，如果没有足够的人员投入或者基建的保证，Monorepo 可能并不是一个很好的选择。
+3. **项目构建问题**。跟 `发 npm 包`的方案一样，所有的公共代码都需要进入项目的构建流程中，产物体积还是会偏大。
+
+#### MF 核心概念
+
+模块联邦中主要有两种模块：本地模块 & 远程模块
+
+本地模块即为普通模块，是当前构建流程的一部分，而远程模块不属于当前构建流程，在本地模块的运行时进行导入，同时本地模块和远程模块可以共享某些依赖的代码
+
+![image-20231011210448219](https://s2.loli.net/2023/10/11/maIK9XPhprTJ67D.png)
+
+值得强调的是，在模块联邦中，每个模块既可以是`本地模块`，导入其它的`远程模块`，又可以作为远程模块，被其他的模块导入。
+
+![image-20231011210534539](https://s2.loli.net/2023/10/11/DjJCTfgQaSu6q7t.png)
+
+MF的设计优势：
+
+1. **实现任意粒度的模块共享**。这里所指的模块粒度可大可小，包括第三方 npm 依赖、业务组件、工具函数，甚至可以是整个前端应用！而整个前端应用能够共享产物，代表着各个应用单独开发、测试、部署，这也是一种`微前端`的实现。
+2. **优化构建产物体积**。远程模块可以从本地模块运行时被拉取，而不用参与本地模块的构建，可以加速构建过程，同时也能减小构建产物。
+3. **运行时按需加载**。远程模块导入的粒度可以很小，如果你只想使用 app1 模块的`add`函数，只需要在 app1 的构建配置中导出这个函数，然后在本地模块中按照诸如`import('app1/add')`的方式导入即可，这样就很好地实现了模块按需加载。
+4. **第三方依赖共享**。通过模块联邦中的共享依赖机制，我们可以很方便地实现在模块间公用依赖代码，从而避免以往的`external + CDN 引入`方案的各种问题。
+
+实现原理：
+
+- 三大要素：
+
+1. `Host`模块: 即本地模块，用来消费远程模块。
+2. `Remote`模块: 即远程模块，用来生产一些模块，并暴露`运行时容器`供本地模块消费。
+3. `Shared`依赖: 即共享依赖，用来在本地模块和远程模块中实现第三方依赖的共享。
+
+![image-20231011211800968](https://s2.loli.net/2023/10/11/WxjDUJb8XHviqA3.png)
+
+本地模块设置了`shared: ['vue']`参数之后，当它执行远程模块代码的时候，一旦遇到了引入`vue`的情况，会优先使用本地的 `vue`，而不是远端模块中的`vue`。
+
+![image-20231011211922675](https://s2.loli.net/2023/10/11/LTFsQeuJPZ73kyN.png)
+
+总体的运行流程![image-20231011212420054](https://s2.loli.net/2023/10/11/hAlXxYIGErb5egC.png)
+
+## 进阶
+
+### ESM 高级特性 & Pure ESM
+
+**ESM 已经不仅仅局限于一个模块规范的概念，它代表了前端社区生态的走向以及各项前端基础设施的未来**。不管是浏览器、Node.js 还是 npm 上第三方包生态的发展，无一不在印证这一点。
+
+#### import maps
+
+在浏览器中我们可以使用包含`type="module"`属性的`script`标签来加载 ES 模块，而模块路径主要包含三种:
+
+- 绝对路径，如 `https://cdn.skypack.dev/react`
+- 相对路径，如`./module-a`
+- `bare import`即直接写一个第三方包名，如`react`、`lodash`
+
+对于前两种模块路径浏览器是原生支持的，而对于 `bare import`，在 Node.js 能直接执行，因为 Node.js 的路径解析算法会从项目的 node_modules 找到第三方包的模块路径，但是放在浏览器中无法直接执行。
+
+浏览器内置的`import map`就可以解决上述的问题
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="importmap">
+  {
+    "imports": {
+      "react": "https://cdn.skypack.dev/react"
+    }
+  }
+  </script>
+
+  <script type="module">
+    import React from 'react';
+    console.log(React)
+  </script>
+</body>
+
+</html>
+```
+
+它的问题在于兼容性
+
+![image-20231011213754698](https://s2.loli.net/2023/10/11/smXL5OzaSohyMGR.png)
+
+不过社区已经有对应的 polyfill 方案 https://github.com/guybedford/es-module-shims 实现了包括`import map`在内的 ESM 特性，包括：
+
+1. `dynamic import`。即动态导入，部分老版本的 Firefox 和 Edge 不支持。
+2. `import.meta`和`import.meta.url`。当前模块的元信息，类似 Node.js 中的 `__dirname`、`__filename`。
+3. `modulepreload`。以前我们会在 link 标签中加上 `rel="preload"` 来进行资源预加载，即在浏览器解析 HTML 之前就开始加载资源，现在对于 ESM 也有对应的`modulepreload`来支持这个行为。
+4. `JSON Modules`和 `CSS Modules`，即通过如下方式来引入`json`或者`css`:
+
+```html
+<script type="module">
+// 获取 json 对象
+import json from 'https://site.com/data.json' assert { type: 'json' };
+// 获取 CSS Modules 对象
+import sheet from 'https://site.com/sheet.css' assert { type: 'css' };
+</script>
+```
+
+这个库是基于 wasm 来实现的，性能并不差：
+
+![image-20231011214151947](https://s2.loli.net/2023/10/11/d9D7Yik2vJFpa4z.png)
+
+#### Nodejs 包导入导出策略
+
+- exports
+
+```typescript
+// package.json
+{
+  "name": "package-a",
+  "type": "module",
+  "exports": {
+    // 默认导出，使用方式: import a from 'package-a'
+    ".": "./dist/index.js",
+    // 子路径导出，使用方式: import d from 'package-a/dist'
+    "./dist": "./dist/index.js",
+    "./dist/*": "./dist/*", // 这里可以使用 `*` 导出目录下所有的文件
+    // 条件导出，区分 ESM 和 CommonJS 引入的情况
+    "./main": {
+      "import": "./main.js",
+      "require": "./main.cjs"
+    },
+  }
+}
+```
+
+条件导出
+
+```typescript
+{
+  "exports": {
+    {
+      ".": {
+       "node": {
+         "import": "./main.js",
+         "require": "./main.cjs"
+        }     
+      }
+    }
+  },
+}
+```
+
+- imports
+
+```typescript
+{
+  "imports": {
+    // key 一般以 # 开头
+    // 也可以直接赋值为一个字符串: "#dep": "lodash-es"
+    "#dep": {
+      "node": "lodash-es",
+      "default": "./dep-polyfill.js"
+    },
+  },
+  "dependencies": {
+    "lodash-es": "^4.17.21"
+  }
+}
+```
+
+```typescript
+// index.js
+import { cloneDeep } from "#dep";
+
+const obj = { a: 1 };
+
+// { a: 1 }
+console.log(cloneDeep(obj));
+```
+
+#### Pure ESM
+
+1. npm 包都提供 ESM 产物
+2. 废弃非 ESM 的产物
+
+存在的问题：
+
+- commonJS 和 ESM 并不能完全兼容
+- 很多基础库都使用了 CommonJS
+
+在 ESM 中无法使用 CommonJS 中的`__dirname`、`__firename`、`require.resolve`等语法，在 CommonJS 中同样无法使用`import.meta`对象
+
+#### 新一代的打包工具 tsup
+
+### 如何对 vite 项目做系统的性能优化
+
+> 主要针对web vitals进行优化
+
+主要优化思路有以下三种：
+
+1. **网络优化**。包括 `HTTP2`、`DNS 预解析`、`Preload`、`Prefetch`等手段。
+2. **资源优化**。包括`构建产物分析`、`资源压缩`、`产物拆包`、`按需加载`等优化方式。
+3. **预渲染优化**，本文主要介绍`服务端渲染`(SSR)和`静态站点生成`(SSG)两种手段。
+
+#### 网络
+
+1. `vite-plugin-mkcert`，dev 模式开启http2（无 proxy 情况）
+2. DNS 预解析，通过两个rel的值来起作用，`preconnect`可以提前建立与服务器的连接，`dns-prefetch`提前解析服务器域名
+
+```html
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+<link rel="dns-prefetch" href="https://fonts.gstatic.com/">
+```
+
+3. Preload/Prefetch
+
+```html
+在资源使用前加载
+<link rel="preload" href="style.css" as="style">
+<link rel="preload" href="main.js" as="script">
+原生 esm 可以使用这个
+<link rel="modulepreload" href="/src/app.js" />
+在浏览器空闲的时候加载
+<link rel="prefetch" href="https://B.com/index.js" as="script">
+```
+
+#### 资源优化
+
+1. 资源分析报告
+
+为了能可视化地感知到产物的体积情况，推荐大家用`rollup-plugin-visualizer`来进行产物分析
+
+```typescript
+// 注: 首先需要安装 rollup-plugin-visualizer 依赖
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+import { visualizer } from "rollup-plugin-visualizer";
+
+// https://vitejs.dev/config/
+export default defineConfig({
+  plugins: [
+    react(),
+    visualizer({
+      // 打包完成后自动打开浏览器，显示产物体积报告
+      open: true,
+    }),
+  ],
+});
+```
+
+2. 产物压缩
+
+```typescript
+// vite.config.ts
+export default {
+  build: {
+    // 类型: boolean | 'esbuild' | 'terser'
+    // 默认为 `esbuild`
+    minify: 'esbuild',
+    // 产物目标环境
+    target: 'modules',
+    // 如果 minify 为 terser，可以通过下面的参数配置具体行为
+    // https://terser.org/docs/api-reference#minify-options
+    terserOptions: {}
+  }
+}
+```
+
+```typescript
+// vite 默认的 target 参数
+['es2019', 'edge88', 'firefox78', 'chrome87', 'safari13.1']
+```
+
+不同的target 产物会影响压缩工具的压缩算法，因为不同标准能使用的语法是不一样的
+
+3. css 压缩
+
+vite 模式使用 esbuild 进行压缩
+
+4. 图片压缩
+
+使用`vite-plugin-imagemin`进行图片压缩
+
+5. 产物拆包
+
+6. 预渲染
+
+
+
+
+
