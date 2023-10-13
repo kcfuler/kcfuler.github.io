@@ -11,31 +11,6 @@
           "mainDocId": "概述",
           "docs": [
             {
-              "id": "概述",
-              "path": "/docs/概述",
-              "sidebar": "Records"
-            },
-            {
-              "id": "算法/面试经典150题",
-              "path": "/docs/算法/面试经典150题",
-              "sidebar": "Records"
-            },
-            {
-              "id": "算法/算法基础模板",
-              "path": "/docs/算法/算法基础模板",
-              "sidebar": "Records"
-            },
-            {
-              "id": "阅读/思考，快与慢",
-              "path": "/docs/阅读/思考，快与慢",
-              "sidebar": "Records"
-            },
-            {
-              "id": "devOps/概览",
-              "path": "/docs/devOps/概览",
-              "sidebar": "Records"
-            },
-            {
               "id": "devOps/rust/rust入门篇",
               "path": "/docs/devOps/rust/rust入门篇",
               "sidebar": "Records"
@@ -46,28 +21,8 @@
               "sidebar": "Records"
             },
             {
-              "id": "web前端/概览",
-              "path": "/docs/web前端/概览",
-              "sidebar": "Records"
-            },
-            {
-              "id": "web前端/工程化/ts学习",
-              "path": "/docs/web前端/工程化/ts学习",
-              "sidebar": "Records"
-            },
-            {
-              "id": "web前端/工程化/vite实现原理",
-              "path": "/docs/web前端/工程化/vite实现原理",
-              "sidebar": "Records"
-            },
-            {
-              "id": "web前端/工程化/webpack实现原理",
-              "path": "/docs/web前端/工程化/webpack实现原理",
-              "sidebar": "Records"
-            },
-            {
-              "id": "web前端/JavaScript/垃圾回收机制",
-              "path": "/docs/web前端/JavaScript/垃圾回收机制",
+              "id": "devOps/概览",
+              "path": "/docs/devOps/概览",
               "sidebar": "Records"
             },
             {
@@ -76,8 +31,23 @@
               "sidebar": "Records"
             },
             {
+              "id": "web前端/JavaScript/垃圾回收机制",
+              "path": "/docs/web前端/JavaScript/垃圾回收机制",
+              "sidebar": "Records"
+            },
+            {
               "id": "web前端/UI框架/React与Vue的响应式原理",
               "path": "/docs/web前端/UI框架/React与Vue的响应式原理",
+              "sidebar": "Records"
+            },
+            {
+              "id": "web前端/W3C/Frame和window",
+              "path": "/docs/web前端/W3C/Frame和window",
+              "sidebar": "Records"
+            },
+            {
+              "id": "web前端/W3C/web_component",
+              "path": "/docs/web前端/W3C/web_component",
               "sidebar": "Records"
             },
             {
@@ -96,13 +66,43 @@
               "sidebar": "Records"
             },
             {
-              "id": "web前端/W3C/Frame和window",
-              "path": "/docs/web前端/W3C/Frame和window",
+              "id": "web前端/工程化/ts学习",
+              "path": "/docs/web前端/工程化/ts学习",
               "sidebar": "Records"
             },
             {
-              "id": "web前端/W3C/web_component",
-              "path": "/docs/web前端/W3C/web_component",
+              "id": "web前端/工程化/vite实现原理",
+              "path": "/docs/web前端/工程化/vite实现原理",
+              "sidebar": "Records"
+            },
+            {
+              "id": "web前端/工程化/webpack实现原理",
+              "path": "/docs/web前端/工程化/webpack实现原理",
+              "sidebar": "Records"
+            },
+            {
+              "id": "web前端/概览",
+              "path": "/docs/web前端/概览",
+              "sidebar": "Records"
+            },
+            {
+              "id": "概述",
+              "path": "/docs/概述",
+              "sidebar": "Records"
+            },
+            {
+              "id": "算法/算法基础模板",
+              "path": "/docs/算法/算法基础模板",
+              "sidebar": "Records"
+            },
+            {
+              "id": "算法/面试经典150题",
+              "path": "/docs/算法/面试经典150题",
+              "sidebar": "Records"
+            },
+            {
+              "id": "阅读/思考，快与慢",
+              "path": "/docs/阅读/思考，快与慢",
               "sidebar": "Records"
             },
             {
