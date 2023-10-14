@@ -202,36 +202,6 @@
     ]
   },
   "docs": {
-    "概述": {
-      "id": "概述",
-      "title": "概述",
-      "description": "这里是我的学习记录。把一些学习的知识记录下来，希望能够记录下自己理解了的知识。",
-      "sidebar": "Records"
-    },
-    "算法/面试经典150题": {
-      "id": "算法/面试经典150题",
-      "title": "面试经典150题",
-      "description": "数组 & 字符串",
-      "sidebar": "Records"
-    },
-    "算法/算法基础模板": {
-      "id": "算法/算法基础模板",
-      "title": "算法基础模板",
-      "description": "理论参考：OI Wiki - OI Wiki",
-      "sidebar": "Records"
-    },
-    "阅读/思考，快与慢": {
-      "id": "阅读/思考，快与慢",
-      "title": "思考，快与慢",
-      "description": "《思考，快与慢》的读书笔记",
-      "sidebar": "Records"
-    },
-    "devOps/概览": {
-      "id": "devOps/概览",
-      "title": "概览",
-      "description": "目前还没有很深入的学习，目前了解到的主要包括以下几个部分:",
-      "sidebar": "Records"
-    },
     "devOps/rust/rust入门篇": {
       "id": "devOps/rust/rust入门篇",
       "title": "rust入门篇",
@@ -244,34 +214,10 @@
       "description": "在Rust中，测试通过函数的方式实现的，它可以用于验证被测试代码的正确性。测试函数往往一次执行以下三种行为：",
       "sidebar": "Records"
     },
-    "web前端/概览": {
-      "id": "web前端/概览",
-      "title": "概述",
-      "description": "web开发目前的主流还是以普通业务开发为主，例如官网、后台管理。此外也有一些其它常见的业务方向，如富文本、3d可视化等方向，但整体来说",
-      "sidebar": "Records"
-    },
-    "web前端/工程化/ts学习": {
-      "id": "web前端/工程化/ts学习",
-      "title": "ts学习",
-      "description": "掘金小册",
-      "sidebar": "Records"
-    },
-    "web前端/工程化/vite实现原理": {
-      "id": "web前端/工程化/vite实现原理",
-      "title": "vite实现原理",
-      "description": "静态资源处理",
-      "sidebar": "Records"
-    },
-    "web前端/工程化/webpack实现原理": {
-      "id": "web前端/工程化/webpack实现原理",
-      "title": "webpack实现原理",
-      "description": "待补充",
-      "sidebar": "Records"
-    },
-    "web前端/JavaScript/垃圾回收机制": {
-      "id": "web前端/JavaScript/垃圾回收机制",
-      "title": "垃圾回收机制",
-      "description": "image-20231003234855890",
+    "devOps/概览": {
+      "id": "devOps/概览",
+      "title": "概览",
+      "description": "目前还没有很深入的学习，目前了解到的主要包括以下几个部分:",
       "sidebar": "Records"
     },
     "web前端/JavaScript/JS内置数据结构": {
@@ -280,10 +226,28 @@
       "description": "​\t总结JS中内置的数据结构，作为阶段性复习吧",
       "sidebar": "Records"
     },
+    "web前端/JavaScript/垃圾回收机制": {
+      "id": "web前端/JavaScript/垃圾回收机制",
+      "title": "垃圾回收机制",
+      "description": "image-20231003234855890",
+      "sidebar": "Records"
+    },
     "web前端/UI框架/React与Vue的响应式原理": {
       "id": "web前端/UI框架/React与Vue的响应式原理",
       "title": "React与Vue的响应式原理",
       "description": "为什么说 Vue 的响应式更新比 React 快？（原理深度解析）-腾讯云开发者社区-腾讯云 (tencent.com)",
+      "sidebar": "Records"
+    },
+    "web前端/W3C/Frame和window": {
+      "id": "web前端/W3C/Frame和window",
+      "title": "Frame和window",
+      "description": "学习中...",
+      "sidebar": "Records"
+    },
+    "web前端/W3C/web_component": {
+      "id": "web前端/W3C/web_component",
+      "title": "web_component",
+      "description": "学习中...",
       "sidebar": "Records"
     },
     "web前端/W3C/二进制数据、文件": {
@@ -304,16 +268,52 @@
       "description": "学习中...",
       "sidebar": "Records"
     },
-    "web前端/W3C/Frame和window": {
-      "id": "web前端/W3C/Frame和window",
-      "title": "Frame和window",
-      "description": "学习中...",
+    "web前端/工程化/ts学习": {
+      "id": "web前端/工程化/ts学习",
+      "title": "ts学习",
+      "description": "掘金小册",
       "sidebar": "Records"
     },
-    "web前端/W3C/web_component": {
-      "id": "web前端/W3C/web_component",
-      "title": "web_component",
-      "description": "学习中...",
+    "web前端/工程化/vite实现原理": {
+      "id": "web前端/工程化/vite实现原理",
+      "title": "vite实现原理",
+      "description": "静态资源处理",
+      "sidebar": "Records"
+    },
+    "web前端/工程化/webpack实现原理": {
+      "id": "web前端/工程化/webpack实现原理",
+      "title": "webpack实现原理",
+      "description": "待补充",
+      "sidebar": "Records"
+    },
+    "web前端/概览": {
+      "id": "web前端/概览",
+      "title": "概述",
+      "description": "web开发目前的主流还是以普通业务开发为主，例如官网、后台管理。此外也有一些其它常见的业务方向，如富文本、3d可视化等方向，但整体来说",
+      "sidebar": "Records"
+    },
+    "概述": {
+      "id": "概述",
+      "title": "概述",
+      "description": "这里是我的学习记录。把一些学习的知识记录下来，希望能够记录下自己理解了的知识。",
+      "sidebar": "Records"
+    },
+    "算法/算法基础模板": {
+      "id": "算法/算法基础模板",
+      "title": "算法基础模板",
+      "description": "理论参考：OI Wiki - OI Wiki",
+      "sidebar": "Records"
+    },
+    "算法/面试经典150题": {
+      "id": "算法/面试经典150题",
+      "title": "面试经典150题",
+      "description": "数组 & 字符串",
+      "sidebar": "Records"
+    },
+    "阅读/思考，快与慢": {
+      "id": "阅读/思考，快与慢",
+      "title": "思考，快与慢",
+      "description": "《思考，快与慢》的读书笔记",
       "sidebar": "Records"
     }
   }
