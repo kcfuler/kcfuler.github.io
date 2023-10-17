@@ -27,7 +27,7 @@ export default {
       "classic",
       {
         "docs": {
-          "sidebarPath": "E:\\repository\\learn\\kcfuler.github.io\\sidebars.js",
+          "sidebarPath": "/Users/kcfuler/Documents/learn/kcfuler.github.io/sidebars.js",
           "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/"
         },
         "blog": {
@@ -35,7 +35,7 @@ export default {
           "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/"
         },
         "theme": {
-          "customCss": "E:\\repository\\learn\\kcfuler.github.io\\src\\css\\custom.css"
+          "customCss": "/Users/kcfuler/Documents/learn/kcfuler.github.io/src/css/custom.css"
         }
       }
     ]

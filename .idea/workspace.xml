@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d9ad1e91-55f6-446c-a0ae-c67565aeee52" name="更改" comment="" />
+    <list default="true" id="d9ad1e91-55f6-446c-a0ae-c67565aeee52" name="更改" comment="">
+      <change afterPath="$PROJECT_DIR$/docs/阅读/刻意练习.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.docusaurus/client-modules.js" beforeDir="false" afterPath="$PROJECT_DIR$/.docusaurus/client-modules.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.docusaurus/docusaurus-plugin-content-blog/default/blog-archive-80c.json" beforeDir="false" afterPath="$PROJECT_DIR$/.docusaurus/docusaurus-plugin-content-blog/default/blog-archive-80c.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.docusaurus/docusaurus-plugin-content-blog/default/blog-post-list-prop-default.json" beforeDir="false" afterPath="$PROJECT_DIR$/.docusaurus/docusaurus-plugin-content-blog/default/blog-post-list-prop-default.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.docusaurus/docusaurus-plugin-content-blog/default/blog-tags-tags-4c2.json" beforeDir="false" afterPath="$PROJECT_DIR$/.docusaurus/docusaurus-plugin-content-blog/default/blog-tags-tags-4c2.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.docusaurus/docusaurus-plugin-content-docs/default/version-current-metadata-prop-751.json" beforeDir="false" afterPath="$PROJECT_DIR$/.docusaurus/docusaurus-plugin-content-docs/default/version-current-metadata-prop-751.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.docusaurus/docusaurus.config.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/.docusaurus/docusaurus.config.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.docusaurus/globalData.json" beforeDir="false" afterPath="$PROJECT_DIR$/.docusaurus/globalData.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.docusaurus/registry.js" beforeDir="false" afterPath="$PROJECT_DIR$/.docusaurus/registry.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.docusaurus/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/.docusaurus/routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.docusaurus/routesChunkNames.json" beforeDir="false" afterPath="$PROJECT_DIR$/.docusaurus/routesChunkNames.json" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,28 +22,34 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitToolBoxStore">
+    <option name="projectConfigVersion" value="5" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 2
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
   <component name="ProjectId" id="2WcZhDHUds9puK8ENbLsiHq7Qch" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/kcfuler/Documents/learn/kcfuler.github.io",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/kcfuler/Documents/learn/kcfuler.github.io&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="默认任务">
@@ -41,6 +59,7 @@
       <option name="presentableId" value="Default" />
       <updated>1697033945267</updated>
       <workItem from="1697033946272" duration="41000" />
+      <workItem from="1697552867637" duration="107000" />
     </task>
     <servers />
   </component>

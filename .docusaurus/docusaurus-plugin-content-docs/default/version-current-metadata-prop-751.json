@@ -122,6 +122,20 @@
           },
           {
             "type": "category",
+            "label": "业务相关",
+            "collapsible": true,
+            "collapsed": true,
+            "items": [
+              {
+                "type": "link",
+                "label": "CRDT 算法",
+                "href": "/docs/web前端/业务相关/CRDT 算法",
+                "docId": "web前端/业务相关/CRDT 算法"
+              }
+            ]
+          },
+          {
+            "type": "category",
             "label": "工程化",
             "collapsible": true,
             "collapsed": true,
@@ -266,6 +280,12 @@
       "id": "web前端/W3C/网络请求",
       "title": "网络请求",
       "description": "学习中...",
+      "sidebar": "Records"
+    },
+    "web前端/业务相关/CRDT 算法": {
+      "id": "web前端/业务相关/CRDT 算法",
+      "title": "CRDT 算法",
+      "description": "https://jakelazaroff.com/words/an-interactive-intro-to-crdts/",
       "sidebar": "Records"
     },
     "web前端/工程化/ts学习": {

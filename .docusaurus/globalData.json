@@ -66,6 +66,11 @@
               "sidebar": "Records"
             },
             {
+              "id": "web前端/业务相关/CRDT 算法",
+              "path": "/docs/web前端/业务相关/CRDT 算法",
+              "sidebar": "Records"
+            },
+            {
               "id": "web前端/工程化/ts学习",
               "path": "/docs/web前端/工程化/ts学习",
               "sidebar": "Records"
