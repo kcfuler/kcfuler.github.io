@@ -136,6 +136,20 @@
           },
           {
             "type": "category",
+            "label": "可视化",
+            "collapsible": true,
+            "collapsed": true,
+            "items": [
+              {
+                "type": "link",
+                "label": "核心概念",
+                "href": "/docs/web前端/可视化/G6学习",
+                "docId": "web前端/可视化/G6学习"
+              }
+            ]
+          },
+          {
+            "type": "category",
             "label": "工程化",
             "collapsible": true,
             "collapsed": true,
@@ -204,6 +218,12 @@
         "collapsible": true,
         "collapsed": true,
         "items": [
+          {
+            "type": "link",
+            "label": "刻意练习",
+            "href": "/docs/阅读/刻意练习",
+            "docId": "阅读/刻意练习"
+          },
           {
             "type": "link",
             "label": "思考，快与慢",
@@ -288,6 +308,12 @@
       "description": "https://jakelazaroff.com/words/an-interactive-intro-to-crdts/",
       "sidebar": "Records"
     },
+    "web前端/可视化/G6学习": {
+      "id": "web前端/可视化/G6学习",
+      "title": "核心概念",
+      "description": "G6 是一个图的可视化引擎。它提供了图的绘制、布局、分析、交互、动画等基础的图可视化能力。",
+      "sidebar": "Records"
+    },
     "web前端/工程化/ts学习": {
       "id": "web前端/工程化/ts学习",
       "title": "ts学习",
@@ -328,6 +354,12 @@
       "id": "算法/面试经典150题",
       "title": "面试经典150题",
       "description": "数组 & 字符串",
+      "sidebar": "Records"
+    },
+    "阅读/刻意练习": {
+      "id": "阅读/刻意练习",
+      "title": "刻意练习",
+      "description": "- 概念",
       "sidebar": "Records"
     },
     "阅读/思考，快与慢": {

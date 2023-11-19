@@ -4,112 +4,137 @@ import ComponentCreator from '@docusaurus/ComponentCreator';
 export default [
   {
     path: '/__docusaurus/debug',
-    component: ComponentCreator('/__docusaurus/debug', '7e1'),
+    component: ComponentCreator('/__docusaurus/debug', 'fd1'),
     exact: true
   },
   {
     path: '/__docusaurus/debug/config',
-    component: ComponentCreator('/__docusaurus/debug/config', 'f73'),
+    component: ComponentCreator('/__docusaurus/debug/config', 'c6e'),
     exact: true
   },
   {
     path: '/__docusaurus/debug/content',
-    component: ComponentCreator('/__docusaurus/debug/content', '32d'),
+    component: ComponentCreator('/__docusaurus/debug/content', '070'),
     exact: true
   },
   {
     path: '/__docusaurus/debug/globalData',
-    component: ComponentCreator('/__docusaurus/debug/globalData', '826'),
+    component: ComponentCreator('/__docusaurus/debug/globalData', 'eec'),
     exact: true
   },
   {
     path: '/__docusaurus/debug/metadata',
-    component: ComponentCreator('/__docusaurus/debug/metadata', '4cd'),
+    component: ComponentCreator('/__docusaurus/debug/metadata', 'e1a'),
     exact: true
   },
   {
     path: '/__docusaurus/debug/registry',
-    component: ComponentCreator('/__docusaurus/debug/registry', '3d0'),
+    component: ComponentCreator('/__docusaurus/debug/registry', '4dd'),
     exact: true
   },
   {
     path: '/__docusaurus/debug/routes',
-    component: ComponentCreator('/__docusaurus/debug/routes', '7ad'),
+    component: ComponentCreator('/__docusaurus/debug/routes', '95c'),
     exact: true
   },
   {
     path: '/blog',
-    component: ComponentCreator('/blog', 'f31'),
+    component: ComponentCreator('/blog', '222'),
+    exact: true
+  },
+  {
+    path: '/blog/2023-10月小记',
+    component: ComponentCreator('/blog/2023-10月小记', '90d'),
     exact: true
   },
   {
     path: '/blog/23-9月总结',
-    component: ComponentCreator('/blog/23-9月总结', 'cb4'),
+    component: ComponentCreator('/blog/23-9月总结', 'b08'),
     exact: true
   },
   {
     path: '/blog/archive',
-    component: ComponentCreator('/blog/archive', '005'),
+    component: ComponentCreator('/blog/archive', '52b'),
     exact: true
   },
   {
     path: '/blog/blog再构建',
-    component: ComponentCreator('/blog/blog再构建', '67e'),
+    component: ComponentCreator('/blog/blog再构建', 'aa7'),
     exact: true
   },
   {
     path: '/blog/react18如何提高应用性能',
-    component: ComponentCreator('/blog/react18如何提高应用性能', '2ae'),
+    component: ComponentCreator('/blog/react18如何提高应用性能', '99e'),
     exact: true
   },
   {
     path: '/blog/tags',
-    component: ComponentCreator('/blog/tags', '599'),
+    component: ComponentCreator('/blog/tags', 'b5e'),
+    exact: true
+  },
+  {
+    path: '/blog/tags/daily-life',
+    component: ComponentCreator('/blog/tags/daily-life', '331'),
+    exact: true
+  },
+  {
+    path: '/blog/tags/experience',
+    component: ComponentCreator('/blog/tags/experience', '3e4'),
     exact: true
   },
   {
     path: '/blog/tags/plan',
-    component: ComponentCreator('/blog/tags/plan', '5b7'),
+    component: ComponentCreator('/blog/tags/plan', '174'),
     exact: true
   },
   {
     path: '/blog/tags/react',
-    component: ComponentCreator('/blog/tags/react', '7f8'),
+    component: ComponentCreator('/blog/tags/react', '273'),
     exact: true
   },
   {
     path: '/blog/tags/travel',
-    component: ComponentCreator('/blog/tags/travel', '1c2'),
+    component: ComponentCreator('/blog/tags/travel', '5dd'),
     exact: true
   },
   {
     path: '/blog/tags/trifling',
-    component: ComponentCreator('/blog/tags/trifling', '390'),
+    component: ComponentCreator('/blog/tags/trifling', '703'),
     exact: true
   },
   {
     path: '/blog/tags/vite',
-    component: ComponentCreator('/blog/tags/vite', 'a29'),
+    component: ComponentCreator('/blog/tags/vite', '9b3'),
+    exact: true
+  },
+  {
+    path: '/blog/TDD的作用',
+    component: ComponentCreator('/blog/TDD的作用', '7b5'),
     exact: true
   },
   {
     path: '/blog/viteConf简记',
-    component: ComponentCreator('/blog/viteConf简记', 'f21'),
+    component: ComponentCreator('/blog/viteConf简记', 'f66'),
     exact: true
   },
   {
     path: '/blog/国庆游',
-    component: ComponentCreator('/blog/国庆游', '92c'),
+    component: ComponentCreator('/blog/国庆游', 'dd3'),
+    exact: true
+  },
+  {
+    path: '/blog/没能量了',
+    component: ComponentCreator('/blog/没能量了', '483'),
     exact: true
   },
   {
     path: '/markdown-page',
-    component: ComponentCreator('/markdown-page', '4fe'),
+    component: ComponentCreator('/markdown-page', '89b'),
     exact: true
   },
   {
     path: '/docs',
-    component: ComponentCreator('/docs', '6b5'),
+    component: ComponentCreator('/docs', '21e'),
     routes: [
       {
         path: '/docs/category/devops学习',
@@ -208,6 +233,12 @@ export default [
         sidebar: "Records"
       },
       {
+        path: '/docs/web前端/可视化/G6学习',
+        component: ComponentCreator('/docs/web前端/可视化/G6学习', '68c'),
+        exact: true,
+        sidebar: "Records"
+      },
+      {
         path: '/docs/web前端/工程化/ts学习',
         component: ComponentCreator('/docs/web前端/工程化/ts学习', 'b84'),
         exact: true,
@@ -250,6 +281,12 @@ export default [
         sidebar: "Records"
       },
       {
+        path: '/docs/阅读/刻意练习',
+        component: ComponentCreator('/docs/阅读/刻意练习', '7fe'),
+        exact: true,
+        sidebar: "Records"
+      },
+      {
         path: '/docs/阅读/思考，快与慢',
         component: ComponentCreator('/docs/阅读/思考，快与慢', 'f99'),
         exact: true,
@@ -259,7 +296,7 @@ export default [
   },
   {
     path: '/',
-    component: ComponentCreator('/', 'd3b'),
+    component: ComponentCreator('/', 'a40'),
     exact: true
   },
   {

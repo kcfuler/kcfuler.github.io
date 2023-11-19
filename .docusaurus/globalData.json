@@ -71,6 +71,11 @@
               "sidebar": "Records"
             },
             {
+              "id": "web前端/可视化/G6学习",
+              "path": "/docs/web前端/可视化/G6学习",
+              "sidebar": "Records"
+            },
+            {
               "id": "web前端/工程化/ts学习",
               "path": "/docs/web前端/工程化/ts学习",
               "sidebar": "Records"
@@ -103,6 +108,11 @@
             {
               "id": "算法/面试经典150题",
               "path": "/docs/算法/面试经典150题",
+              "sidebar": "Records"
+            },
+            {
+              "id": "阅读/刻意练习",
+              "path": "/docs/阅读/刻意练习",
               "sidebar": "Records"
             },
             {

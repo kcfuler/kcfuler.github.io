@@ -1,6 +1,140 @@
 {
   "blogPosts": [
     {
+      "id": "2023-10月小记",
+      "metadata": {
+        "permalink": "/blog/2023-10月小记",
+        "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/blog/2023-11-11-10月小记.md",
+        "source": "@site/blog/2023-11-11-10月小记.md",
+        "title": "2023-10月小记",
+        "description": "转眼间，十月已经过去，这个月整体是比较摆（wlb。），九月的时候计划的减肥、学习计划基本没有执行下去，倒是泰拉瑞亚大师要毕业了。。不过在工作中也有一些收获，心态上也有一些变化",
+        "date": "2023-11-11T00:00:00.000Z",
+        "formattedDate": "2023年11月11日",
+        "tags": [
+          {
+            "label": "plan",
+            "permalink": "/blog/tags/plan"
+          }
+        ],
+        "readingTime": 1.16,
+        "hasTruncateMarker": false,
+        "authors": [
+          {
+            "name": "kcfuler",
+            "title": "passionate software engineer",
+            "url": "https://github.com/kcfuler",
+            "imageURL": "https://s2.loli.net/2023/10/04/i7A3Mb81YwvNmGl.jpg",
+            "key": "kcfuler"
+          }
+        ],
+        "frontMatter": {
+          "slug": "2023-10月小记",
+          "title": "2023-10月小记",
+          "authors": "kcfuler",
+          "tags": [
+            "plan"
+          ]
+        },
+        "nextItem": {
+          "title": "TDD的作用",
+          "permalink": "/blog/TDD的作用"
+        }
+      },
+      "content": "转眼间，十月已经过去，这个月整体是比较摆（wlb。），九月的时候计划的减肥、学习计划基本没有执行下去，倒是泰拉瑞亚大师要毕业了。。不过在工作中也有一些收获，心态上也有一些变化\r\n\r\n最重要的：\r\n\r\n- 做能够感受到快乐的事，像重构中，抽离组件实现复用那一刻的满足感，学习到的新知识得到应用的时刻。这可以是持续学习、进步的动力。\r\n\r\n- 身体状态很重要。晚睡晚起、饮食不规律会直接导致精神状态变差，做其它事情力不从心\r\n\r\n11月中也要从xhs离职了，后面的寒假希望能够有所收获，多看书，多学习，多锻炼。\r\n\r\n就编程学习上，现在还是对rust更感兴趣，vue、react的深入放在下一段实习之前吧。"
+    },
+    {
+      "id": "TDD的作用",
+      "metadata": {
+        "permalink": "/blog/TDD的作用",
+        "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/blog/2023-10-25-TDD的作用.md",
+        "source": "@site/blog/2023-10-25-TDD的作用.md",
+        "title": "TDD的作用",
+        "description": "背景",
+        "date": "2023-10-25T00:00:00.000Z",
+        "formattedDate": "2023年10月25日",
+        "tags": [
+          {
+            "label": "experience",
+            "permalink": "/blog/tags/experience"
+          }
+        ],
+        "readingTime": 4.345,
+        "hasTruncateMarker": false,
+        "authors": [
+          {
+            "name": "kcfuler",
+            "title": "passionate software engineer",
+            "url": "https://github.com/kcfuler",
+            "imageURL": "https://s2.loli.net/2023/10/04/i7A3Mb81YwvNmGl.jpg",
+            "key": "kcfuler"
+          }
+        ],
+        "frontMatter": {
+          "slug": "TDD的作用",
+          "title": "TDD的作用",
+          "authors": "kcfuler",
+          "tags": [
+            "experience"
+          ]
+        },
+        "prevItem": {
+          "title": "2023-10月小记",
+          "permalink": "/blog/2023-10月小记"
+        },
+        "nextItem": {
+          "title": "没能量啦",
+          "permalink": "/blog/没能量了"
+        }
+      },
+      "content": "## 背景\r\n\r\n最近在小红书的中台实习，技术栈是vue2 - vue3 的微前端，因为之前并没有正式的前端员工，代码很多都是后端或者前端实习生写的，由于实习生的流动性+没有明确的HC，之前的实习生感觉对代码并没有一定的责任感，结果就是大量2-3k行的文件，很多逻辑的耦合，配合上vue2选项式api的限制，代码的可读性很差。由于项目的功能还需要快速迭代，而历史代码已经给迭代带来了很高的变动成本，于是重构+迁移迫在眉睫。\t\r\n\r\n日常工作也包括对之前的一些不良设计、实现问题的修复，而这种修复往往很难完整的理解它所有的业务需求，带来的问题就是，作为修复的改动，可能会影响到线上正常的功能，每一次改动都需要小心翼翼，不断重复和产品、测试确认。而今天的一个改动，因为自己并不熟悉代码面对的需求背景，改动之后只是和产品确认了（这里是把产品和测试的角色重叠了，不应该这样的），就直接提mr，合入，但在beta验证的时候才发现自己还有一部分逻辑没有实现！不得不重新提了两个mr来修正前面的错误，而总体的代码改动只有10行左右。\r\n\r\n## 正文\r\n\r\n前几天组里面也有技术分享，主题就是如何写出高质量的代码。关于这个主题大家都分享了很多，我印象最深的是其中对TDD的一个演示：\r\n\r\n- 目的：写一个斐波那契数列\r\n\r\n1. 写几个成功的测试用例\r\n2. 写几个失败的测试用例\r\n3. 编码\r\n4. 执行测试\r\n5. 重构\r\n6. 执行测试\r\n7. 重构\r\n8. 执行测试\r\n9. ...\r\n\r\n在编写测试的过程中，你对你需要实现的需求的认知会逐渐体现在测试中，用测试来定义它应该是什么样，不能是什么样，越好的测试，也就意味越好的理解。\r\n\r\n在测试的保障下，你可以自由的调整代码的结构，让它向更好的方向转化，而不用担心破坏它对外表现的功能。大家也讨论了很多关于它的优点，在我看来，它最重要的优点：**增强了开发者改动原有代码的信心**。\r\n\r\n在传统的开发流程中，代码上的改动一般都需要专门的QA来进行测试，这部分测试需要时间，更需要测试的人力。越大、越复杂的模块，改动的测试成本就越高。\r\n\r\n越大的项目，代码量就会越大，在到达一定的临界值时，就需要对代码的结构做调整，在业务迭代的压力下，往往很难有足够的测试、开发时间来处理这部分的需求，带来的结果就是代码变得复杂，在下一个周期需要的改动成本更高，测试成本也更高。\r\n\r\nTDD一般通过自动化工具进行，最大的好处就是快，不依赖其他人员。开发者对代码的改动，可以在很短的时间内得到反馈..."
+    },
+    {
+      "id": "没能量了",
+      "metadata": {
+        "permalink": "/blog/没能量了",
+        "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/blog/2023-10-23-低能量状态.md",
+        "source": "@site/blog/2023-10-23-低能量状态.md",
+        "title": "没能量啦",
+        "description": "​\t最近，在大小周的工作 + 不算高质量的休息之下，不出意外的，在下班之后进入了低能量状态：",
+        "date": "2023-10-23T00:00:00.000Z",
+        "formattedDate": "2023年10月23日",
+        "tags": [
+          {
+            "label": "daily life",
+            "permalink": "/blog/tags/daily-life"
+          }
+        ],
+        "readingTime": 1.53,
+        "hasTruncateMarker": false,
+        "authors": [
+          {
+            "name": "kcfuler",
+            "title": "passionate software engineer",
+            "url": "https://github.com/kcfuler",
+            "imageURL": "https://s2.loli.net/2023/10/04/i7A3Mb81YwvNmGl.jpg",
+            "key": "kcfuler"
+          }
+        ],
+        "frontMatter": {
+          "slug": "没能量了",
+          "title": "没能量啦",
+          "authors": "kcfuler",
+          "tags": [
+            "daily life"
+          ]
+        },
+        "prevItem": {
+          "title": "TDD的作用",
+          "permalink": "/blog/TDD的作用"
+        },
+        "nextItem": {
+          "title": "viteConf简记",
+          "permalink": "/blog/viteConf简记"
+        }
+      },
+      "content": "​\t最近，在大小周的工作 + 不算高质量的休息之下，不出意外的，在下班之后进入了低能量状态：\r\n\r\n- 累，总体感觉就是累\r\n- 理性告诉我，要搞搞学习，但是开始学习之后，发现脑子已经不会处理新的知识了，它们只是流动，但没有留下来\r\n- 想打把游戏提提神，但和学习一样，大脑无法维持专注，玩着也没什么意思\r\n- 室友还处于精神状态，没有比较好的休息条件\r\n\r\n在这样的状态下，下班后-睡眠前的三四个小时就显得比较折磨了。\r\n\r\n没有足够的能量做需要专注的活动，只能转换一下思路了，这些时间可以做一些发散性的活动：\r\n\r\n- 逛逛github，看看关注的大佬最近在关注啥，顺便看看开源项目的迭代动态\r\n- 看下medium，找找有木有值得看的文章\r\n- 看看其它感兴趣领域的动态\r\n- ...\r\n\r\n不能做的：\r\n\r\n- 短视频--时间黑洞\r\n\r\n- 购物--容易做后悔的决定😭\r\n\r\n- 看电影、番剧--容易短时间内降低理性，可能会导致难受"
+    },
+    {
       "id": "viteConf简记",
       "metadata": {
         "permalink": "/blog/viteConf简记",
@@ -35,12 +169,16 @@
             "vite"
           ]
         },
+        "prevItem": {
+          "title": "没能量啦",
+          "permalink": "/blog/没能量了"
+        },
         "nextItem": {
           "title": "23-9月总结",
           "permalink": "/blog/23-9月总结"
         }
       },
-      "content": "## Evan you\n\n### state of vite\n\n#### 4.0\n\n- rollup 3.0\n- swc\n\n#### 4.2\n\n- source-map debug improvement\n\n#### 4.3\n\n- performance improvement\n\n#### 4.4\n\n- Experimental Lightning CSS support\n- Solid and Qwik templates in create-vite\n\n#### 5.0(bate)\n\n- node 18\n- CommonJS API deprecated\n\n#### mission\n\nThe shared **foundation** for higher-level innovations in the web ecosystem\n\n#### vite's Philosophy\n\n- Lean and Extensible Core\n- Push for the Modern Web\n- A Pragmatic Approach to Performance\n- Support Higher-Level Frameworks\n- Foster a Collaborative Ecosystem\n\n### Next\n\n#### Current Problems of Vite\n\n> vite is far from perfect\n\n- Relatively slow production build speed\n- Inconsistency between dev & prod environments\n- Network overhead of unbundled ESM during dev\n- Confusing SSR externals issues\n- Limited control over chunk splitting\n- Lack of first-party Module Federation support\n\n#### challenges\n\n- Most issues need to be resolved at the bundler level\n- esbuild(or bun) is extremely fast, but:\n  - very limited control for build asset optimization\n  - Plugin API not flexible enough\n- Rollup is mature and flexible, but:\n  - Still slow compared to native bundlers\n  - Handling of ESM/CJS interop can be improved\n- Two bundlers that cannot fully replace one another, and with subtle behavior inconsistencies\n\n### Rolldown\n\n> a rust port of Rollup\n\n- focus: performance with best-effort compatibility with Rollup\n- Goal: switch to it in Vite with minimal impact on end users\n\n#### state\n\n![image-20231006121545472](https://s2.loli.net/2023/10/06/YHueZR4nmIdocwA.png)\n\n#### Roadmap\n\n1. basic bundling\n\n   replace esbuild for dependency pre-bundling\n\n   - CommonJS & Faux-ESM compatibility\n\n2. Advanced Bundling\n\n   - rollup feature parity\n     - plugin compatibility\n     - tree-shaking\n     - Advanced Chunk-splitting control\n\n3. Build-in Transforms\n\n   - TS\n   - JSX\n   - Minification\n   - Syntax lowering\n\n4. Rustify Vite\n\n   - Rolldown exposing plugin container as API\n   - Vite introducing a Rust core , Rolldown as dependency\n   - Rustify perf critical Vite internal pugins & ssrLoadModule transform\n   - Full-bundle mode alternative to unbundled ESM\n\n   后面的主要就是看兴趣来了。一个个写下来比较费时间。\n\n   \n\n## Dr. Lukas\n\n> maintainer of RollupJS\n\n### main complaint\n\n- speed\n- memory comsuption\n\n![image-20231006141021957](https://s2.loli.net/2023/10/06/yIMGUQu6aitWeZc.png)\n\n![image-20231006141323621](https://s2.loli.net/2023/10/06/vqgH5rNI3RTCzWo.png)\n\n`rolldown`这个名字确实搞😂\n\n![image-20231006142117800](https://s2.loli.net/2023/10/06/NAVdQzUkwhT8OI6.png)\n\n## Design System\n\n### Figma - Emil sjolander\n\n> Bringing developers into the design process -- figma\n\n![image-20231006144224773](https://s2.loli.net/2023/10/06/opExiR3GMzSDfdh.png)\n\n#### problems\n\n1. design software is not built for devs\n2. Designs don't easily translate to code\n3. miscommunication leads to mistakes\n\n> nothing great made alone\n\n### Storybook - Jeppe Reinholt\n\n> Storybook & Vite: It Keeps Getting Better\n\n## Framework\n\n### unjs - Pooya Parsa\n\n> State of Nitro 2023\n\n![image-20231006150714710](https://s2.loli.net/2023/10/06/zpOq6at8y5WmxI3.png)\n\n### vitest\n\n..."
+      "content": "## Evan you\r\n\r\n### state of vite\r\n\r\n#### 4.0\r\n\r\n- rollup 3.0\r\n- swc\r\n\r\n#### 4.2\r\n\r\n- source-map debug improvement\r\n\r\n#### 4.3\r\n\r\n- performance improvement\r\n\r\n#### 4.4\r\n\r\n- Experimental Lightning CSS support\r\n- Solid and Qwik templates in create-vite\r\n\r\n#### 5.0(bate)\r\n\r\n- node 18\r\n- CommonJS API deprecated\r\n\r\n#### mission\r\n\r\nThe shared **foundation** for higher-level innovations in the web ecosystem\r\n\r\n#### vite's Philosophy\r\n\r\n- Lean and Extensible Core\r\n- Push for the Modern Web\r\n- A Pragmatic Approach to Performance\r\n- Support Higher-Level Frameworks\r\n- Foster a Collaborative Ecosystem\r\n\r\n### Next\r\n\r\n#### Current Problems of Vite\r\n\r\n> vite is far from perfect\r\n\r\n- Relatively slow production build speed\r\n- Inconsistency between dev & prod environments\r\n- Network overhead of unbundled ESM during dev\r\n- Confusing SSR externals issues\r\n- Limited control over chunk splitting\r\n- Lack of first-party Module Federation support\r\n\r\n#### challenges\r\n\r\n- Most issues need to be resolved at the bundler level\r\n- esbuild(or bun) is extremely fast, but:\r\n  - very limited control for build asset optimization\r\n  - Plugin API not flexible enough\r\n- Rollup is mature and flexible, but:\r\n  - Still slow compared to native bundlers\r\n  - Handling of ESM/CJS interop can be improved\r\n- Two bundlers that cannot fully replace one another, and with subtle behavior inconsistencies\r\n\r\n### Rolldown\r\n\r\n> a rust port of Rollup\r\n\r\n- focus: performance with best-effort compatibility with Rollup\r\n- Goal: switch to it in Vite with minimal impact on end users\r\n\r\n#### state\r\n\r\n![image-20231006121545472](https://s2.loli.net/2023/10/06/YHueZR4nmIdocwA.png)\r\n\r\n#### Roadmap\r\n\r\n1. basic bundling\r\n\r\n   replace esbuild for dependency pre-bundling\r\n\r\n   - CommonJS & Faux-ESM compatibility\r\n\r\n2. Advanced Bundling\r\n\r\n   - rollup feature parity\r\n     - plugin compatibility\r\n     - tree-shaking\r\n     - Advanced Chunk-splitting control\r\n\r\n3. Build-in Transforms\r\n\r\n   - TS\r\n   - JSX\r\n   - Minification\r\n   - Syntax lowering\r\n\r\n4. Rustify Vite\r\n\r\n   - Rolldown exposing plugin container as API\r\n   - Vite introducing a Rust core , Rolldown as dependency\r\n   - Rustify perf critical Vite internal pugins & ssrLoadModule transform\r\n   - Full-bundle mode alternative to unbundled ESM\r\n\r\n   后面的主要就是看兴趣来了。一个个写下来比较费时间。\r\n\r\n   \r\n\r\n## Dr. Lukas\r\n\r\n> maintainer of RollupJS\r\n\r\n### main complaint\r\n\r\n- speed\r\n- memory comsuption\r\n\r\n![image-20231006141021957](https://s2.loli.net/2023/10/06/yIMGUQu6aitWeZc.png)\r\n\r\n![image-20231006141323621](https://s2.loli.net/2023/10/06/vqgH5rNI3RTCzWo.png)\r\n\r\n`rolldown`这个名字确实搞😂\r\n\r\n![image-20231006142117800](https://s2.loli.net/2023/10/06/NAVdQzUkwhT8OI6.png)\r\n\r\n## Design System\r\n\r\n### Figma - Emil sjolander\r\n\r\n> Bringing developers into the design process -- figma\r\n\r\n![image-20231006144224773](https://s2.loli.net/2023/10/06/opExiR3GMzSDfdh.png)\r\n\r\n#### problems\r\n\r\n1. design software is not built for devs\r\n2. Designs don't easily translate to code\r\n3. miscommunication leads to mistakes\r\n\r\n> nothing great made alone\r\n\r\n### Storybook - Jeppe Reinholt\r\n\r\n> Storybook & Vite: It Keeps Getting Better\r\n\r\n## Framework\r\n\r\n### unjs - Pooya Parsa\r\n\r\n> State of Nitro 2023\r\n\r\n![image-20231006150714710](https://s2.loli.net/2023/10/06/zpOq6at8y5WmxI3.png)\r\n\r\n### vitest\r\n\r\n..."
     },
     {
       "id": "23-9月总结",
@@ -82,57 +220,11 @@
           "permalink": "/blog/viteConf简记"
         },
         "nextItem": {
-          "title": "react18如何提高应用性能",
-          "permalink": "/blog/react18如何提高应用性能"
-        }
-      },
-      "content": "​\t9月总体来说还是发生了不少事，实习和心态上的变化对之前的计划带来了不小的冲击，部分预期的事都没有做完。\n\n### 大事记\n\n1. 9.18入职，继续实习\n2. 10月开始课程压力++\n3. blog重启\n\n​\t首先，变化最直接的影响就是时间，实习+课程导致学习的时间大大缩减，原来每天大概有6h左右的自由时间可以用于学习，现在大幅降低课内学习质量后，也只有2h左右了。\n\n​\t第二点是心态上的变化。之前实习离职的原因主要是想学习、接触新东西、兼顾课程进度。但后面发现学习到的新知识并没有什么使用场景（比如java、机组的学习），学起来**没有反馈**，学着学着就不想学了。课内的东西学习节奏比较慢，很容易忘记之前学习的东西，学习有割裂感。\n\n​\t第三点就是钱，经济压力比我想象的要大，之前攒的不足以消除压力，也不够后续生活的需要，还是需要实习。\n\n​\t最后也是最重要的一点：**学习的方式、反馈**。\n\n- 之前在没有基础的时候，将自己所学的每一个内容都总结为博客难度很大，在学习内容的压力下成本太高。现在对于求职方向而言，需要学习的大部分内容已经学过，在准备面试时也有复习，对单个知识点的掌握基本足够。问题在于**知识之间的连接**，像软件工程->模块化->vue & react->响应式原理->数据结构和算法，这些模块之间都有很多内在的联系，但之前显然没有将内容串联起来。\n- 现在的状态应该可以将方向做一下转变，通过文章的方式，提炼、加深对知识的理解，让学到的知识更有用\n\n### 计划完成情况\n\n![image-20231004183843206](https://s2.loli.net/2023/10/04/WlEFLjGxBf3bSqV.png)\t没有完成的内容主要是计算机基础相关的\n\n- 算法：只是完成了剑指offer中的一部分，算法提高课部分的内容总体来说离实践太远，很难将它和已有的知识建立连接，每一次练习感觉都是独立的单元 | 但算法带来的思维锻炼也是其它部分很难带来的，还是需要坚持\n- 计算机组成原理：主要的难点在于里面涉及到的电路相关的原理，很烦，混杂着计算机系统相关的东西，很难看下去\n- vue & webpack：vue是复习了一下之前学习的内容，webpack还没有复习，因为实际项目中需要配置webpack的场景很少，实习之后离面试的距离也比较远，原理相关的知识后面用到的时候再复习吧。\n\n### 10月计划\n\n- 完成实习工作-- 6/10\n- 处理课内，实验课、点名 -- 2/10\n- 补齐、复习浏览器内的技术栈，探索新技术-- 2/10"
-    },
-    {
-      "id": "react18如何提高应用性能",
-      "metadata": {
-        "permalink": "/blog/react18如何提高应用性能",
-        "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/blog/2023-10-3-React18如何提高应用性能.md",
-        "source": "@site/blog/2023-10-3-React18如何提高应用性能.md",
-        "title": "react18如何提高应用性能",
-        "description": "How React 18 Improves Application Performance – Vercel",
-        "date": "2023-10-03T00:00:00.000Z",
-        "formattedDate": "2023年10月3日",
-        "tags": [
-          {
-            "label": "react",
-            "permalink": "/blog/tags/react"
-          }
-        ],
-        "readingTime": 5.84,
-        "hasTruncateMarker": false,
-        "authors": [
-          {
-            "name": "kcfuler",
-            "title": "passionate software engineer",
-            "url": "https://github.com/kcfuler",
-            "imageURL": "https://s2.loli.net/2023/10/04/i7A3Mb81YwvNmGl.jpg",
-            "key": "kcfuler"
-          }
-        ],
-        "frontMatter": {
-          "slug": "react18如何提高应用性能",
-          "title": "react18如何提高应用性能",
-          "authors": "kcfuler",
-          "tags": [
-            "react"
-          ]
-        },
-        "prevItem": {
-          "title": "23-9月总结",
-          "permalink": "/blog/23-9月总结"
-        },
-        "nextItem": {
           "title": "blog再构建",
           "permalink": "/blog/blog再构建"
         }
       },
-      "content": "> [How React 18 Improves Application Performance – Vercel](https://vercel.com/blog/how-react-18-improves-application-performance)\n\n# 主线程和长任务\n\n1. 长任务( >= 50ms)\n2. 一些指标(Core Web Vitals metric)\n- Total Blocking Time\n- First Contentful Paint\n- Time To Interactive\n- Interaction to Next Paint (INP), new core metric\n### Traditional React Rendering\n\n- render: compute\n- commit: update\n\n![image.png](https://cdn.nlark.com/yuque/0/2023/png/22577092/1690252168433-f8737d66-06ab-4612-bee2-e4d227dd825e.png#averageHue=%23f9f8f4&clientId=ud75be37b-ab2a-4&from=paste&height=856&id=uc7df3636&originHeight=1711&originWidth=3521&originalType=binary&ratio=2&rotation=0&showTitle=false&size=646119&status=done&style=none&taskId=u54f50ea8-602a-43b1-a8df-c8f0e2fe329&title=&width=1760.5)\nIn a traditional synchronous render, React would give the same priority to all elements within a component tree. \n![image.png](https://cdn.nlark.com/yuque/0/2023/png/22577092/1690252322834-533311e5-e08d-40c8-a452-473de18e2219.png#averageHue=%23f3f3f1&clientId=ud75be37b-ab2a-4&from=paste&height=376&id=uf2d22cf2&originHeight=751&originWidth=3521&originalType=binary&ratio=2&rotation=0&showTitle=false&size=293154&status=done&style=none&taskId=ubdbabac1-60e3-4492-a3d2-a4ed1dd32b3&title=&width=1760.5)\nA synchronous render is an “all-or-nothing” operation, where it’s guaranteed that a component that starts rendering will always finish.\n\n---\n\nReact 18 introduces a new **concurrent** renderer that that operates behind the scenes.\n![image.png](https://cdn.nlark.com/yuque/0/2023/png/22577092/1690266559606-1a43a62f-9b0a-4f00-ac96-718dcd7b2d74.png#averageHue=%23fafafa&clientId=ud75be37b-ab2a-4&from=paste&height=940&id=uc07e55a4&originHeight=1879&originWidth=3521&originalType=binary&ratio=2&rotation=0&showTitle=false&size=674395&status=done&style=none&taskId=u2a0c9d44-e113-45e8-a765-6b33a5afa2d&title=&width=1760.5)\n> When rendering the low-priority components(pink), React yields back to the main thead to check for more important tasks\n\nIn that case, React will yield back to the main thread every 5 ms to see if there are more important tasks to handle instead.\n![image.png](https://cdn.nlark.com/yuque/0/2023/png/22577092/1690267068136-bc592a95-6fea-46a0-9bc8-f5faa5e6be96.png#averageHue=%23f4f5f2&clientId=ud75be37b-ab2a-4&from=paste&height=560&id=u88c61d30&originHeight=1120&originWidth=3521&originalType=binary&ratio=2&rotation=0&showTitle=false&size=495114&status=done&style=none&taskId=u5362903e-2112-4c45-97dc-349c92973c2&title=&width=1760.5)\nAdditionally, the concurrent renderer is able to “concurrently” render multiple versions of the component tree in the background without immediately committing the result.\nWhereas a synchronous render is an all-or-nothing computation, the concurrent renderer allows React to pause and resume the rendering of one or multiple component trees to achieve the most optimal user experience.\n![image.png](https://cdn.nlark.com/yuque/0/2023/png/22577092/1690267349086-12adb9fd-4f7d-4933-bbfc-430ee91193d3.png#averageHue=%23f9f9f9&clientId=ud75be37b-ab2a-4&from=paste&height=1085&id=ud6d38dc8&originHeight=2170&originWidth=3521&originalType=binary&ratio=2&rotation=0&showTitle=false&size=1010730&status=done&style=none&taskId=u3df985fa-a3b2-49c0-bf19-e80dee927bd&title=&width=1760.5)\nUsing concurrent features, React can pause and resume the rendering of components based on external events such as user interaction. When the user started interacting with **ComponentTwo**, React paused the current rendering, prioritized and render **ComponentTwo**, after which it resumed rendering **ComponentOne**. We'll talk about this more in the section on **Suspense.**\n## Transitions\nWe can mark an update as non-urgent by using the **startTransition** function made available by the **useTransition** hook. This is a powerful new feature that allows us to mark certain state updates as “transitions”, indicating that they can lead to visual changes that could potentially disrupt user experience if they were rendered synchronously.\nBy wrapping a state update in **startTransition**, we can tell React that we’re okay with deferring or interrupting the rendering to prioritize more important tasks to keep the current user interface interactive.\n![image.png](https://cdn.nlark.com/yuque/0/2023/png/22577092/1690267716311-992a7ec6-a8d2-46d6-99e9-90606b81bac6.png#averageHue=%23f9f9f9&clientId=ud75be37b-ab2a-4&from=paste&height=1247&id=u44e12dd6&originHeight=2494&originWidth=3536&originalType=binary&ratio=2&rotation=0&showTitle=false&size=1128370&status=done&style=none&taskId=u6e927baa-1ab4-4540-8d00-d2874dbd6c4&title=&width=1768)\nTransitions are part of a fundamental shift in React's rendering model, enabling React to render muliple versions of the UI concurrently, and manage priorities between different tasks. This allows for a smoother and more responsive user experience, especially when dealing with high-frequency updates or CPU-intensive rendering tasks.\n# React Server Componnent\n![image.png](https://cdn.nlark.com/yuque/0/2023/png/22577092/1690268488074-5c705077-9fbb-450d-8f81-4d47ca91adf4.png#averageHue=%23f7f7f7&clientId=ud75be37b-ab2a-4&from=paste&height=1428&id=u0d26b5c1&originHeight=2855&originWidth=3840&originalType=binary&ratio=2&rotation=0&showTitle=false&size=1476809&status=done&style=none&taskId=u57cc47e6-4e88-4ae4-8a99-594388cf514&title=&width=1920)\nBoth approaches rely on the fact that the **synchronous React renderer needs to rebuild the component tree client-side which the use of the shipped JavaScript bundle, even though this component tree was already available on the server.**\nReact Server Components allow React to send the **actual serialized component tree** to the client. The client-side React renderer understands this format and uses it to performantly reconstruct the React component tree without having to send the HTML file or JavaScript bundle.\n![image.png](https://cdn.nlark.com/yuque/0/2023/png/22577092/1690268656642-35197a87-e288-4829-a223-809e779414da.png#averageHue=%23f9f9f9&clientId=ud75be37b-ab2a-4&from=paste&height=676&id=u4b95a1d3&originHeight=1351&originWidth=3840&originalType=binary&ratio=2&rotation=0&showTitle=false&size=661028&status=done&style=none&taskId=ua9003e84-2eac-49d9-b063-ab40d23617b&title=&width=1920)\nWe can use this new rendering pattern by combining `**react-server-dom-webpack/server**'s **renderToPipeableStream**` method with `**react-dom/client**`'s `**createRoot**` method.\nBy default, React won't hydrate React Server Components. The components aren't expected to use any client-side interactivity like accessing the **window** object or use hooks like **useState** or **useEffect**.\nTo add a component and its imports to a JavaScript bundle that gets shipped to the client, thus making it interactive, you can use the [\"use client\" bundler directive](https://react.dev/reference/react/use-client) on the top of the file. This tells the bundler to add **this component and its imports** to the client bundle and tells React to hydrate the tree client-side to add interactivity. Such components are referred to as Client Components.\n![image.png](https://cdn.nlark.com/yuque/0/2023/png/22577092/1690269029259-7302d886-64e6-4647-9eff-5a40ae353f25.png#averageHue=%23f1e2ce&clientId=ud75be37b-ab2a-4&from=paste&height=634&id=u203facdc&originHeight=1268&originWidth=3840&originalType=binary&ratio=2&rotation=0&showTitle=false&size=788979&status=done&style=none&taskId=u507a01a5-0848-4040-bdc4-5fe2781612b&title=&width=1920)\nIt's up to the developer to optimize bundle size when working with Client Components. Developers can do this by:\n\n- Ensuring that only the leaf-most node of the interactive component defines the **\"use client\"** directive. This may require some component decoupling.\n- Passing component trees **as props** rather than importing them directly. This allows React to render the **children** as React Server Components without adding them to the client bundle.\n\n## Suspense\n the new capabilities introduced with React 18 extend **Suspense** to data fetching.\n```tsx\nasync function BlogPosts() {\n  const posts = await db.posts.findAll();\n  return '...';\n}\n\nexport default function Page() {\n  return (\n    <Suspense fallback={<Skeleton />}>\n      <BlogPosts />\n    </Suspense>\n  )\n}\n```\nThe true power of **Suspense** comes from its deep integration with React's Concurrent features. When a component is suspended, for example because it’s still waiting for data to load, React doesn't just sit idle until the component has received the data. Instead, it pauses the rendering of the suspended component and shifts its focus to other tasks.\n![image.png](https://cdn.nlark.com/yuque/0/2023/png/22577092/1690269935138-b3ad7a3a-0326-4262-b131-26a5456d0c76.png#averageHue=%23f8f8f8&clientId=ud75be37b-ab2a-4&from=paste&height=993&id=u3240a1eb&originHeight=1986&originWidth=3484&originalType=binary&ratio=2&rotation=0&showTitle=false&size=1027302&status=done&style=none&taskId=u84ec620b-7198-4ee4-af96-05f9aeef375&title=&width=1742)\nDuring this time, we can tell React to render a fallback UI to indicate that this component is still loading. Once the awaited data becomes available, React can seamlessly resume the rendering of the previously suspended component in an interruptible way, like we previously saw happening with transitions.\nReact can also reprioritize components based on user interaction. For example, when a user interacts with a suspended component that's not currently being rendered, React suspends the ongoing render and prioritizes the component that the user is interacting with.\n![image.png](https://cdn.nlark.com/yuque/0/2023/png/22577092/1690270453641-f8bea9c9-f974-4a26-80ca-d8696e092726.png#averageHue=%23f9f8f7&clientId=ud75be37b-ab2a-4&from=paste&height=856&id=ud7a66ee8&originHeight=1712&originWidth=3840&originalType=binary&ratio=2&rotation=0&showTitle=false&size=852712&status=done&style=none&taskId=u2edb5693-6bf0-44d5-8a34-d1215a10f2e&title=&width=1920)\n# Data Fetching\nBesides rendering updates, React 18 also introduces a new API to fetch data and memoize the result efficiently.\nReact 18 now has a [cache function](https://nextjs.org/docs/app/building-your-application/data-fetching/caching#react-cache) that remembers the result of the wrapped function call. If you call the same function with the same arguments _within the same render pass_, it will use the memoized value without the need to execute the function again.\n```tsx\nimport { cache } from 'react'\n \nexport const getUser = cache(async (id) => {\n  const user = await db.user.findUnique({ id })\n  return user;\n})\n\ngetUser(1)\ngetUser(1) // Called within same render pass: returns memoized result.\n```\nIn **fetch** calls, React 18 now includes a similar caching mechanism by default without having to use **cache**. This helps to reduce the number of network requests in a single render pass, which improves application performance and lowers API costs.\n```tsx\nexport const fetchPost = (id) => {\n  const res = await fetch(`https://.../posts/${id}`);\n  const data = await res.json();\n  return { post: data.post } \n}\n\nfetchPost(1)\nfetchPost(1) // Called within same render pass: returns memoized result.\n```\n![image.png](https://cdn.nlark.com/yuque/0/2023/png/22577092/1690270738188-a3ff0075-8aa2-4402-a1a1-2e218ddb33c3.png#averageHue=%23f7f6f6&clientId=ud75be37b-ab2a-4&from=paste&height=704&id=ubc3a3b10&originHeight=1408&originWidth=3840&originalType=binary&ratio=2&rotation=0&showTitle=false&size=625164&status=done&style=none&taskId=u9d55bbed-1078-4821-850f-45b64b8092c&title=&width=1920)\n# Conclusion\nIn summary, React 18's latest features improve performance in many ways.\n\n- With **Concurrent React**, the rendering process can be paused and resumed later or even abandoned. This means the UI can respond immediately to user input even if a large rendering task is in progress.\n- The **Transitions API **allows for smoother transitions during data fetches or screen changes without blocking user input.\n- **React Server Components** lets developers build components that work on both the server and client, combining the interactivity of client-side apps with the performance of traditional server rendering without the cost of hydration.\n- The extended **Suspense** functionality improves loading performance by allowing parts of the application to render before others that may take longer to fetch data."
+      "content": "​\t9月总体来说还是发生了不少事，实习和心态上的变化对之前的计划带来了不小的冲击，部分预期的事都没有做完。\r\n\r\n### 大事记\r\n\r\n1. 9.18入职，继续实习\r\n2. 10月开始课程压力++\r\n3. blog重启\r\n\r\n​\t首先，变化最直接的影响就是时间，实习+课程导致学习的时间大大缩减，原来每天大概有6h左右的自由时间可以用于学习，现在大幅降低课内学习质量后，也只有2h左右了。\r\n\r\n​\t第二点是心态上的变化。之前实习离职的原因主要是想学习、接触新东西、兼顾课程进度。但后面发现学习到的新知识并没有什么使用场景（比如java、机组的学习），学起来**没有反馈**，学着学着就不想学了。课内的东西学习节奏比较慢，很容易忘记之前学习的东西，学习有割裂感。\r\n\r\n​\t第三点就是钱，经济压力比我想象的要大，之前攒的不足以消除压力，也不够后续生活的需要，还是需要实习。\r\n\r\n​\t最后也是最重要的一点：**学习的方式、反馈**。\r\n\r\n- 之前在没有基础的时候，将自己所学的每一个内容都总结为博客难度很大，在学习内容的压力下成本太高。现在对于求职方向而言，需要学习的大部分内容已经学过，在准备面试时也有复习，对单个知识点的掌握基本足够。问题在于**知识之间的连接**，像软件工程->模块化->vue & react->响应式原理->数据结构和算法，这些模块之间都有很多内在的联系，但之前显然没有将内容串联起来。\r\n- 现在的状态应该可以将方向做一下转变，通过文章的方式，提炼、加深对知识的理解，让学到的知识更有用\r\n\r\n### 计划完成情况\r\n\r\n![image-20231004183843206](https://s2.loli.net/2023/10/04/WlEFLjGxBf3bSqV.png)\t没有完成的内容主要是计算机基础相关的\r\n\r\n- 算法：只是完成了剑指offer中的一部分，算法提高课部分的内容总体来说离实践太远，很难将它和已有的知识建立连接，每一次练习感觉都是独立的单元 | 但算法带来的思维锻炼也是其它部分很难带来的，还是需要坚持\r\n- 计算机组成原理：主要的难点在于里面涉及到的电路相关的原理，很烦，混杂着计算机系统相关的东西，很难看下去\r\n- vue & webpack：vue是复习了一下之前学习的内容，webpack还没有复习，因为实际项目中需要配置webpack的场景很少，实习之后离面试的距离也比较远，原理相关的知识后面用到的时候再复习吧。\r\n\r\n### 10月计划\r\n\r\n- 完成实习工作-- 6/10\r\n- 处理课内，实验课、点名 -- 2/10\r\n- 补齐、复习浏览器内的技术栈，探索新技术-- 2/10"
     },
     {
       "id": "blog再构建",
@@ -170,15 +262,61 @@
           ]
         },
         "prevItem": {
+          "title": "23-9月总结",
+          "permalink": "/blog/23-9月总结"
+        },
+        "nextItem": {
           "title": "react18如何提高应用性能",
           "permalink": "/blog/react18如何提高应用性能"
+        }
+      },
+      "content": "- 之前一直都使用的是别的提供商提供的文档服务，但当我想展示一些文档之外的其它内容时，自定义的能力就很差。一直有自己搭一个博客的想法。但从零开始搭建一个博客系统，时间成本很高，就一直没什么动力\n- 看到cloudmoonocus使用的[Docusaurus](https://docusaurus.io/), 兼顾md文档支持与react前端页面的自定义能力，正好符合我的需求，就使用它吧！\n\n# 行动\n\n## 概览\n\n使用到以下工具：\n\n- vercel：内容更新自动部署\n\n- docusaurus：博客框架\n\n- Typora：编辑器\n- Pic.Go + SM.MS：图床工具\n\n### docusaurus搭建博客\n\n​\t参考官网\n\n### vercel\n\n​\tvercel本身的使用是很简单的，导入项目，然后选择docusaurus框架即可，它提供自动构建和部署的功能。这里主要说一下为什么不使用Github pages。\n\n​\t一开始我是打算使用Github pages来完成部署的，但是遇到了这样一个问题：通过Github pages部署，域名会自动重定向到我自己的域名。带来的后果就是：直接访问会404，我想要正常访问部署的博客就需要手动添加域名设置，而docusaurus提供的`deploy` 脚手架并没有考虑到这一点，每一次部署都会清除我对域名的设置。\n\n​\t一开始我考虑是自定义域名的问题，尝试解除自定义域名的设置，但解除之后对域名的重定向仍然存在。![image-20231003225248184](https://s2.loli.net/2023/10/03/DdJLHRwoABgXyVF.png)\n\n​\t后面考虑是不是域名解析带来的重定向，于是将阿里云上的域名解析规则清除，但仍然未生效。\n\n​\t上面两个步骤花了2个多小时（中途需要多次触发部署来验证效果），感觉到时间的浪费。直接上vercel，**20s解决问题**。\n\n### typora\n\n​\tmd编辑器同类产品有很多，选择它的主要原因是两点：\n\n- UI设计简洁\n- 对md编辑的支持比较完善\n- 与图床的集成比较简单\n\n### 图床\n\n​\t选择pic-go的原因主要还是和typora集成比较方便。使用SM.MS作为图床的主要原因则是因为不用备案（国内OSS提供商都需要提供域名备案才能提供服务，蛋疼），而Github上传的图片加上了访问token的限制，无token无法正常访问，蛋疼。\n\n# 总结\n\n​\t之前的学习大多是通过阅读已有的资料，或者通过CV来形成自己的笔记，虽然最后看起来内容也不少，但实际上缺乏理解，并没有真正的学到心中，是“学了忘”的比较重要的一个原因。\n\n​\t写作也可以帮助自己回顾、整理出思路，提高自己的面试、表达能力，既然发现了问题，就没有理由不解决它了。\n\n​\t一天时间，博客架子基本上搭好了，后面多多写作吧！"
+    },
+    {
+      "id": "react18如何提高应用性能",
+      "metadata": {
+        "permalink": "/blog/react18如何提高应用性能",
+        "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/blog/2023-10-3-React18如何提高应用性能.md",
+        "source": "@site/blog/2023-10-3-React18如何提高应用性能.md",
+        "title": "react18如何提高应用性能",
+        "description": "How React 18 Improves Application Performance – Vercel",
+        "date": "2023-10-03T00:00:00.000Z",
+        "formattedDate": "2023年10月3日",
+        "tags": [
+          {
+            "label": "react",
+            "permalink": "/blog/tags/react"
+          }
+        ],
+        "readingTime": 5.84,
+        "hasTruncateMarker": false,
+        "authors": [
+          {
+            "name": "kcfuler",
+            "title": "passionate software engineer",
+            "url": "https://github.com/kcfuler",
+            "imageURL": "https://s2.loli.net/2023/10/04/i7A3Mb81YwvNmGl.jpg",
+            "key": "kcfuler"
+          }
+        ],
+        "frontMatter": {
+          "slug": "react18如何提高应用性能",
+          "title": "react18如何提高应用性能",
+          "authors": "kcfuler",
+          "tags": [
+            "react"
+          ]
+        },
+        "prevItem": {
+          "title": "blog再构建",
+          "permalink": "/blog/blog再构建"
         },
         "nextItem": {
           "title": "国庆游",
           "permalink": "/blog/国庆游"
         }
       },
-      "content": "- 之前一直都使用的是别的提供商提供的文档服务，但当我想展示一些文档之外的其它内容时，自定义的能力就很差。一直有自己搭一个博客的想法。但从零开始搭建一个博客系统，时间成本很高，就一直没什么动力\n- 看到cloudmoonocus使用的[Docusaurus](https://docusaurus.io/), 兼顾md文档支持与react前端页面的自定义能力，正好符合我的需求，就使用它吧！\n\n# 行动\n\n## 概览\n\n使用到以下工具：\n\n- vercel：内容更新自动部署\n\n- docusaurus：博客框架\n\n- Typora：编辑器\n- Pic.Go + SM.MS：图床工具\n\n### docusaurus搭建博客\n\n​\t参考官网\n\n### vercel\n\n​\tvercel本身的使用是很简单的，导入项目，然后选择docusaurus框架即可，它提供自动构建和部署的功能。这里主要说一下为什么不使用Github pages。\n\n​\t一开始我是打算使用Github pages来完成部署的，但是遇到了这样一个问题：通过Github pages部署，域名会自动重定向到我自己的域名。带来的后果就是：直接访问会404，我想要正常访问部署的博客就需要手动添加域名设置，而docusaurus提供的`deploy` 脚手架并没有考虑到这一点，每一次部署都会清除我对域名的设置。\n\n​\t一开始我考虑是自定义域名的问题，尝试解除自定义域名的设置，但解除之后对域名的重定向仍然存在。![image-20231003225248184](https://s2.loli.net/2023/10/03/DdJLHRwoABgXyVF.png)\n\n​\t后面考虑是不是域名解析带来的重定向，于是将阿里云上的域名解析规则清除，但仍然未生效。\n\n​\t上面两个步骤花了2个多小时（中途需要多次触发部署来验证效果），感觉到时间的浪费。直接上vercel，**20s解决问题**。\n\n### typora\n\n​\tmd编辑器同类产品有很多，选择它的主要原因是两点：\n\n- UI设计简洁\n- 对md编辑的支持比较完善\n- 与图床的集成比较简单\n\n### 图床\n\n​\t选择pic-go的原因主要还是和typora集成比较方便。使用SM.MS作为图床的主要原因则是因为不用备案（国内OSS提供商都需要提供域名备案才能提供服务，蛋疼），而Github上传的图片加上了访问token的限制，无token无法正常访问，蛋疼。\n\n# 总结\n\n​\t之前的学习大多是通过阅读已有的资料，或者通过CV来形成自己的笔记，虽然最后看起来内容也不少，但实际上缺乏理解，并没有真正的学到心中，是“学了忘”的比较重要的一个原因。\n\n​\t写作也可以帮助自己回顾、整理出思路，提高自己的面试、表达能力，既然发现了问题，就没有理由不解决它了。\n\n​\t一天时间，博客架子基本上搭好了，后面多多写作吧！"
+      "content": "> [How React 18 Improves Application Performance – Vercel](https://vercel.com/blog/how-react-18-improves-application-performance)\n\n# 主线程和长任务\n\n1. 长任务( >= 50ms)\n2. 一些指标(Core Web Vitals metric)\n- Total Blocking Time\n- First Contentful Paint\n- Time To Interactive\n- Interaction to Next Paint (INP), new core metric\n### Traditional React Rendering\n\n- render: compute\n- commit: update\n\n![image.png](https://cdn.nlark.com/yuque/0/2023/png/22577092/1690252168433-f8737d66-06ab-4612-bee2-e4d227dd825e.png#averageHue=%23f9f8f4&clientId=ud75be37b-ab2a-4&from=paste&height=856&id=uc7df3636&originHeight=1711&originWidth=3521&originalType=binary&ratio=2&rotation=0&showTitle=false&size=646119&status=done&style=none&taskId=u54f50ea8-602a-43b1-a8df-c8f0e2fe329&title=&width=1760.5)\nIn a traditional synchronous render, React would give the same priority to all elements within a component tree. \n![image.png](https://cdn.nlark.com/yuque/0/2023/png/22577092/1690252322834-533311e5-e08d-40c8-a452-473de18e2219.png#averageHue=%23f3f3f1&clientId=ud75be37b-ab2a-4&from=paste&height=376&id=uf2d22cf2&originHeight=751&originWidth=3521&originalType=binary&ratio=2&rotation=0&showTitle=false&size=293154&status=done&style=none&taskId=ubdbabac1-60e3-4492-a3d2-a4ed1dd32b3&title=&width=1760.5)\nA synchronous render is an “all-or-nothing” operation, where it’s guaranteed that a component that starts rendering will always finish.\n\n---\n\nReact 18 introduces a new **concurrent** renderer that that operates behind the scenes.\n![image.png](https://cdn.nlark.com/yuque/0/2023/png/22577092/1690266559606-1a43a62f-9b0a-4f00-ac96-718dcd7b2d74.png#averageHue=%23fafafa&clientId=ud75be37b-ab2a-4&from=paste&height=940&id=uc07e55a4&originHeight=1879&originWidth=3521&originalType=binary&ratio=2&rotation=0&showTitle=false&size=674395&status=done&style=none&taskId=u2a0c9d44-e113-45e8-a765-6b33a5afa2d&title=&width=1760.5)\n> When rendering the low-priority components(pink), React yields back to the main thead to check for more important tasks\n\nIn that case, React will yield back to the main thread every 5 ms to see if there are more important tasks to handle instead.\n![image.png](https://cdn.nlark.com/yuque/0/2023/png/22577092/1690267068136-bc592a95-6fea-46a0-9bc8-f5faa5e6be96.png#averageHue=%23f4f5f2&clientId=ud75be37b-ab2a-4&from=paste&height=560&id=u88c61d30&originHeight=1120&originWidth=3521&originalType=binary&ratio=2&rotation=0&showTitle=false&size=495114&status=done&style=none&taskId=u5362903e-2112-4c45-97dc-349c92973c2&title=&width=1760.5)\nAdditionally, the concurrent renderer is able to “concurrently” render multiple versions of the component tree in the background without immediately committing the result.\nWhereas a synchronous render is an all-or-nothing computation, the concurrent renderer allows React to pause and resume the rendering of one or multiple component trees to achieve the most optimal user experience.\n![image.png](https://cdn.nlark.com/yuque/0/2023/png/22577092/1690267349086-12adb9fd-4f7d-4933-bbfc-430ee91193d3.png#averageHue=%23f9f9f9&clientId=ud75be37b-ab2a-4&from=paste&height=1085&id=ud6d38dc8&originHeight=2170&originWidth=3521&originalType=binary&ratio=2&rotation=0&showTitle=false&size=1010730&status=done&style=none&taskId=u3df985fa-a3b2-49c0-bf19-e80dee927bd&title=&width=1760.5)\nUsing concurrent features, React can pause and resume the rendering of components based on external events such as user interaction. When the user started interacting with **ComponentTwo**, React paused the current rendering, prioritized and render **ComponentTwo**, after which it resumed rendering **ComponentOne**. We'll talk about this more in the section on **Suspense.**\n## Transitions\nWe can mark an update as non-urgent by using the **startTransition** function made available by the **useTransition** hook. This is a powerful new feature that allows us to mark certain state updates as “transitions”, indicating that they can lead to visual changes that could potentially disrupt user experience if they were rendered synchronously.\nBy wrapping a state update in **startTransition**, we can tell React that we’re okay with deferring or interrupting the rendering to prioritize more important tasks to keep the current user interface interactive.\n![image.png](https://cdn.nlark.com/yuque/0/2023/png/22577092/1690267716311-992a7ec6-a8d2-46d6-99e9-90606b81bac6.png#averageHue=%23f9f9f9&clientId=ud75be37b-ab2a-4&from=paste&height=1247&id=u44e12dd6&originHeight=2494&originWidth=3536&originalType=binary&ratio=2&rotation=0&showTitle=false&size=1128370&status=done&style=none&taskId=u6e927baa-1ab4-4540-8d00-d2874dbd6c4&title=&width=1768)\nTransitions are part of a fundamental shift in React's rendering model, enabling React to render muliple versions of the UI concurrently, and manage priorities between different tasks. This allows for a smoother and more responsive user experience, especially when dealing with high-frequency updates or CPU-intensive rendering tasks.\n# React Server Componnent\n![image.png](https://cdn.nlark.com/yuque/0/2023/png/22577092/1690268488074-5c705077-9fbb-450d-8f81-4d47ca91adf4.png#averageHue=%23f7f7f7&clientId=ud75be37b-ab2a-4&from=paste&height=1428&id=u0d26b5c1&originHeight=2855&originWidth=3840&originalType=binary&ratio=2&rotation=0&showTitle=false&size=1476809&status=done&style=none&taskId=u57cc47e6-4e88-4ae4-8a99-594388cf514&title=&width=1920)\nBoth approaches rely on the fact that the **synchronous React renderer needs to rebuild the component tree client-side which the use of the shipped JavaScript bundle, even though this component tree was already available on the server.**\nReact Server Components allow React to send the **actual serialized component tree** to the client. The client-side React renderer understands this format and uses it to performantly reconstruct the React component tree without having to send the HTML file or JavaScript bundle.\n![image.png](https://cdn.nlark.com/yuque/0/2023/png/22577092/1690268656642-35197a87-e288-4829-a223-809e779414da.png#averageHue=%23f9f9f9&clientId=ud75be37b-ab2a-4&from=paste&height=676&id=u4b95a1d3&originHeight=1351&originWidth=3840&originalType=binary&ratio=2&rotation=0&showTitle=false&size=661028&status=done&style=none&taskId=ua9003e84-2eac-49d9-b063-ab40d23617b&title=&width=1920)\nWe can use this new rendering pattern by combining `**react-server-dom-webpack/server**'s **renderToPipeableStream**` method with `**react-dom/client**`'s `**createRoot**` method.\nBy default, React won't hydrate React Server Components. The components aren't expected to use any client-side interactivity like accessing the **window** object or use hooks like **useState** or **useEffect**.\nTo add a component and its imports to a JavaScript bundle that gets shipped to the client, thus making it interactive, you can use the [\"use client\" bundler directive](https://react.dev/reference/react/use-client) on the top of the file. This tells the bundler to add **this component and its imports** to the client bundle and tells React to hydrate the tree client-side to add interactivity. Such components are referred to as Client Components.\n![image.png](https://cdn.nlark.com/yuque/0/2023/png/22577092/1690269029259-7302d886-64e6-4647-9eff-5a40ae353f25.png#averageHue=%23f1e2ce&clientId=ud75be37b-ab2a-4&from=paste&height=634&id=u203facdc&originHeight=1268&originWidth=3840&originalType=binary&ratio=2&rotation=0&showTitle=false&size=788979&status=done&style=none&taskId=u507a01a5-0848-4040-bdc4-5fe2781612b&title=&width=1920)\nIt's up to the developer to optimize bundle size when working with Client Components. Developers can do this by:\n\n- Ensuring that only the leaf-most node of the interactive component defines the **\"use client\"** directive. This may require some component decoupling.\n- Passing component trees **as props** rather than importing them directly. This allows React to render the **children** as React Server Components without adding them to the client bundle.\n\n## Suspense\n the new capabilities introduced with React 18 extend **Suspense** to data fetching.\n```tsx\nasync function BlogPosts() {\n  const posts = await db.posts.findAll();\n  return '...';\n}\n\nexport default function Page() {\n  return (\n    <Suspense fallback={<Skeleton />}>\n      <BlogPosts />\n    </Suspense>\n  )\n}\n```\nThe true power of **Suspense** comes from its deep integration with React's Concurrent features. When a component is suspended, for example because it’s still waiting for data to load, React doesn't just sit idle until the component has received the data. Instead, it pauses the rendering of the suspended component and shifts its focus to other tasks.\n![image.png](https://cdn.nlark.com/yuque/0/2023/png/22577092/1690269935138-b3ad7a3a-0326-4262-b131-26a5456d0c76.png#averageHue=%23f8f8f8&clientId=ud75be37b-ab2a-4&from=paste&height=993&id=u3240a1eb&originHeight=1986&originWidth=3484&originalType=binary&ratio=2&rotation=0&showTitle=false&size=1027302&status=done&style=none&taskId=u84ec620b-7198-4ee4-af96-05f9aeef375&title=&width=1742)\nDuring this time, we can tell React to render a fallback UI to indicate that this component is still loading. Once the awaited data becomes available, React can seamlessly resume the rendering of the previously suspended component in an interruptible way, like we previously saw happening with transitions.\nReact can also reprioritize components based on user interaction. For example, when a user interacts with a suspended component that's not currently being rendered, React suspends the ongoing render and prioritizes the component that the user is interacting with.\n![image.png](https://cdn.nlark.com/yuque/0/2023/png/22577092/1690270453641-f8bea9c9-f974-4a26-80ca-d8696e092726.png#averageHue=%23f9f8f7&clientId=ud75be37b-ab2a-4&from=paste&height=856&id=ud7a66ee8&originHeight=1712&originWidth=3840&originalType=binary&ratio=2&rotation=0&showTitle=false&size=852712&status=done&style=none&taskId=u2edb5693-6bf0-44d5-8a34-d1215a10f2e&title=&width=1920)\n# Data Fetching\nBesides rendering updates, React 18 also introduces a new API to fetch data and memoize the result efficiently.\nReact 18 now has a [cache function](https://nextjs.org/docs/app/building-your-application/data-fetching/caching#react-cache) that remembers the result of the wrapped function call. If you call the same function with the same arguments _within the same render pass_, it will use the memoized value without the need to execute the function again.\n```tsx\nimport { cache } from 'react'\n \nexport const getUser = cache(async (id) => {\n  const user = await db.user.findUnique({ id })\n  return user;\n})\n\ngetUser(1)\ngetUser(1) // Called within same render pass: returns memoized result.\n```\nIn **fetch** calls, React 18 now includes a similar caching mechanism by default without having to use **cache**. This helps to reduce the number of network requests in a single render pass, which improves application performance and lowers API costs.\n```tsx\nexport const fetchPost = (id) => {\n  const res = await fetch(`https://.../posts/${id}`);\n  const data = await res.json();\n  return { post: data.post } \n}\n\nfetchPost(1)\nfetchPost(1) // Called within same render pass: returns memoized result.\n```\n![image.png](https://cdn.nlark.com/yuque/0/2023/png/22577092/1690270738188-a3ff0075-8aa2-4402-a1a1-2e218ddb33c3.png#averageHue=%23f7f6f6&clientId=ud75be37b-ab2a-4&from=paste&height=704&id=ubc3a3b10&originHeight=1408&originWidth=3840&originalType=binary&ratio=2&rotation=0&showTitle=false&size=625164&status=done&style=none&taskId=u9d55bbed-1078-4821-850f-45b64b8092c&title=&width=1920)\n# Conclusion\nIn summary, React 18's latest features improve performance in many ways.\n\n- With **Concurrent React**, the rendering process can be paused and resumed later or even abandoned. This means the UI can respond immediately to user input even if a large rendering task is in progress.\n- The **Transitions API **allows for smoother transitions during data fetches or screen changes without blocking user input.\n- **React Server Components** lets developers build components that work on both the server and client, combining the interactivity of client-side apps with the performance of traditional server rendering without the cost of hydration.\n- The extended **Suspense** functionality improves loading performance by allowing parts of the application to render before others that may take longer to fetch data."
     },
     {
       "id": "国庆游",
@@ -216,11 +354,11 @@
           ]
         },
         "prevItem": {
-          "title": "blog再构建",
-          "permalink": "/blog/blog再构建"
+          "title": "react18如何提高应用性能",
+          "permalink": "/blog/react18如何提高应用性能"
         }
       },
-      "content": "![1696344578349](https://s2.loli.net/2023/10/03/n5jkCi7ar23qmhX.jpg)\n\n![1696345182884](https://s2.loli.net/2023/10/03/RmQsSWv2M5ob48z.jpg)"
+      "content": "![1696344578349](https://s2.loli.net/2023/10/03/n5jkCi7ar23qmhX.jpg)\r\n\r\n![1696345182884](https://s2.loli.net/2023/10/03/RmQsSWv2M5ob48z.jpg)"
     }
   ]
 }

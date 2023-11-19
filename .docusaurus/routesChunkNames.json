@@ -1,54 +1,63 @@
 {
-  "/__docusaurus/debug-7e1": {
+  "/__docusaurus/debug-fd1": {
     "__comp": "__comp---theme-debug-config-23-a-2ff",
     "__context": {
-      "plugin": "plugin---docusaurus-debugcd-4-f69"
+      "plugin": "plugin---docusaurus-debug-01-b-a9b"
     }
   },
-  "/__docusaurus/debug/config-f73": {
+  "/__docusaurus/debug/config-c6e": {
     "__comp": "__comp---theme-debug-config-23-a-2ff",
     "__context": {
-      "plugin": "plugin---docusaurus-debugcd-4-f69"
+      "plugin": "plugin---docusaurus-debug-01-b-a9b"
     }
   },
-  "/__docusaurus/debug/content-32d": {
+  "/__docusaurus/debug/content-070": {
     "__comp": "__comp---theme-debug-contentba-8-ce7",
     "__context": {
-      "plugin": "plugin---docusaurus-debugcd-4-f69"
+      "plugin": "plugin---docusaurus-debug-01-b-a9b"
     },
     "allContent": "allContent---docusaurus-debug-content-246-9aa"
   },
-  "/__docusaurus/debug/globalData-826": {
+  "/__docusaurus/debug/globalData-eec": {
     "__comp": "__comp---theme-debug-global-dataede-0fa",
     "__context": {
-      "plugin": "plugin---docusaurus-debugcd-4-f69"
+      "plugin": "plugin---docusaurus-debug-01-b-a9b"
     }
   },
-  "/__docusaurus/debug/metadata-4cd": {
+  "/__docusaurus/debug/metadata-e1a": {
     "__comp": "__comp---theme-debug-site-metadata-68-e-3d4",
     "__context": {
-      "plugin": "plugin---docusaurus-debugcd-4-f69"
+      "plugin": "plugin---docusaurus-debug-01-b-a9b"
     }
   },
-  "/__docusaurus/debug/registry-3d0": {
+  "/__docusaurus/debug/registry-4dd": {
     "__comp": "__comp---theme-debug-registry-679-501",
     "__context": {
-      "plugin": "plugin---docusaurus-debugcd-4-f69"
+      "plugin": "plugin---docusaurus-debug-01-b-a9b"
     }
   },
-  "/__docusaurus/debug/routes-7ad": {
+  "/__docusaurus/debug/routes-95c": {
     "__comp": "__comp---theme-debug-routes-946-699",
     "__context": {
-      "plugin": "plugin---docusaurus-debugcd-4-f69"
+      "plugin": "plugin---docusaurus-debug-01-b-a9b"
     }
   },
-  "/blog-f31": {
+  "/blog-222": {
     "__comp": "__comp---theme-blog-list-pagea-6-a-7ba",
     "__context": {
-      "plugin": "plugin---blogecc-8c8"
+      "plugin": "plugin---blogc-83-838"
     },
     "sidebar": "sidebar---blog-814-8ac",
     "items": [
+      {
+        "content": "content---blogf-3-d-813"
+      },
+      {
+        "content": "content---blog-119-b3a"
+      },
+      {
+        "content": "content---blog-6-f-0-151"
+      },
       {
         "content": "content---blog-499-943"
       },
@@ -56,10 +65,10 @@
         "content": "content---blog-08-c-7b4"
       },
       {
-        "content": "content---blog-38-b-2f5"
+        "content": "content---blog-0-d-9-aee"
       },
       {
-        "content": "content---blog-0-d-9-aee"
+        "content": "content---blog-38-b-2f5"
       },
       {
         "content": "content---blog-2-a-4-e8d"
@@ -67,52 +76,91 @@
     ],
     "metadata": "metadata---blogb-2-b-df1"
   },
-  "/blog/23-9月总结-cb4": {
+  "/blog/2023-10月小记-90d": {
     "__comp": "__comp---theme-blog-post-pageccc-cab",
     "__context": {
-      "plugin": "plugin---blogecc-8c8"
+      "plugin": "plugin---blogc-83-838"
+    },
+    "sidebar": "sidebar---blog-814-8ac",
+    "content": "content---blog-2023-10-月小记-81-e-64d"
+  },
+  "/blog/23-9月总结-b08": {
+    "__comp": "__comp---theme-blog-post-pageccc-cab",
+    "__context": {
+      "plugin": "plugin---blogc-83-838"
     },
     "sidebar": "sidebar---blog-814-8ac",
     "content": "content---blog-23-9-月总结fee-c3d"
   },
-  "/blog/archive-005": {
+  "/blog/archive-52b": {
     "__comp": "__comp---theme-blog-archive-page-9-e-4-1d8",
     "__context": {
-      "plugin": "plugin---blogecc-8c8"
+      "plugin": "plugin---blogc-83-838"
     },
     "archive": "archive---blog-archiveb-2-f-393"
   },
-  "/blog/blog再构建-67e": {
+  "/blog/blog再构建-aa7": {
     "__comp": "__comp---theme-blog-post-pageccc-cab",
     "__context": {
-      "plugin": "plugin---blogecc-8c8"
+      "plugin": "plugin---blogc-83-838"
     },
     "sidebar": "sidebar---blog-814-8ac",
     "content": "content---blog-blog再构建-376-3fa"
   },
-  "/blog/react18如何提高应用性能-2ae": {
+  "/blog/react18如何提高应用性能-99e": {
     "__comp": "__comp---theme-blog-post-pageccc-cab",
     "__context": {
-      "plugin": "plugin---blogecc-8c8"
+      "plugin": "plugin---blogc-83-838"
     },
     "sidebar": "sidebar---blog-814-8ac",
     "content": "content---blog-react-18-如何提高应用性能-97-c-369"
   },
-  "/blog/tags-599": {
+  "/blog/tags-b5e": {
     "__comp": "__comp---theme-blog-tags-list-page-01-a-d0b",
     "__context": {
-      "plugin": "plugin---blogecc-8c8"
+      "plugin": "plugin---blogc-83-838"
     },
     "sidebar": "sidebar---blog-814-8ac",
     "tags": "tags---blog-tagsa-70-da2"
   },
-  "/blog/tags/plan-5b7": {
+  "/blog/tags/daily-life-331": {
     "__comp": "__comp---theme-blog-tags-posts-page-687-b6c",
     "__context": {
-      "plugin": "plugin---blogecc-8c8"
+      "plugin": "plugin---blogc-83-838"
     },
     "sidebar": "sidebar---blog-814-8ac",
     "items": [
+      {
+        "content": "content---blog-6-f-0-151"
+      }
+    ],
+    "tag": "tag---blog-tags-daily-lifea-45-d08",
+    "listMetadata": "listMetadata---blog-tags-daily-life-92-e-fd8"
+  },
+  "/blog/tags/experience-3e4": {
+    "__comp": "__comp---theme-blog-tags-posts-page-687-b6c",
+    "__context": {
+      "plugin": "plugin---blogc-83-838"
+    },
+    "sidebar": "sidebar---blog-814-8ac",
+    "items": [
+      {
+        "content": "content---blog-119-b3a"
+      }
+    ],
+    "tag": "tag---blog-tags-experience-5-a-8-5bf",
+    "listMetadata": "listMetadata---blog-tags-experience-57-e-3cd"
+  },
+  "/blog/tags/plan-174": {
+    "__comp": "__comp---theme-blog-tags-posts-page-687-b6c",
+    "__context": {
+      "plugin": "plugin---blogc-83-838"
+    },
+    "sidebar": "sidebar---blog-814-8ac",
+    "items": [
+      {
+        "content": "content---blogf-3-d-813"
+      },
       {
         "content": "content---blog-08-c-7b4"
       }
@@ -120,10 +168,10 @@
     "tag": "tag---blog-tags-plan-0-f-2-7aa",
     "listMetadata": "listMetadata---blog-tags-plan-1-c-9-68c"
   },
-  "/blog/tags/react-7f8": {
+  "/blog/tags/react-273": {
     "__comp": "__comp---theme-blog-tags-posts-page-687-b6c",
     "__context": {
-      "plugin": "plugin---blogecc-8c8"
+      "plugin": "plugin---blogc-83-838"
     },
     "sidebar": "sidebar---blog-814-8ac",
     "items": [
@@ -134,10 +182,10 @@
     "tag": "tag---blog-tags-react-986-5dd",
     "listMetadata": "listMetadata---blog-tags-react-76-d-cbc"
   },
-  "/blog/tags/travel-1c2": {
+  "/blog/tags/travel-5dd": {
     "__comp": "__comp---theme-blog-tags-posts-page-687-b6c",
     "__context": {
-      "plugin": "plugin---blogecc-8c8"
+      "plugin": "plugin---blogc-83-838"
     },
     "sidebar": "sidebar---blog-814-8ac",
     "items": [
@@ -148,10 +196,10 @@
     "tag": "tag---blog-tags-travelba-5-ec8",
     "listMetadata": "listMetadata---blog-tags-travelcc-5-0b6"
   },
-  "/blog/tags/trifling-390": {
+  "/blog/tags/trifling-703": {
     "__comp": "__comp---theme-blog-tags-posts-page-687-b6c",
     "__context": {
-      "plugin": "plugin---blogecc-8c8"
+      "plugin": "plugin---blogc-83-838"
     },
     "sidebar": "sidebar---blog-814-8ac",
     "items": [
@@ -162,10 +210,10 @@
     "tag": "tag---blog-tags-triflinga-56-a20",
     "listMetadata": "listMetadata---blog-tags-trifling-2-c-8-649"
   },
-  "/blog/tags/vite-a29": {
+  "/blog/tags/vite-9b3": {
     "__comp": "__comp---theme-blog-tags-posts-page-687-b6c",
     "__context": {
-      "plugin": "plugin---blogecc-8c8"
+      "plugin": "plugin---blogc-83-838"
     },
     "sidebar": "sidebar---blog-814-8ac",
     "items": [
@@ -176,33 +224,49 @@
     "tag": "tag---blog-tags-vited-08-f31",
     "listMetadata": "listMetadata---blog-tags-vite-6-bf-a2e"
   },
-  "/blog/viteConf简记-f21": {
+  "/blog/TDD的作用-7b5": {
     "__comp": "__comp---theme-blog-post-pageccc-cab",
     "__context": {
-      "plugin": "plugin---blogecc-8c8"
+      "plugin": "plugin---blogc-83-838"
+    },
+    "sidebar": "sidebar---blog-814-8ac",
+    "content": "content---blog-td-d的作用-3-f-8-852"
+  },
+  "/blog/viteConf简记-f66": {
+    "__comp": "__comp---theme-blog-post-pageccc-cab",
+    "__context": {
+      "plugin": "plugin---blogc-83-838"
     },
     "sidebar": "sidebar---blog-814-8ac",
     "content": "content---blog-vite-conf简记acd-abd"
   },
-  "/blog/国庆游-92c": {
+  "/blog/国庆游-dd3": {
     "__comp": "__comp---theme-blog-post-pageccc-cab",
     "__context": {
-      "plugin": "plugin---blogecc-8c8"
+      "plugin": "plugin---blogc-83-838"
     },
     "sidebar": "sidebar---blog-814-8ac",
     "content": "content---blog-国庆游-4-c-1-073"
   },
-  "/markdown-page-4fe": {
+  "/blog/没能量了-483": {
+    "__comp": "__comp---theme-blog-post-pageccc-cab",
+    "__context": {
+      "plugin": "plugin---blogc-83-838"
+    },
+    "sidebar": "sidebar---blog-814-8ac",
+    "content": "content---blog-没能量了bcc-d38"
+  },
+  "/markdown-page-89b": {
     "__comp": "__comp---theme-mdx-page-1-f-3-b90",
     "__context": {
-      "plugin": "plugin---markdown-page-98-c-792"
+      "plugin": "plugin---markdown-pagecc-0-755"
     },
     "content": "content---markdown-page-393-028"
   },
-  "/docs-6b5": {
+  "/docs-21e": {
     "__comp": "__comp---theme-doc-page-1-be-9be",
     "__context": {
-      "plugin": "plugin---docsa-19-e45"
+      "plugin": "plugin---docs-875-8dc"
     },
     "versionMetadata": "versionMetadata---docs-935-398"
   },
@@ -270,6 +334,10 @@
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-web前端-业务相关-crdt-算法-220-c00"
   },
+  "/docs/web前端/可视化/G6学习-68c": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-web前端-可视化-g-6-学习-4-de-255"
+  },
   "/docs/web前端/工程化/ts学习-b84": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-web前端-工程化-ts学习-2-ff-304"
@@ -298,14 +366,18 @@
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-算法-面试经典-150-题f-0-f-775"
   },
+  "/docs/阅读/刻意练习-7fe": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-阅读-刻意练习cb-5-a93"
+  },
   "/docs/阅读/思考，快与慢-f99": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-阅读-思考，快与慢-1-e-3-235"
   },
-  "/-d3b": {
+  "/-a40": {
     "__comp": "__comp---site-src-pages-index-tsx-1-df-d3e",
     "__context": {
-      "plugin": "plugin---markdown-page-98-c-792"
+      "plugin": "plugin---markdown-pagecc-0-755"
     },
     "config": "config---5-e-9-4f3"
   }
